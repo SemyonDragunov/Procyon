@@ -1,0 +1,2456 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Procyon | Процион | CSS Framework</title>
+<link href="procyon.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-1.5.min.js"></script>
+<script src="procyon.js"></script>
+<!--<link href="normalize.css" rel="stylesheet">-->
+</head>
+<body>
+    
+<div data-wrapper>
+    <div data-topbar>
+        <a class="menu-icon sidebar-menu"></a>
+    </div>
+    <aside data-menu>
+        <ul>
+        <li>
+            <a href="#grid">Сетка</a>
+        </li>
+        <li>
+            <a href="#block">Блоки</a>
+        </li>
+        <li>
+            <a href="#button">Кнопки</a>
+        </li>
+        <li>
+            <a href="#form">Формы</a>
+        </li>
+        <li>
+            <a href="#navs">Навигация</a>
+        </li>
+        <li>
+            <a href="#elements">Элементы</a>
+        </li>
+        <li>
+            <a href="#modal">Модальные окна</a>
+        </li>
+        <li>
+            <a href="#typography">Типоргафика</a>
+        </li>
+        <li>
+            <a href="#table">Таблицы</a>
+        </li>
+        <li>
+            <a href="#media">Медиа</a>
+        </li>
+        <li>
+            <a href="#less">Less</a>
+        </li>
+    </ul>
+    </aside>
+    <div data-content style="padding-top: 50px;">
+        <nav class="procyon-menu fixed-top dark" role="navigation">
+    <ul>
+        <li>
+            <a href="#grid">Сетка</a>
+        </li>
+        <li>
+            <a href="#block">Блоки</a>
+        </li>
+        <li>
+            <a href="#button">Кнопки</a>
+        </li>
+        <li>
+            <a href="#form">Формы</a>
+        </li>
+        <li>
+            <a href="#navs">Навигация</a>
+        </li>
+        <li>
+            <a href="#elements">Элементы</a>
+        </li>
+        <li>
+            <a href="#modal">Модальные окна</a>
+        </li>
+        <li>
+            <a href="#typography">Типоргафика</a>
+        </li>
+        <li>
+            <a href="#table">Таблицы</a>
+        </li>
+        <li>
+            <a href="#media">Медиа</a>
+        </li>
+        <li>
+            <a href="#less">Less</a>
+        </li>
+    </ul>
+</nav>
+<section id="grid">
+    <div class="row">
+        <div class="xs-12">
+
+        <h2>Адаптивная сетка</h2>
+        <div class="row">
+            <div class="xs-4 sm-2">
+                <span class="xs-hide">sm-2</span>
+                <span class="xs-show">xs-4</span>
+            </div>
+            <div class="xs-4 sm-6">
+                <span class="xs-hide">sm-6</span>
+                <span class="xs-show">xs-4</span>
+            </div>
+            <div class="xs-4">
+                <span>xs-4</span>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="sm-4 md-6">
+                <span class="xs-show">100%</span>
+                <span class="xs-hide md-hide-up">.sm-4</span>
+                <span class="sm-hide-down">.md-6</span>
+            </div>
+            <div class="sm-8 md-4">
+                <span class="xs-show">100%</span>
+                <span class="sm-show">.sm-8</span>
+                <span class="md-show-up">.md-4</span>
+            </div>
+            <div class="md-2">
+                <span class="sm-show-down">100%</span>
+                <span class="sm-hide-down">.md-2</span>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="sm-4 md-5 lg-7">
+                <span class="xs-show">100%</span>
+                <span class="sm-show">.sm-4</span>
+                <span class="md-show">.md-5</span>
+                <span class="md-hide-down">.lg-7</span>
+            </div>
+            <div class="sm-8 md-5 lg-3">
+                <span class="xs-show">100%</span>
+                <span class="sm-show">.sm-8</span>
+                <span class="md-show">.md-5</span>
+                <span class="lg-show">.lg-3</span>
+            </div>
+            <div class="md-2 lg-2">
+                <span class="sm-show-down">100%</span>
+                <span class="md-show">.md-2</span>
+                <span class="md-hide-down">.lg-2</span>
+            </div>
+        </div>
+        
+        <hr>
+        
+        <h3>Контент по середине страницы</h3>
+        <p>Чтобы материал на странице был по середине экрана, поместите его в <mark>&lt;div class="row"&gt; ... &lt;/div&gt;</mark>. Этот элемент будет менять ширину в зависимости от типа экрана. Как на этом сайте.</p>
+        <p>Если Вы хотите использовать "резиновую" верстку, то просто не используйте данный класс. Но если вдруг понадобилось переключаться на "резиновую" верстку для некоторых дисплеев, то существую следующие классы. Их необходимо добавить в элемент, пример <mark>&lt;div class="row fluid-md-up"&gt; ... &lt;/div&gt;</mark>.</p>
+        <ul>
+            <li>.fluid-sm - "резиновый" row только для планшетов.</li>
+            <li>.fluid-sm-up - для планшетов и больше.</li>
+            <li>.fluid-sm-down - для планшетов и меньше.</li>
+            <li>.fluid-md - только для средних дисплеев.</li>
+            <li>.fluid-md-up - для средних дисплеев и больше.</li>
+            <li>.fluid-md-down - для средних дисплеев и меньше.</li>
+            <li>.fluid-lg - только для больших дисплеев.</li>
+            <li>.fluid-landscape - для альбомной ориентации</li>
+            <li>.fluid-portrait - для портретной ориентации</li>
+            <li>.fluid-4by3 - для диагонали дисплеев 4/3</li>
+            <li>.fluid-16by9 - для диагонали дисплеев 16/9</li>
+            <li>.fluid-16by10 - для диагонали дисплеев 16/10</li>
+            <li>.fluid-16by9and10 - для диагонали дисплеев 16/9 и 16/10</li>
+            <li>.fluid-print - для режима печати</li>
+        </ul>
+        <div class="info">
+            <p>Класс .row всегда имеет ширину 100% для смарфонов (.xs-#).</p>
+        </div>
+        
+        <hr>
+        
+        <h3>Вложенные .row</h3>
+        <ul>
+            <li>Певый .row в разметке - по середине страницы (<a href="#">см. пункт</a>).</li>
+            <li>.row > .row (прямой потомок) - у второго .row отступа не будет. Можно добавлять другие блоки.</li>
+            <li>[xs-# sm-# md-# ld-# block-*] > .row (прямое наследование) - у второго .row появляются отпицательные левые и правые отступы для выравнивания отступов. Поэтому его надо помещать непосредственно в адаптивные ячейки .xs-#. (<a href="#">см. пункт</a>)</li>
+        </ul>
+        
+        <hr>
+        
+        <h3>Вложенные блоки</h3>
+        <p>Если Вы захотели разбить блок ещё на несколько частей, то добавьте внутрь элемент <mark>.row</mark> (нужно для компенсации отступов в ячейках) и можете снова разбивать ячейку на 12 частей.</p>
+        <div class="row">
+            <div class="xs-8">
+                <div class="row">
+                    <div class="xs-8">
+                        .xs-8
+                    </div>
+                    <div class="xs-4">
+                        .xs-4
+                    </div>
+                </div>
+            </div>
+            <div class="xs-4">.xs-4</div>
+        </div>
+        <pre>
+            <code>
+                
+            </code>
+        </pre>
+        
+        <hr>
+            
+        <h3>Положение блоков</h3>
+        <p>Если один блок выше другого, то следующий не будет переносится под него, а перейдет на позицию к более низкому. Для обычного построчного вывода сетки необходимо добавить элемент с классом <mark>.clearfix</mark> между элементами.</p>
+        <div class="row">
+            
+            <div class="md-6">
+                <div class="xs-6">.xs-6<br />2я строка<br />3я строка<br />4я строка</div>
+                <div class="xs-6">.xs-6</div>
+                <div class="xs-6">.xs-6</div>
+            </div>
+            <div class="md-6">
+                <pre>
+                    <code>
+                        
+                    </code>
+                </pre>
+            </div>
+            
+            <div class="clearfix"></div>
+            
+            <div class="md-6">
+                <div class="xs-6">.xs-6<br />2я строка<br />3я строка<br />4я строка</div>
+                <div class="xs-6">.xs-6</div>
+                <div class="clearfix"></div>                
+                <div class="xs-6">.xs-6</div>
+            </div>
+            <div class="md-6">
+                <pre>
+                    <code>
+                        
+                    </code>
+                </pre>
+            </div>
+        </div>
+        
+        <hr>
+        
+        <h3>Отступы</h3>
+        <p>Класс <mark>.xs-2-offset</mark> означает, что блок сделает отступ на 2 блока вправо для смартфонов и выше.</p>
+        <div class="row">
+            <div class="xs-12">.xs-12</div>
+            <div class="xs-10 xs-2-offset">.xs-10 .xs-2-offset</div>
+        </div>
+        <pre>
+            <code>
+                
+            </code>
+        </pre>
+        
+        <hr>
+        
+        <h3>Замена</h3>
+        <p>Смена местами блоков. Для этого используются 2 класса <mark>.-push</mark> (отступающий) и <mark>.-pull</mark> (заменяемый). Этот приём пригодится если надо, чтобы при нужном разрешении экрана была другая последовательность.</p>
+        <div class="row">
+            <div class="sm-4 sm-8-push">Первый (.sm-4 .sm-8-push)</div>
+            <div class="sm-8 sm-4-pull">Последний (.sm-8 .sm-4-pull)</div>
+        </div>
+        <pre>
+            <code>
+                
+            </code>
+        </pre>
+        
+        <hr>
+        
+        <h3>Неполные строки</h3>
+        <p>Добавьте класс <mark>.end</mark> в нужный блок и он станет последним в этой строке.</p>
+        <div class="row">
+            <div class="xs-3">.xs-3</div>
+            <div class="xs-3">.xs-3</div>
+            <div class="xs-3 end">.xs-3 .end</div>
+        </div>
+        <pre>
+            <code>
+                
+            </code>
+        </pre>
+        
+        <hr>
+        
+        <h3>Адаптивное центрирование сетки</h3>
+        <p>Ширина 4 колонки (.xs-4) для смартфонов и выше. Центрирование для средних дисплеев и выше (.md-center-up).</p>
+        <div class="row">
+            <div class="md-center-up xs-4">.xs-4 .md-center-up</div>
+        </div>
+        <p>Возможны такие варианты:</p>
+        <ul>
+            <li>xs-center - Центрирование для смартофон и выше.</li>
+            <li>sm-center - Центрирование только для планшетов.</li>
+            <li>sm-center-up - Центрирование для планшетов и выше.</li>
+            <li>sm-center-down - Центрирование для планшетов и ниже.</li>
+            <li>md-center - Центрирование только малых дисплеев.</li>
+            <li>md-center-up - Центрирование для средних дисплеев и выше.</li>
+            <li>md-center-down - Центрирование для дисплеев и ниже.</li>
+            <li>lg-center - Центрирование только для больших дисплеев.</li>
+        </ul>
+        
+        <div class="clearfix"></div>
+        
+        <hr>
+        
+        <div class="row">
+        <div class="md-6">
+                <h3>Скрыть элемент</h3>
+                <p>Элемент виден всегда, но скрыт для следующих условий.</p>
+                    <table class="table">
+            <thead>
+              <tr>
+               <th>Класс</th>
+               <th>Условия скрытия</th>
+             </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>.hide</td>
+                <td>Всегда</td>
+              </tr>
+              <tr>
+                <td>.hide-print</td>
+                <td>При печати</td>
+              </tr>
+              <tr>
+                <td>.hide-landscape</td>
+                <td>В альбомной ориентации</td>
+              </tr>
+              <tr>
+                <td>.hide-portrait</td>
+                <td>В портретной ориентации</td>
+              </tr>
+              <tr>
+                <td>.hide-4by3</td>
+                <td>Диагональ 4/3</td>
+              </tr>
+              <tr>
+                <td>.hide-16by9</td>
+                <td>Диагональ 16/9</td>
+              </tr>
+              <tr>
+                <td>.hide-16by10</td>
+                <td>Диагональ 16/10</td>
+              </tr>
+              <tr>
+                <td>.hide-16by9and10</td>
+                <td>Диагональ 16/9 и 16/10</td>
+              </tr>
+              <tr>
+                <td>.xs-hide</td>
+                <td>до 767px</td>
+              </tr>
+              <tr>
+                <td>.sm-hide</td>
+                <td>от 768px до 991px</td>
+              </tr>
+              <tr>
+                <td>.sm-hide-up</td>
+                <td>от 768px и выше</td>
+              </tr>
+              <tr>
+                <td>.sm-hide-down</td>
+                <td>от 0px до 991px</td>
+              </tr>
+              <tr>
+                <td>.md-hide</td>
+                <td>от 992px до 1199px</td>
+              </tr>
+              <tr>
+                <td>.md-hide-up</td>
+                <td>от 992px и выше</td>
+              </tr>
+              <tr>
+                <td>.md-hide-down</td>
+                <td>от 0px до 1199px</td>
+              </tr>
+              <tr>
+                <td>.lg-hide</td>
+                <td>от 1200 и выше</td>
+              </tr>
+            </tbody>
+        </table>
+                    
+                <div>
+                    <p>Тест классов:</p>
+                    <span class="hide">.hide</span>
+                    <span class="hide-print">.hide-print</span>
+                    <span class="hide-landscape">.hide-landscape</span>
+                    <span class="hide-portrait">.hide-portrait</span>
+                    <span class="hide-4by3">.hide-4by3</span>
+                    <span class="hide-16by9">.hide-16by9</span>
+                    <span class="hide-16by10">.hide-16by10</span>
+                    <span class="hide-16by9and10">.hide-16by9and10</span>
+                    <span class="xs-hide">.xs-hide</span>
+                    <span class="sm-hide">.sm-hide</span>
+                    <span class="sm-hide-up">.sm-hide-up</span>
+                    <span class="sm-hide-down">.sm-hide-down</span>
+                    <span class="md-hide">.md-hide</span>
+                    <span class="md-hide-up">.md-hide-up</span>
+                    <span class="md-hide-down">.md-hide-down</span>
+                    <span class="lg-hide">.lg-hide</span>
+                </div>
+                    
+        </div>
+        
+        <div class="md-6">
+            <h3>Показать элемент</h3>
+            <p>Элемент всегда скрыт, но виден для следующих условий.</p>
+            <table class="table">
+            <thead>
+              <tr>
+               <th>Класс</th>
+               <th>Условия показа</th>
+             </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>.show</td>
+                <td>Всегда</td>
+              </tr>
+              <tr>
+                <td>.show-print</td>
+                <td>При печати</td>
+              </tr>
+              <tr>
+                <td>.show-landscape</td>
+                <td>В альбомной ориентации</td>
+              </tr>
+              <tr>
+                <td>.show-portrait</td>
+                <td>В портретной ориентации</td>
+              </tr>
+              <tr>
+                <td>.show-4by3</td>
+                <td>Диагональ 4/3</td>
+              </tr>
+              <tr>
+                <td>.show-16by9</td>
+                <td>Диагональ 16/9</td>
+              </tr>
+              <tr>
+                <td>.show-16by10</td>
+                <td>Диагональ 16/10</td>
+              </tr>
+              <tr>
+                <td>.show-16by9and10</td>
+                <td>Диагональ 16/9 и 16/10</td>
+              </tr>
+              <tr>
+                <td>.xs-show</td>
+                <td>до 767px</td>
+              </tr>
+              <tr>
+                <td>.sm-show</td>
+                <td>от 768px до 991px</td>
+              </tr>
+              <tr>
+                <td>.sm-show-up</td>
+                <td>от 768px и выше</td>
+              </tr>
+              <tr>
+                <td>.sm-show-down</td>
+                <td>от 0px до 991px</td>
+              </tr>
+              <tr>
+                <td>.md-show</td>
+                <td>от 992px до 1199px</td>
+              </tr>
+              <tr>
+                <td>.md-show-up</td>
+                <td>от 992px и выше</td>
+              </tr>
+              <tr>
+                <td>.md-show-down</td>
+                <td>от 0px до 1199px</td>
+              </tr>
+              <tr>
+                <td>.lg-show</td>
+                <td>от 1200 и выше</td>
+              </tr>
+            </tbody>
+            </table>
+        
+                <div>
+                    <p>Режимы показа. Где * вышеперечисленные классы.</p>
+                    <ul>
+                        <li><mark>*</mark> (без дополнений, по умолчанию) - {display: inherit !important;}</li>
+                        <li><mark>*-block</mark> {display: block !important;}</li>
+                        <li><mark>*-inline</mark> {display: inline !important;}</li>
+                        <li><mark>*-inline-block</mark> {display: inline-block !important;}</li>
+                    </ul>
+                    <p>Пример:</p>
+                    <ul>
+                        <li>.show-inline - Показать в линию для всех дисплеев.</li>
+                        <li>.show-print-inline - Показать в линию в режиме печати.</li>
+                        <li>.show-4by3-inline - Показать в линию для мониторов диагональю 4/3.</li>
+                        <li>.sm-show-up-block - Показать для планшетов и выше в режиме block.</li>
+                    </ul>
+                </div>
+            
+                <div>
+                    <p>Тест классов:</p>
+                    <span class="show">.show</span>
+                    <span class="show-landscape">.show-landscape</span>
+                    <span class="show-portrait">.show-portrait</span>
+                    <span class="show-4by3">.show-4by3</span>
+                    <span class="show-16by9">.show-16by9</span>
+                    <span class="show-16by10">.show-16by10</span>
+                    <span class="show-16by9and10">.show-16by9and10</span>
+                    <span class="xs-show">.xs-show</span>
+                    <span class="sm-show">.sm-show</span>
+                    <span class="sm-show-up-inline">.sm-show-up-inline</span>
+                    <span class="sm-show-down-inline">.sm-show-down-inline</span>
+                    <span class="md-show">.md-show</span>
+                    <span class="md-show-up-inline">.md-show-up-inline</span>
+                    <span class="md-show-down-inline">.md-show-down-inline</span>
+                    <span class="lg-show">.lg-show</span>
+                </div>
+        
+        </div>
+        
+        </div>
+        
+        <hr>
+        
+        </div>
+    </div>
+</section>
+<section id="block">
+    <div class="row">
+        <div class="xs-12">
+            
+        <h2>Блоки</h2>
+        
+        <h3>Плитка</h3>
+        <p>Для использования адаптивных блоков в виде плитки, добавьте класс <mark>.block-tile</mark>. Он уберет все внешние отступы.</p>
+        <div class="warning">
+            <p>Не добавляйте <strong>.block-tile</strong> непосредственно во второстепенный <strong>.row</strong></p>
+        </div>
+        
+        <div class="block-tile xs-6">
+            <div class="xs-4" style="background-color: #DDD; height: 200px;"></div>
+            <div class="xs-4" style="background-color: #5BC0DE; height: 200px;"></div>
+            <div class="xs-4" style="background-color: #F04124; height: 200px;"></div>
+            <div class="xs-6" style="background-color: #F04124; height: 200px;"></div>
+            <div class="xs-6" style="background-color: #F08A24; height: 200px;"></div>
+        </div>
+        <div class="block-tile xs-6" style="background-color: #333; height: 400px;"></div>
+        
+        <div class="clearfix"></div>
+        
+        <pre>
+            <code>
+                
+            </code>
+        </pre>
+        
+        <hr>
+            
+        <h3>Информационные блоки</h3>
+        <p>Для блока с иконкой "Закрыть" используйте <code>div.messages</code> + необходимые подклассы. Если без кнопки, то  не пишите класс <code>.messages</code> для родительского элемента. Как Вы могли заметить - это применимо только к элементу <code>div</code>.</p>
+        <p class="text-warning">Иконку закрытия <code>&lt;span class="close"&gt;&lt;/span&gt;</code> можно добавить в любой блок с <code>position: relative;</code>. При нажатии, закроется родительский элемент. ВАЖНО добавить её не последним элементом в закрываемом блоке.</p>
+        <div class="messages status">
+            <h3>div .messages .status</h3>
+            <ul>
+                <li><a href="#">Ссылка</a></li>
+                <li>Используется основной цвет в качестве фона</li>
+            </ul>
+        </div>
+        
+        <div class="status radius">
+            <p>div .status .radius</p>
+        </div>
+        
+        <div class="status radius" style="position: relative;">
+            <span class="close"></span>
+            <p>div .status .radius</p>
+        </div>
+        
+        <div class="messages info">
+            <h3>div .messages .info</h3>
+            <ul>
+                <li><a href="#">Ссылка</a></li>
+                <li>li</li>
+            </ul>
+        </div>
+        
+        <div class="info">
+            <p>div.info</p>
+        </div>
+
+        <div class="messages error">
+            <h3>div .messages .error</h3>
+            <ul>
+                <li><a href="#">Ссылка</a></li>
+                <li>li</li>
+            </ul>
+        </div>
+        
+        <div class="error round">
+            <p>div.error.round</p>
+        </div>
+    
+        <div class="messages success radius">
+            <h3>div .messages .success .radius</h3>
+            <ul>
+                <li><a href="#">Ссылка</a></li>
+                <li>С дополнительным классом .radius</li>
+            </ul>
+        </div>
+        
+        <div class="success">
+            <p>div.success</p>
+        </div>
+    
+        <div class="messages warning round">
+            <h3>div .messages .warning .round</h3>
+            <ul>
+                <li><a href="#">Ссылка</a></li>
+                <li>С дополнительным классом .round</li>
+            </ul>
+        </div>
+        
+        <div class="warning">
+            <p>div.warning</p>
+        </div>
+        
+        <hr>
+        
+        <h3>В линию</h3>
+        <div class="block-inline">
+            .block-inline
+        </div>
+        <div class="block-inline">
+            .block-inline
+        </div>
+        <div class="block-inline">
+            .block-inline
+        </div>
+        <pre>
+            <code>
+                
+            </code>
+        </pre>
+        
+        <h3>Горизонтальное центрирование</h3>
+        <div class="xs-8 block-h-center" style="background: green;">
+            .xs-6 .block-h-center
+            <div class="row">
+                <div class="xs-6">.xs-6</div>
+                <div class="xs-6">.xs-6</div>
+            </div>
+        </div>
+        
+        <div class="xs-8 block-h-center">
+            <pre>
+                <code>
+                    
+                </code>
+            </pre>
+        </div>
+    
+        </div>
+    </div>
+</section>
+<section style="padding-bottom: 300px;">    
+    <div class="block-v-outer-center text-center" style="background: rgba(0,0,0,0.5); height: 300px; color: white;">
+        <div class="block-v-inner-center">
+            
+            <h3>Вертикальное и горизонтальное центрирование</h3>
+            
+            <div class="sm-6 block-h-center text-left"  style="background: green;">
+                <div class="row">
+                    dfhgsdrjfgjkh
+                    <div class="xs-8 block-h-center text-center">
+                        <h4>Вложенное горизонтальное центрирование</h4>
+                        <div class="xs-6 text-center">
+                            .xs-6
+                        </div>
+                        <div class="xs-6 text-center">
+                            .xs-6
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <pre class="xs-10 block-h-center">
+                        <code>
+                            hh
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<section id="button">
+    <div class="row">
+        
+        <div class="xs-12">
+            <h2>Кнопки</h2>
+            <p>Все классы кнопок стоятся следующим образом <mark>.btn-*</mark>, где * Ваш класс. Таким образом кнопка будет получать стандартные стили для кнопок + Ваши собственные стили.</p>
+            <p>Для элемента <mark>button</mark> по умолчанию применяются стили от <mark>.btn-*</mark>. Далее Вы можете сами дописать необходимые стили или примешать готовый стиль через less.</p>
+            <p>Ниже приведеные готовые классы кнопок.</p>
+        </div>
+        
+        <div class="xs-12">
+            <h3>.btn-base</h3>
+            <div class="row">
+                <div class="sm-6">
+                    <pre>
+                        <code>
+                    
+                        </code>
+                    </pre>
+                </div>
+                <div class="sm-6">
+                    <p>
+                        <a href="#" class="btn-base big">.big</a>
+                        <a href="#" class="btn-base big round">.big .round</a>
+                        <a href="#" class="btn-base disabled" disabled="disabled">disabled</a>
+                        <a href="#" class="btn-base radius">.radius</a>
+                        <a href="#" class="btn-base small">.small</a>
+                        <a href="#" class="btn-base small round">.small .round</a>
+                    </p>
+                    <p>
+                        <a href="#" class="btn-base expand">.expand</a>
+                    </p>
+                </div>
+            </div>
+            <hr>
+        </div>
+        
+        <div class="xs-12">
+            <h3>.btn-border</h3>
+            <div class="row">
+                <div class="sm-6">
+                    <pre>
+                        <code>
+                    
+                        </code>
+                    </pre>
+                </div>
+                <div class="sm-6">
+                    <p>
+                        <a href="#" class="btn-border big">.big</a>
+                        <a href="#" class="btn-border big round">.big .round</a>
+                        <a href="#" class="btn-border disabled" disabled="disabled">disabled</a>
+                        <a href="#" class="btn-border radius">.radius</a>
+                        <a href="#" class="btn-border small">.small</a>
+                        <a href="#" class="btn-border small round">.small .round</a>
+                    </p>
+                    <p>
+                        <a href="#" class="btn-border expand">.expand</a>
+                    </p>
+                </div>
+            </div>
+            <hr>
+        </div>
+        
+        <div class="xs-12">
+            <h3>.btn-alpha</h3>
+            <div class="row">
+                <div class="sm-6">
+                    <pre>
+                        <code>
+                    
+                        </code>
+                    </pre>
+                </div>
+                <div class="sm-6">
+                    <p style="background-color: #333; padding: 10px;">
+                        <a href="#" class="btn-alpha big">.big</a>
+                        <a href="#" class="btn-alpha big round">.big .round</a>
+                        <a href="#" class="btn-alpha disabled" disabled="disabled">disabled</a>
+                        <a href="#" class="btn-alpha radius">.radius</a>
+                        <a href="#" class="btn-alpha small">.small</a>
+                        <a href="#" class="btn-alpha small round">.small .round</a>
+                        <span class=""></span>
+                        <a href="#" class="btn-alpha expand">.expand</a>
+                    </p>
+                </div>
+            </div>
+            <hr>
+        </div>
+        
+        <div class="xs-12">
+            <h3>Alert кнопки</h3>
+            <div class="row">
+                <div class="sm-6">
+                    <pre>
+                        <code>
+                    
+                        </code>
+                    </pre>
+                </div>
+                <div class="sm-6">
+                    <p>
+                        <a href="#" class="btn-error">.btn-error</a>
+                        <a href="#" class="btn-warning">.btn-warning</a>
+                        <a href="#" class="btn-success">.btn-success</a>
+                        <a href="#" class="btn-info">.btn-info</a>
+                    </p>
+                </div>
+            </div>
+            <hr>
+        </div>
+        
+        <div class="xs-12">
+            <h3>Disabled</h3>
+            <div class="row">
+                <div class="sm-6">
+                    <pre>
+                        <code>
+                    
+                        </code>
+                    </pre>
+                </div>
+                <div class="sm-6">
+                    <p>
+                        <a href="#" class="btn-error disabled">.btn-error</a>
+                        <a href="#" class="btn-warning disabled">.btn-warning</a>
+                        <a href="#" class="btn-success disabled">.btn-success</a>
+                        <a href="#" class="btn-info disabled">.btn-info</a>
+                    </p>
+                </div>
+            </div>
+            <hr>
+        </div>
+            
+    </div>
+</section>
+<section id="form">
+    <div class="row">
+        
+        <div class="xs-12">
+            <h2>Формы</h2>
+        </div>
+        
+        <div class="xs-12">
+            <div class="row">
+                
+                <div class="md-6">
+                    <pre>
+                        <code>
+                    
+                        </code>
+                    </pre>
+                </div>
+                
+                <div class="md-6">
+            
+                <form>
+                <div class="form-item">
+                    <label for="text1">Input Label</label>
+                    <input type="text" placeholder="Ширина 100% всегда. Не оборачивать в .row" id="text1" />
+                </div>
+
+                <div class="row">
+                    <div class="xs-4 form-item">
+                        <label for="text2">Label</label>
+                        <input type="text" placeholder="xs-4" id="text2" />
+                    </div>
+                    <div class="xs-8 form-item">
+                        <label for="text3">Disabled input</label>
+                        <input type="text" disabled placeholder="xs-8 disabled" id="text3" />
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <div class="xs-12 form-item">
+                        <label for="select1">Select</label>
+                        <select id="select1">
+                            <option value="husker">Veider</option>
+                            <option value="starbuck">Luc</option>
+                            <option value="hotdog">Palpatin</option>
+                        </select>
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <div class="xs-12 form-item">
+                        <label id="textarea1">Textarea</label>
+                        <textarea placeholder="xs-12" id="textarea1"></textarea>
+                    </div>
+                </div>
+
+                <fieldset class="form-item">
+                    <legend>Fieldset Legend</legend>
+                    <label for="fieldset1">Label</label>
+                        <input type="text" placeholder="Text input in fieldset" id="fieldset1">
+                </fieldset>
+                </form>
+            
+                </div>
+                
+            </div>
+            <hr>
+        </div>
+    
+        <div class="xs-12">
+            <h3>Checkbox и Radio</h3>
+            <div class="row">
+                
+                <div class="md-6">
+                    <pre>
+                        <code>
+                    
+                        </code>
+                    </pre>
+                </div>
+                
+                <div class="md-6">
+                    <div class="row">
+                        <div class="xs-6">
+                            <form>
+                            <h4>Checkbox:</h4>
+                            <div class="switch">
+                                <input id="checkbox1" type="checkbox">
+                                <label for="checkbox1"></label>
+                            </div>
+                            <label class="option" for="checkbox1">Checkbox</label>
+                            </form>
+                        </div>
+                        <div class="xs-6">
+                            <h4>Radio:</h4>
+                            <div class="form-item">
+                            <div class="switch">
+                                <input id="radio1" type="radio" name="radioGroup" checked>
+                                <label for="radio1"></label>
+                            </div>
+                            <label class="option" for="radio1">Checked</label>
+                        </div>
+                            <div class="form-item">
+                            <div class="switch">
+                                <input id="radio2" type="radio" name="radioGroup">
+                                <label for="radio2"></label>
+                            </div>
+                            <label class="option" for="radio2">Uchecked</label>
+                        </div>
+                        <div class="form-item">
+                            <div class="switch">
+                                <input id="radio3" type="radio" name="radioGroup" disabled>
+                                <label for="radio3"></label>
+                            </div>
+                            <label class="option" for="radio3">Disabled</label>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+
+        <div class="xs-12">
+            <h3>В линию</h3>
+            <div class="row">
+                
+                <div class="md-6">
+                    <pre>
+                        <code>
+                    
+                        </code>
+                    </pre>
+                </div>
+                
+                <div class="md-6">
+                <form>
+                <div class="row form-item">
+                    <div class="xs-2">
+                        <label class="inline">Label</label>
+                    </div>
+                    <div class="xs-10">
+                        <input type="text" placeholder="Inline Text Input">
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="xs-3 form-item">
+                        <label class="right inline">Label</label>
+                    </div>
+                    <div class="xs-9">
+                        <input type="text" placeholder="Inline Text Input">
+                    </div>
+                </div>
+                    
+                <div class="row">
+                    <div class="xs-3 form-item">
+                        <label class="right inline">Label label</label>
+                    </div>
+                    <div class="xs-9 form-item">
+                        <input type="text" placeholder="Inline Text Input">
+                    </div>
+                </div>
+                    
+                <div class="row">
+                    <div class="xs-3 form-item">
+                        <label class="right inline">Label label label</label>
+                    </div>
+                    <div class="xs-9 form-item">
+                        <input type="text"placeholder="Inline Text Input">
+                    </div>
+                </div>
+                </form>
+                </div>
+            </div>
+            <hr>
+        </div>
+    
+        <div class="xs-12">
+            <h3>Префиксы и суффиксы</h3>
+            <div class="row">
+                
+                <div class="md-6">
+                    <pre>
+                        <code>
+                    
+                        </code>
+                    </pre>
+                </div>
+                
+                <div class="md-6">
+                    <div class="row">
+                    <form>
+                        <div class="md-6">
+                            <div class="row">
+                            <div class="xs-12 form-item">
+                                <label for="prefix1">Label</label>
+                                <div class="xs-3">
+                                    <span class="prefix">http://</span>
+                                </div>
+                                <div class="xs-9">
+                                    <input type="text" placeholder="xs-7" id="prefix1"/>
+                                </div>
+                            </div>
+                    
+                            <div class="xs-12 form-item">
+                                <div class="xs-3">
+                                    <span class="prefix radius">http://</span>
+                                </div>
+                                <div class="xs-9">
+                                    <input class="suffix radius" type="text" placeholder="xs-7"/>
+                                </div>
+                            </div>
+                    
+                            <div class="xs-12 form-item">
+                                <div class="xs-3">
+                                    <span class="prefix round">http://</span>
+                                </div>
+                                <div class="xs-9">
+                                    <input class="suffix round" type="text" placeholder="xs-7"/>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    
+                        <div class="md-6">
+                            <div class="row">
+                            <div class="xs-12 form-item">
+                                <label class="text-right" for="prefix2">Label</label>
+                                <div class="xs-10">
+                                    <input type="text" placeholder="xs-7" id="prefix2"/>
+                                </div>
+                                <div class="xs-2">
+                                    <span class="suffix">.ru</span>
+                                </div>
+                            </div>
+                    
+                            <div class="xs-12 form-item">
+                                <div class="xs-10">
+                                    <input class="prefix radius" type="text" placeholder="xs-7"/>
+                                </div>
+                                <div class="xs-2">
+                                    <span class="suffix radius">.ru</span>
+                                </div>
+                            </div>
+                    
+                            <div class="xs-12 form-item">
+                                <div class="xs-10">
+                                    <input class="prefix round" type="text" placeholder="xs-7"/>
+                                </div>
+                                <div class="xs-2">
+                                    <span class="suffix round">.ru</span>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    
+                    <div class="xs-12 form-item">
+                        <div class="xs-3">
+                            <span class="prefix">http://</span>
+                        </div>
+                        <div class="xs-7">
+                            <input type="text" placeholder="xs-7"/>
+                        </div>
+                        <div class="xs-2">
+                            <span class="suffix">.ru</span>
+                        </div>
+                    </div>
+                    
+                    <div class="xs-12 form-item">
+                        <div class="xs-3">
+                            <span class="prefix radius">http://</span>
+                        </div>
+                        <div class="xs-7">
+                            <input type="text" placeholder="xs-7"/>
+                        </div>
+                        <div class="xs-2">
+                            <span class="suffix radius">.ru</span>
+                        </div>
+                    </div>
+                    
+                    <div class="xs-12 form-item">
+                        <div class="xs-3">
+                            <span class="prefix round">http://</span>
+                        </div>
+                        <div class="xs-7">
+                            <input type="text" placeholder="xs-7"/>
+                        </div>
+                        <div class="xs-2">
+                            <span class="suffix round">.ru</span>
+                        </div>
+                    </div>
+            
+                    <div class="xs-12 form-item">
+                        <div class="xs-10">
+                            <input type="text" placeholder="xs-9" />
+                        </div>
+                        <div class="xs-2">
+                            <a class="btn-base suffix">Go</a>
+                        </div>
+                    </div>
+                    
+                    <div class="xs-12 form-item">
+                        <div class="xs-10">
+                            <input class="prefix radius" type="text" placeholder="xs-9" />
+                        </div>
+                        <div class="xs-2">
+                            <a class="btn-base suffix radius">Go</a>
+                        </div>
+                    </div>
+                    
+                    <div class="xs-12 form-item">
+                        <div class="xs-2">
+                            <a class="btn-base prefix round">Go</a>
+                        </div>
+                        <div class="xs-10">
+                            <input class="suffix round" type="text" placeholder="xs-9" />
+                        </div>
+                    </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+        
+        <div class="xs-12">
+            <h3>Всплывающее описание</h3>
+            <p>Наведите курсор мыши на поле ввода.</p>
+            <div class="row">
+                
+                <div class="md-6">
+                    <pre>
+                        <code>
+                    
+                        </code>
+                    </pre>
+                </div>
+                
+                <div class="md-6">
+                    <form>
+                        <div class="form-item">
+                            <label for="city1">Введите данные</label>
+                            <input type="text" placeholder="Введите название страны" id="city1"/>
+                            <div class="description">
+                                Пишите только существущую страну.
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <input type="text" placeholder="Введите название города"/>
+                            <div class="description">
+                                Это может быть и поселок.
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <hr>
+            </div>
+        </div>
+    
+        <div class="xs-12">
+            <h3>Error</h3>
+            <div class="row">
+                
+                <div class="md-6">
+                    <pre>
+                        <code>
+                    
+                        </code>
+                    </pre>
+                </div>
+                
+                <div class="md-6">
+                    <form>
+                    <div class="form-item">
+                    <div class="sm-12">
+                        <label>Error <span class="form-required">*</span></label>
+                        <input class="error" type="text" placeholder=".error" />
+                        <span class="error">Error</span>
+                    </div>
+                    </div>
+                    <div class="form-item">
+                    <div class="sm-12">
+                        <label class="error">Error</label>
+                        <input class="error" type="password" placeholder=".error" value="password" />
+                        <span class="error">Error</span>
+                    </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <hr>
+        </div>
+    
+        <div class="xs-12">
+            <h3>Success</h3>
+            <div class="row">
+                
+                <div class="md-6">
+                    <pre>
+                        <code>
+                    
+                        </code>
+                    </pre>
+                </div>
+                
+                <div class="md-6">
+                    <form>
+                    <div class="form-item">
+                    <div class="sm-12">
+                        <label class="success">Success</label>
+                        <input class="success" type="password" placeholder=".success" value="password" />
+                        <span class="success">Success</span>
+                    </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <hr>
+        </div>
+    
+    </div>
+</section>
+<section id="navs">
+    <div class="row">
+        
+        <div class="xs-12">
+            <h2>Навигация</h2>
+            
+            <nav class="procyon-menu inline dark">
+                <ul class="left">
+                    <li>
+                        <a>Ссылка</a>
+                    </li>
+                    <li class="dropdown">
+                        <a>Ссылка</a>
+                        <ul>
+                            <li class="title">
+                                <span>Уровень 1</span>
+                            </li>
+                            <li class="dropdown">
+                                <a>Ссылка</a>
+                                <ul>
+                                    <li class="title">
+                                        <span>Уровень 2</span>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a>Ссылка</a>
+                                        <ul>
+                                            <li class="title">
+                                                <span>Уровень 3</span>
+                                            </li>
+                                            <li>
+                                                <a>Ссылка</a>
+                                            </li>
+                                            <li>
+                                                <a>Ссылка</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a>Ссылка</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a>Ссылка</a>
+                            </li>
+                            <li>
+                                <a>Ссылка</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <form>
+                    <div class="form-item">
+                        <div class="xs-2 no-padding">
+                            <input class="prefix" type="text" placeholder="Поиск" />
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <div class="xs-1 no-padding">
+                            <input type="submit" class="btn-error suffix" value="Найти"/>
+                        </div>
+                    </div>
+                </form>
+                
+                <ul class="right">
+                    <li class="dropdown">
+                        <a>Ссылка</a>
+                        <ul>
+                            <li class="title">
+                                <span>Уровень 1</span>
+                            </li>
+                            <li class="dropdown">
+                                <a>Ссылка</a>
+                                <ul>
+                                    <li class="title">
+                                        <span>Уровень 2</span>
+                                    </li>
+                                    <li>
+                                        <a>Ссылка</a>
+                                    </li>
+                                    <li>
+                                        <a>Ссылка</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a>Ссылка</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <a class="btn-base right">Загрузить</a>
+            </nav>
+            
+            
+            <hr>
+            
+        </div>
+    </div>
+</section>
+<section id="elements">
+    <div class="row">
+        <div class="xs-12">
+            <h2>Элементы</h2>
+            
+            <h3>Хлебные крошки</h3>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="#">Главная</a>
+                </li>
+                <li>
+                    <a href="#">Блог</a>
+                </li>
+                <li>
+                    О лисах
+                </li>
+            </ul>
+            <pre>
+                <code class="html">
+                    
+                </code>
+            </pre>
+            
+            <hr>
+                
+            <h3>Спойлер</h3>
+            <p>По умолчанию спойлер имеет основной цвет. Так же есть готовое решение в темном цвете. Можно использовать вложенные спойлеры.</p>
+            <div class="spoiler">
+                <div class="spoiler-head">Заголовок спойлера</div>
+                <div class="spoiler-content">
+                    <p>Внутренний контент в спойлере.</p>
+                    <div class="spoiler">
+                        <div class="spoiler-head">Заголовок спойлера</div>
+                        <div class="spoiler-content">
+                            <p>Внутренний контент в спойлере.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="spoiler dark">
+                <div class="spoiler-head">Заголовок спойлера</div>
+                <div class="spoiler-content">
+                    <p>Внутренний контент в спойлере.</p>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <pre>
+                <code class="html">
+                    
+                </code>
+            </pre>
+            
+            <hr>
+            
+            <h3>Загрузка</h3>
+            <div class="progress">
+                <span class="meter" style="width: 70%;"></span>
+            </div>
+            <div class="progress xs-10 radius">
+                <span class="meter" style="width: 20%;"></span>
+            </div>
+            <div class="progress xs-6 round">
+                <span class="meter" style="width: 50%;"></span>
+            </div>
+            <div class="clearfix"></div>
+            <pre>
+                <code class="html">
+                    
+                </code>
+            </pre>
+            
+            <hr>
+                
+            <h3>Признак</h3>
+            <div class="row">
+                <div class="xs-12">
+                    <a href="#">Сообщения <span class="badge">58</span></a>
+                </div>
+                <div class="clearfix"></div>
+                <div class="xs-4 sm-3">
+                    <a href="#">Сообщения <span class="badge right">58</span></a>
+                </div>
+                <div class="xs-12">
+                    <p>
+                        <a class="btn-base">Сообщения <span class="badge">58</span></a>
+                    </p>
+                    <p>
+                        <a class="btn-border">Сообщения <span class="badge">58</span></a>
+                    </p>
+                    <p style="background-color: #333; padding: 5px;">
+                        <a class="btn-alpha">Сообщения <span class="badge">58</span></a>
+                    </p>
+                </div>
+            </div>
+            <pre>
+                <code class="html">
+                    
+                </code>
+            </pre>
+
+            <hr>
+            
+            <h3>Метка</h3>
+            <p>Элемент <mark>.label</mark> может быть применен к любому элементу.</p>
+            <p>
+                <span class="label">.label</span>
+                <span class="label info round">.label .info .round</span>
+                <span class="label warning">.label .warning</span>
+                <span class="label success radius">.label .success .radius</span>
+                <span class="label error">.label .error</span>
+            </p>
+            <div class="clearfix"></div>
+            <pre>
+                <code class="html">
+                    
+                </code>
+            </pre>
+            
+            <hr>
+            
+            <h3>Маркировка</h3>
+            <p><mark>mark</mark></p>
+            <p><span class="mark">mark 2</span></p>
+            <div class="clearfix"></div>
+            <pre>
+                <code class="html">
+                    
+                </code>
+            </pre>
+            
+            <hr>
+            
+            <h3>kbd</h3>
+            <p>В этот элемент помещается подсказки для кнопок на клавиатуре или других устройствах ввода.</p>
+            <p><kbd>Ctrl + a</kbd></p>
+            <div class="clearfix"></div>
+            <pre><code class="html"><kbd>Ctrl + a</kbd></code></pre>
+            
+            <hr>
+            
+            <h3>Дополнительные классы</h3>
+            <p>Чтобы воспользоваться дополнительными классами, необходимо просто их добавить к элеменнту. Значения по умолчанию можно легко сменить в less исходниках.</p>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>Класс</th>
+                    <th>CSS</th>
+                    <th>Описание</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>.radius</td>
+                    <td>border-radius: 5px;</td>
+                    <td>Закругление границ любого элемента. По умолчанию 5px.</td>
+                  </tr>
+                  <tr>
+                    <td>.round</td>
+                    <td>border-radius: 1000px;</td>
+                    <td>Закругление границ любого элемента. По умолчанию 1000px.</td>
+                  </tr>
+                  <tr>
+                    <td>.circle</td>
+                    <td>border-radius: 50%;</td>
+                    <td>Закругление границ любого элемента до круга.</td>
+                  </tr>
+                  <tr>
+                    <td>.left</td>
+                    <td>float: left !important;</td>
+                    <td>Придать элементу свойство <mark>float: left</mark>.</td>
+                  </tr>
+                  <tr>
+                    <td>.right</td>
+                    <td>float: right !important;</td>
+                    <td>Придать элементу свойство <mark>float: right</mark>.</td>
+                  </tr>
+                  <tr>
+                    <td>.clearfix</td>
+                    <td>clearfix: both;</td>
+                    <td>Применить для элемента обтекание со всех сторон.</td>
+                  </tr>
+                  <tr>
+                    <td>.no-padding</td>
+                    <td>padding: 0 !important;</td>
+                    <td>Убрать у элемента все внутрение отступы.</td>
+                  </tr>
+                </tbody>
+            </table>
+            <hr>
+                
+        </div>
+    </div>
+</section>
+<section id="modal">
+    <div class="row">
+        <div class="xs-12">
+            
+            <h2>Модальные окна</h2>
+            
+            <p><a data-modal-id="one-modal" class="btn-base">Открыть модальное окно</a></p>
+            
+            <p>Чтобы открыть модальное окно, необходимо к элементу добавить <code>data-modal-id="myModal"</code>, где <strong>myModal</strong> - это id открываемого модального окна.</p>
+            
+            <pre>
+                <code>
+                    
+                </code>
+            </pre>
+            
+            <hr>
+            
+            <h3>Размеры окна</h3>
+            <p>Класс размера окна добавляется к основному контейнеру модального окна. Пример <code>&lt;div id="myModal" class="modal-xs" data-modal&gt;</code>.</p>
+            <div class="info">
+                <p>Если не задавать определенный размер, то ширина составит 80%.</p>
+                <p>Все модальные окна на маленьких экранах имеют 100% ширины и высоты.</p>
+            </div>
+            <ul>
+                <li>.modal-xs - ширина 30%</li>
+                <li>.modal-sm - ширина 40%</li>
+                <li>.modal-md - ширина 60%</li>
+                <li>.modal-lg - ширина 90%</li>
+                <li>.modal-full - на весь экран</li>
+            </ul>
+            
+            <hr>
+            
+            <h3>JS</h3>
+            <p>С использованием jquery, можно взаимодействовать следующим образом:</p>
+            
+            <pre>
+                <code>
+                    // Через событие
+                    $('a.modal-link').triger('click');
+                    $('a.modal-link-close').triger('click');
+                    
+                    // Вызвать или закрыть модальное окно
+                    $('#myModal').modal();
+                </code>
+            </pre>
+            
+            <hr>
+            
+        </div>
+    </div>
+</section>
+<section id="typography">
+    <div class="row">
+        
+        <div class="xs-12">
+            <h2>Типоргафика</h2>
+        </div>
+        
+        <div class="xs-12">
+            <h3>Заголовки</h3>
+            <div class="row">
+                
+                <div class="sm-6">
+                    <h1>h1 <small>- small</small></h1>
+                    <h2>h2 <small>- small</small></h2>
+                    <h3>h3 <small>- small</small></h3>
+                    <h4>h4 <small>- small</small></h4>
+                    <h5>h5 <small>- small</small></h5>
+                    <h6>h6 <small>- small</small></h6>
+                </div>
+        
+                <div class="sm-6">
+                    <pre>
+                        <code>
+                            
+                        </code>
+                    </pre>
+                </div>
+                    
+            </div>
+                        
+            <hr>
+        </div>
+        
+        <div class="xs-12">
+            <h3>Выделенный текст</h3>
+            <p>Чтобы использовать данный стиль - <mark>&lt;p class="lead"&gt; ... &lt;/p&gt;</mark>.</p>
+            <p class="lead">Вот так выглядит выделенный текст!</p>
+            <hr>
+        </div>
+        
+        <div class="xs-12">
+            <h3>Параграф</h3>
+            <p>По умолчанию font-size: 16px, margin-bottom: 15px. <mark>&lt;p&gt; ... &lt;/p&gt;</mark></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus quam vitae lectus posuere, a pretium mi vehicula. Pellentesque ac tincidunt metus. Vestibulum quis risus eu est tristique vehicula. In tristique lacinia vulputate. Nulla vulputate pretium rutrum. Sed sollicitudin erat ac tellus molestie, id facilisis orci aliquet. Nam dignissim vel dolor eu rhoncus. Cras nec quam vel magna placerat luctus.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus quam vitae lectus posuere, a pretium mi vehicula. Pellentesque ac tincidunt metus. Vestibulum quis risus eu est tristique vehicula. In tristique lacinia vulputate. Nulla vulputate pretium rutrum. Sed sollicitudin erat ac tellus molestie, id facilisis orci aliquet. Nam dignissim vel dolor eu rhoncus. Cras nec quam vel magna placerat luctus.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus quam vitae lectus posuere, a pretium mi vehicula. Pellentesque ac tincidunt metus. Vestibulum quis risus eu est tristique vehicula. In tristique lacinia vulputate. Nulla vulputate pretium rutrum. Sed sollicitudin erat ac tellus molestie, id facilisis orci aliquet. Nam dignissim vel dolor eu rhoncus. Cras nec quam vel magna placerat luctus.</p>
+            <hr>
+        </div>
+
+        <div class="xs-12">
+            <h3>Текст</h3>
+            <div class="row">
+                
+                <div class="sm-6">
+                    <p class="text-left">Слева</p>
+                    <p class="text-center">По центру</p>
+                    <p class="text-right">Справа</p>
+                    <p class="text-justify">На всю ширину блока с текстом.</p>
+                    <p class="text-nowrap">Текст не переносится на новую строку.</p>
+                    <p class="text-lower">В нижнем регистре</p>
+                    <p class="text-upper">В верхнем регистре</p>
+                    <p class="text-capit">Каждое слово с большой буквы</p>
+                </div>
+            
+        
+                <div class="sm-6">
+                    <pre>
+                        <code>
+                    
+                        </code>
+                    </pre>
+                </div>
+                
+                <div class="sm-12">
+                    <h4>Адаптивный text-align</h4>
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Left</th>
+                            <th>Right</th>
+                            <th>Center</th>
+                            <th>Justify</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>text-left</td>
+                            <td>text-right</td>
+                            <td>text-center</td>
+                            <td>text-justify</td>
+                          </tr>
+                          <tr>
+                            <td>text-left-xs</td>
+                            <td>text-right-xs</td>
+                            <td>text-center-xs</td>
+                            <td>text-justify-xs</td>
+                          </tr>
+                          <tr>
+                            <td>text-left-sm</td>
+                            <td>text-right-sm</td>
+                            <td>text-center-sm</td>
+                            <td>text-justify-sm</td>
+                          </tr>
+                          <tr>
+                            <td>text-left-sm-up</td>
+                            <td>text-right-sm-up</td>
+                            <td>text-center-sm-up</td>
+                            <td>text-justify-sm-up</td>
+                          </tr>
+                          <tr>
+                            <td>text-left-sm-down</td>
+                            <td>text-right-sm-down</td>
+                            <td>text-center-sm-down</td>
+                            <td>text-justify-sm-down</td>
+                          </tr>
+                          <tr>
+                            <td>text-left-md</td>
+                            <td>text-right-md</td>
+                            <td>text-center-md</td>
+                            <td>text-justify-md</td>
+                          </tr>
+                          <tr>
+                            <td>text-left-md-up</td>
+                            <td>text-right-md-up</td>
+                            <td>text-center-md-up</td>
+                            <td>text-justify-md-up</td>
+                          </tr>
+                          <tr>
+                            <td>text-left-md-down</td>
+                            <td>text-right-md-down</td>
+                            <td>text-center-md-down</td>
+                            <td>text-justify-md-down</td>
+                          </tr>
+                          <tr>
+                            <td>text-left-lg</td>
+                            <td>text-right-lg</td>
+                            <td>text-center-lg</td>
+                            <td>text-justify-lg</td>
+                          </tr>
+                          <tr>
+                            <td>text-left-landscape</td>
+                            <td>text-right-landscape</td>
+                            <td>text-center-landscape</td>
+                            <td>text-justify-landscape</td>
+                          </tr>
+                          <tr>
+                            <td>text-left-portrait</td>
+                            <td>text-right-portrait</td>
+                            <td>text-center-portrait</td>
+                            <td>text-justify-portrait</td>
+                          </tr>
+                          <tr>
+                            <td>text-left-4by3</td>
+                            <td>text-right-4by3</td>
+                            <td>text-center-4by3</td>
+                            <td>text-justify-4by3</td>
+                          </tr>
+                          <tr>
+                            <td>text-left-16by9</td>
+                            <td>text-right-16by9</td>
+                            <td>text-center-16by9</td>
+                            <td>text-justify-16by9</td>
+                          </tr>
+                          <tr>
+                            <td>text-left-16by10</td>
+                            <td>text-right-16by10</td>
+                            <td>text-center-16by10</td>
+                            <td>text-justify-16by10</td>
+                          </tr>
+                          <tr>
+                            <td>text-left-16by9and10</td>
+                            <td>text-right-16by9and10</td>
+                            <td>text-center-16by9and10</td>
+                            <td>text-justify-16by9and10</td>
+                          </tr>
+                          <tr>
+                            <td>text-left-print</td>
+                            <td>text-right-print</td>
+                            <td>text-center-print</td>
+                            <td>text-justify-print</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+
+            </div>
+            
+            <hr>
+            
+        </div>
+        
+        <div class="xs-12">
+            <h3>Подсветка текста</h3>
+            <div class="row">
+                
+                <div class="sm-6">
+                    <p class="text-prime">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="text-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="text-success">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="text-error">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="text-warning">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            
+        
+                <div class="sm-6">
+                    <pre>
+                        <code>
+                    
+                        </code>
+                    </pre>
+                </div>
+
+            </div>
+            
+            <hr>
+            
+        </div>
+        
+        <div class="xs-12">
+            <h3>Адаптивное скрытие текста</h3>
+            <div class="row">
+                
+                <div class="sm-6">
+                    <p>Принцип такой же, как и у классов <mark>.hide</mark> для сетки. Классы работают не только с <mark>&lt;p&gt;</mark>, а так же со всеми другими элементами, где надо скрыть текст.</p>
+                    <p>Примеры классов: <strong>.text-hide-print, .text-hide-sm, .text-hide-md-up, .text-hide-landscape, .text-hide-4by3</strong>.</p>
+                    <p>Тест некоторых классов:</p>
+                    <p class="text-hide">.text-hide</p>
+                    <p class="text-hide-print">.text-hide-print</p>
+                    <p class="text-hide-xs">.text-hide-xs</p>
+                    <p class="text-hide-sm">.text-hide-sm</p>
+                    <p class="text-hide-sm-up">.text-hide-sm-up</p>
+                    <p class="text-hide-sm-down">.text-hide-sm-down</p>
+                    <p class="text-hide-md">.text-hide-md</p>
+                    <p class="text-hide-md-up">.text-hide-md-up</p>
+                    <p class="text-hide-md-down">.text-hide-md-down</p>
+                    <p class="text-hide-lg">.text-hide-lg</p>
+                    <p class="text-hide-landscape">.text-hide-landscape</p>
+                    <p class="text-hide-4by3">.text-hide-4by3</p>
+                </div>
+        
+                <div class="sm-6">
+                    <pre>
+                        <code>
+                            
+                        </code>
+                    </pre>
+                </div>
+                
+            </div>
+            
+            <hr>
+            
+        </div>
+        
+        
+        
+        <div class="xs-12">
+            <h3>Список</h3>
+            <div class="row">
+                
+                <div class="sm-6">        
+                    <ul>
+                        <li>ul li</li>
+                            <ul>
+                                <li>ul li вложенный</li>
+                                <li>ul li вложенный</li>
+                            </ul>
+                        <li>ul li</li>
+                            <ol>
+                                <li>ol li вложенный</li>
+                                <li>ol li вложенный</li>
+                            </ol>
+                        <li>ul li</li>
+                    </ul>
+                </div>
+        
+                <div class="sm-6">
+                    <pre>
+                        <code>
+                            
+                        </code>
+                    </pre>
+                </div>
+        
+            </div>
+            
+            <hr>
+            
+        </div>
+        
+        <div class="xs-12">
+            <h3>Немаркированный список</h3>
+            <div class="row">
+                
+                <div class="sm-6">
+                    <p>Применимо к ul и ol.</p>
+                    <ul class="list-unstyle">
+                        <li>ul li</li>
+                            <ul>
+                                <li>ul li вложенный</li>
+                                <li>ul li вложенный</li>
+                            </ul>
+                        <li>ul li</li>
+                            <ol>
+                                <li>ol li вложенный</li>
+                                <li>ol li вложенный</li>
+                            </ol>
+                        <li>ul li</li>
+                    </ul>
+                </div>
+        
+                <div class="sm-6">
+                    <pre>
+                        <code>
+                    
+                        </code>
+                    </pre>
+                </div>
+        
+            </div>
+            
+            <hr>
+            
+        </div>
+        
+        <div class="xs-12">
+            <h3>Список в линию</h3>
+            <div class="row">
+                
+                <div class="sm-6">
+                    <ul class="list-inline">
+                        <li><a href="#">ul li</a></li>
+                        <li>ul li</li>
+                        <li>ul li</li>
+                    </ul>
+                </div>
+        
+                <div class="sm-6">
+                    <pre>
+                        <code>
+                            
+                        </code>
+                    </pre>
+                </div>
+                
+            </div>
+            
+            <hr>
+                
+        </div>
+        
+        <div class="xs-12">
+            <h3>Описание</h3>
+            <div class="row">
+                
+                <div class="sm-6">
+                    <dl>
+                        <dt>Описание</dt>
+                        <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</dd>
+                        <dt>Длинное описание</dt>
+                        <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</dd>
+                        <dt>Очень длинное описание</dt>
+                        <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</dd>
+                    </dl>
+                </div>
+
+                <div class="sm-6">
+                    <pre>
+                        <code>
+                            
+                        </code>
+                    </pre>
+                </div>
+                
+            </div>
+            
+            <hr>
+            
+        </div>
+        
+        <div class="xs-12">
+            <h3>Горизонтальное описание</h3>
+            <div class="row">
+                
+                <div class="sm-6">
+                    <dl class="dl-h">
+                        <dt>Описание</dt>
+                        <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</dd>
+                        <dt>Длинное описание</dt>
+                        <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</dd>
+                        <dt>Очень длинное описание</dt>
+                        <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</dd>
+                    </dl>
+                </div>
+
+                <div class="sm-6">
+                    <pre>
+                        <code>
+                            
+                        </code>
+                    </pre>
+                </div>
+                
+            </div>
+            
+            <hr>
+            
+        </div>
+        
+        <div class="xs-12">
+            <h3>Аббревиатура</h3>
+            <div class="row">
+                
+                <div class="sm-6">
+                    <p><abbr title="HyperText Markup Language">HTML</abbr></p>
+                </div>
+
+                <div class="sm-6">
+                    <pre>
+                        <code>
+                            
+                        </code>
+                    </pre>
+                </div>
+                
+            </div>
+            
+            <hr>
+            
+        </div>
+        
+        <div class="xs-12">
+            <div class="row">
+                
+                <div class="xs-12">
+                    <h3>Цитаты</h3>
+                    <p>Можно использовать без <mark>&lt;cite&gt; ... &lt;/cite&gt;</mark>.</p>
+                </div>
+        
+                <div class="sm-6">
+        
+                    <blockquote>
+                        <p>Люк, я твой отец!</p>
+                        <cite>Дарт Вейдер</cite>
+                    </blockquote>
+        
+                    <pre>
+                        <code>
+                            
+                        </code>
+                    </pre>
+        
+                </div>
+        
+                <div class="sm-6">
+            
+                    <blockquote class="reverse">
+                        <p>Люк, я твой отец!</p>
+                        <cite>Дарт Вейдер</cite>
+                    </blockquote>
+        
+                    <pre>
+                        <code>
+                    
+                        </code>
+                    </pre>
+             
+                </div>
+                
+            </div>
+            
+            <hr>
+            
+        </div>
+        
+    
+    </div>
+</section>
+<section id="table">
+    <div class="row">
+        
+        <div class="xs-12">
+            <h2>Таблицы</h2>
+            <p>Если Вы хотите создать свою таблицу на основе приведенных ниже, то начинайте класс таблицы с <mark>.table-*</mark>.</p>
+            <div class="info">
+                <p>Для самых маленьких экранов (смартфоны) отступы в ячейках таблицы убираются.</p>
+            </div>
+        </div>
+        
+        <div class="xs-12">
+            <div class="row">
+                <div class="md-6">
+        <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Username</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+        </div>
+    
+        <div class="md-6">
+            <pre>
+                <code>
+                
+                </code>
+            </pre>
+        </div>
+            </div>
+            <hr>
+        </div>
+        
+        
+    
+        <div class="xs-12">
+            <h3>Чередование строк</h3>
+            <div class="row">
+                
+                <div class="xs-12">
+                    <h4>Вариант 1</h4>
+                </div>
+                
+                <div class="md-6">
+                    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Username</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td>1</td>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr class="even">
+          <td>2</td>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr class="odd">
+          <td>3</td>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+                </div>
+                
+                <div class="md-6">
+                    <pre>
+                        <code>
+                    
+                        </code>
+                    </pre>
+                </div>
+                
+            </div>
+            
+            <div class="row">
+                
+                <div class="xs-12">
+                    <h4>Вариант 2</h4>
+                </div>
+                
+                <div class="md-6">
+                    <table class="table-stripe">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Username</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+                </div>
+                
+                <div class="md-6">
+                    <pre>
+                        <code>
+                    
+                        </code>
+                    </pre>
+                </div>
+                
+            </div>
+            
+            <hr>
+        </div>
+    
+        <div class="xs-12">
+            <h3>С границами</h3>
+            <div class="row">
+                
+                <div class="md-6">
+                    <p>Если надо таблицу без чередования строк, то уберите классы <mark>odd</mark> и <mark>even</mark>.</p>
+                    <table class="table-border">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Username</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd">
+          <td>1</td>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr class="even">
+          <td>2</td>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr class="odd">
+          <td>3</td>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+                </div>
+                
+                <div class="md-6">
+                    <pre>
+                        <code>
+                    
+                        </code>
+                    </pre>
+                </div>
+                
+            </div>
+            <hr>
+        </div>
+    
+        <div class="xs-12">
+            <h3>Alert строк</h3>
+            <div class="row">
+                
+                <div class="md-6">
+                    <p>Применимо к <mark>tr</mark> и <mark>td</mark>, но только в <mark>tbody</mark>.</p>
+                    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Username</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="error">
+          <td>1</td>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr class="success">
+          <td>2</td>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr class="warning">
+          <td>3</td>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+        <tr class="info">
+          <td>4</td>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+                </div>
+                
+                <div class="md-6">
+                    <pre>
+                        <code>
+                    
+                        </code>
+                    </pre>
+                </div>
+                
+            </div>
+            <hr>
+        </div>
+    
+    </div>
+</section>
+<section id="media">
+    <div class="row">
+        
+        <div class="xs-12">
+            <h2>Медиа</h2>
+            
+            <h3>Изображения</h3>
+            <p>Все изображения по умолчанию адаптивны. Так что просто поместите картинку в блок необходимого размера.</p>
+            <p>Дополнительные классы для темизации изображения: <mark>.round</mark>, <mark>.radius</mark>, <mark>.circle</mark>.</p>
+        
+        <div class="row">
+            <div class="sm-6">
+                <img class="radius" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlgAAAJYCAYAAAC+ZpjcAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gkDCRogf9f7/AAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAgAElEQVR42u3dfbyWdX3A8e+R52dQwUTUgEjTEBNQpjnSapoSiZYsjUoFna4120wUZoACkg63tV644hWaTTSbluJLpjPC6aiBzhw6xBQJFBOWyABBHvcHL03hvu7z9D0P9+H9/kvO75zr/p3j77rP59z39VA1ePDg3QEAQJoDmnoCAAAtjcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkrZt6Auyfdu/e/b5/V1VVNfWUACCNwKJR7R1We39caAHQEggsGkVRWBV9ntACoJIJLBpcqbiq7i3C3bt3iywAKpbAolG9N6ze+2qVV64AaEmcRUiDKhVUu3fv3ufj7x0r9bUAUEm8gkWjKhVSEX94FcsrWAC0BF7BosEUvRpV6pWs6j4XACqJwKLR1CSiBBUALYHAAgBIJrBoNO89vqom/w0AlUpg0WCqi6iqqqr3/Xd1XwcAlcJZhDSqcmcLiikAWgqvYNGgqnvlau9/e/UKgJbAK1g0qneiae9XscQUAC2JwKLBvfdWOO/9WHVfAwCVSmDRKN77ylVNPg8AKpnAolEVhZawAqAlEVg0CUEFQEvmLEIAgGQCCwAgmbcIK1Dr1q1j0KBBMWTIkOjfv38ceeSR0aNHj+jYsWO0atUqtm7dGps3b461a9fG6tWrY+XKlbF06dJYunRpvP322406z8GDB8fJJ58cAwYMiMMPPzy6dOkS7du3j61bt8bGjRtj1apV8eKLL8aiRYviqaeeih07djT5z7bS5lxprF9zhv1B1eDBg3fXfzM0hg996EPxhS98Ic4444zo3Llzrb9+x44d8eyzz8Zjjz0Wjz32WKxatapB5tmtW7e48MILY9SoUdGjR48af9369evjvvvuizvvvDP+7//+r8F+ji1lzpXG+m04lThnaOkEVgU49NBD42tf+1p8+tOfjgMOyHtXd8iQIelzPfvss+PKK6+s1ZP83tavXx+33HJLzJ8/P31+LWXOlcT6bViVOGfYHwisZm7kyJFx1VVXRceOHdO3nfkL6oADDojx48fHeeedl7bNe+65J26++eZqr521P8250li/1i/sr1r17t17clNPgn1VVVXFhAkT4s/+7M+iTZs2DfIY3//+99O2df3118fIkSNT53fsscdG7969Y+HChQ3y/VfinCuF9Wv9wv7OQe7N0AEHHBDf/va347TTTiv8nF27dsXTTz8dixYtiueeey5Wr14db775Zmzbti26dOkS3bp1i969e8dxxx0XgwYNihNOOCHatm3bIPP9+te/Hp/5zGcKxzds2BD3339/PPbYY7FixYrYvHlzdOrUKfr37x+f+MQnYuTIkdG1a9eSXztixIhYu3ZtzJo1a7+fc6Wwfv/A+oX9l7cIm6FvfetbhX+Z7tq1Kx544IGYM2dOrFmzpsbb7Ny5c3zqU5+KkSNHxnHHHRcROW+xnHLKKfF3f/d3hcfWPProozF9+vSyB9B269YtJk6cGKeffnrh9/wXf/EX8Z//+Z8pP99KnHMlsX73/Z6tX9j/CKxm5ktf+lJceeWVJcfWrl0b1157bTzzzDP1eoyhQ4fG2LFj47LLLqvXdtq1axf33ntvfOADHyg5/i//8i8xY8aMGm9vwoQJce6555YcW7NmTXz+85+Pbdu27XdzriTWr/UL7OEYrGbk6KOPjmnTpkWrVq32GVu9enVccsklsWLFino/zpo1a+LBBx+s93bGjh0bw4cPLzn21FNPxTXXXFOr7T3xxBNx4oknlvzl0aVLl9i2bVs8/fTT+92cK4X1a/0Cf+AVrGaiqqoq5s6dGwMGDNhnbMOGDTFmzJhavaXS0Dp06BAPPfRQdOnSZZ+xbdu2xRe+8IV49dVXa73dww8/PO65556SB0a/+eabcfbZZ9f5YpOVOOdKYf3uYf0C73CrnGbi3HPPLfnLKSLixhtvbFa/nCIiPve5z5V8oo+I+OlPf1qnJ/qIPa90PPDAAyXHunfvXq+zpipxzpXC+t3D+gXeIbCagdatW8e4ceNKji1evDgeffTRpp7iPkaMGFHy47t27Yq5c+fWa9vlvr7ocVvqnCuB9ft+1i8QIbCahREjRsTBBx9ccux73/teU09vH0ceeWQcffTRJceWLl1a57+k3/Hb3/42nn322ZJjxx57bBx++OH7xZwrhfX7ftYvECGwmoXRo0eX/PiyZcvqfcZVQ/j4xz9eOLZgwYKUxyi3nXKP35LmXCms39ptx/ptXG3atImPf/zjcfXVV8fs2bNj/vz58fjjj8cvf/nLWLBgQdx1110xbdq0OOecc+LAAw9s6unSgrjQaBPr169f4bErDz30UFNPr6STTjqpcGzJkiUpj1FuOyeddFLcddddLXLOkyZNis9+9rMlx5588sm4/PLLU25jUlVVFbfeemvhtaTmzZsXU6ZMqXY71m/tt9OS129jePLJJ0t+fO+13L59+xgzZkyMHj06unfvXvJr2rRpE127do0BAwbEGWecEdu3b4+f//znceutt9brVcFK249pGF7BamKf/vSnC8f+/d//vamnV9I7F3rc2+bNm+OFF15IeYznn38+tmzZUnJs0KBBLXbOM2bMKLyUwZAhQ+LSSy9Nmetll11W+KS8YsWKGl9LyfotbX9dv83FoEGD4u67747LLrusMK5KadOmTZx55pnxk5/8JL70pS/V+fErbT+mYQisJjZs2LCSH3/11VfrfVxFQ+jTp0907ty55NhvfvObtMfZvXt34fa6dOkShx12WIuc89tvvx3XXHNN4S+6iy++uN5XMB86dGhcdNFFJce2bNkS11xzTY1Py7d+S9tf129zcPrpp8ett94affr0qfM22rZtG1deeWXMmDEjWreu/Rs9lbYf0zC8RdiEOnToUHjgatEBp4cddlj88R//cZxwwgnRt2/fOOigg6JDhw6xffv22LRpU/zud7+Ll19+OZ555pl44okn4ve//33qnI866qjCsZdeein1sV566aXCv9yPOuqoGv8Cr7Q5r1ixIm666aaYNGnSPmOtWrWKqVOnxgUXXBBv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cteAq62m3o9pOAKrCW3YsKHs+PPPP5/2WOX+4qnNWyzl5lyfM2tKKfdkX93PrtLnXFM33HBDrF69uuznvPbaa3U6i6861m951m/jasxrgpX7OdVFU+7HNByB1YSq+4vrt7/9bdpjldtW0Vkqpbz55puFYz169Ej86ey5NUqR2jzZV+Kca2rz5s3VXltqzpw51b7aVBfWb3nWb+PKPiap3Pay35ptyv2YhiOwmlB1pxRnviRfblu1uQXG7373u8Kxclf2rotyT/avvfZai55zTY0ZMyaGDRtW9nPGjRvXIPeRs37Ls36pqabcj2k4AqsJvfLKK2XHG+sXVLt27Wq8nTVr1hSOZR34+Y7evXvXaR4tYc41ccwxx8QVV1xR7ef16tWrQW6lYf2WZ/02ruy37cptL/OA/6bej2k4AqsJFV0DpTkrd5zA4YcfnvpYpW4WXJN5tIQ5V6djx44xffr0Gl9de9iwYYW326gr67c867dxNeYB/1lvRzaH/ZiGI7CaUHUHAWcewFpuW7W5d1e52zL069cv8adT/loztbk9RCXOuToTJ06MPn361Oprxo4dW6tLGlTH+i3P+m1c2cejldtefS6e+17NYT+m4QisJvT666/HG2+8UTie+QuqS5cuhWPlDqLd2+rVqwvfrhkwYEDqz6doexs3bqzRTYMrec7ljBw5Ms4444zC7/V73/teybFWrVrF1KlT047bsX7Ls34b14c+9KFG21654+JqqrnsxzQcgdXEnn766cKxI488Mu1xjjjiiMKx2t6/q+iWFJ07d057wj/66KMLX/Ivd02kljTnUo488sj45je/WXJs+/btMWHChJg9e3YsXLiw5OccdNBBMX369LRbrFi/pVm/ja8xA2vFihX12nZz249pGAKrif3qV78qHMu439U7PvKRjxSO1fbJYvHixYVjJ554Ysp8y70EXu7xW9Kc99amTZu48cYbo0OHDiXHv/vd7757vajJkycXvuIwePDg+PM///OU79n6Lc36bXzHHXdc6vYGDhxYOFafK6k3x/2YhiGwmtgTTzxReJ+1j33sY2mPM2jQoMKxorvGF/mP//iPwrHTTjstZb6f/OQnC8eeeOKJWm+vEue8t2984xvx4Q9/uPD7u/POO9/996ZNm+Laa68tPNvpy1/+cpxyyin1npP1W5r12/gGDhwYhxxySMq2Dj30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QDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJDs/wFD6cSLsMga6wAAAABJRU5ErkJggg=="/>
+            </div>
+            <div class="sm-3">
+                <img class="circle" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlgAAAJYCAYAAAC+ZpjcAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gkDCRogf9f7/AAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAgAElEQVR42u3dfbyWdX3A8e+R52dQwUTUgEjTEBNQpjnSapoSiZYsjUoFna4120wUZoACkg63tV644hWaTTSbluJLpjPC6aiBzhw6xBQJFBOWyABBHvcHL03hvu7z9D0P9+H9/kvO75zr/p3j77rP59z39VA1ePDg3QEAQJoDmnoCAAAtjcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkrZt6Auyfdu/e/b5/V1VVNfWUACCNwKJR7R1We39caAHQEggsGkVRWBV9ntACoJIJLBpcqbiq7i3C3bt3iywAKpbAolG9N6ze+2qVV64AaEmcRUiDKhVUu3fv3ufj7x0r9bUAUEm8gkWjKhVSEX94FcsrWAC0BF7BosEUvRpV6pWs6j4XACqJwKLR1CSiBBUALYHAAgBIJrBoNO89vqom/w0AlUpg0WCqi6iqqqr3/Xd1XwcAlcJZhDSqcmcLiikAWgqvYNGgqnvlau9/e/UKgJbAK1g0qneiae9XscQUAC2JwKLBvfdWOO/9WHVfAwCVSmDRKN77ylVNPg8AKpnAolEVhZawAqAlEVg0CUEFQEvmLEIAgGQCCwAgmbcIK1Dr1q1j0KBBMWTIkOjfv38ceeSR0aNHj+jYsWO0atUqtm7dGps3b461a9fG6tWrY+XKlbF06dJYunRpvP322406z8GDB8fJJ58cAwYMiMMPPzy6dOkS7du3j61bt8bGjRtj1apV8eKLL8aiRYviqaeeih07djT5z7bS5lxprF9zhv1B1eDBg3fXfzM0hg996EPxhS98Ic4444zo3Llzrb9+x44d8eyzz8Zjjz0Wjz32WKxatapB5tmtW7e48MILY9SoUdGjR48af9369evjvvvuizvvvDP+7//+r8F+ji1lzpXG+m04lThnaOkEVgU49NBD42tf+1p8+tOfjgMOyHtXd8iQIelzPfvss+PKK6+s1ZP83tavXx+33HJLzJ8/P31+LWXOlcT6bViVOGfYHwisZm7kyJFx1VVXRceOHdO3nfkL6oADDojx48fHeeedl7bNe+65J26++eZqr521P8250li/1i/sr1r17t17clNPgn1VVVXFhAkT4s/+7M+iTZs2DfIY3//+99O2df3118fIkSNT53fsscdG7969Y+HChQ3y/VfinCuF9Wv9wv7OQe7N0AEHHBDf/va347TTTiv8nF27dsXTTz8dixYtiueeey5Wr14db775Zmzbti26dOkS3bp1i969e8dxxx0XgwYNihNOOCHatm3bIPP9+te/Hp/5zGcKxzds2BD3339/PPbYY7FixYrYvHlzdOrUKfr37x+f+MQnYuTIkdG1a9eSXztixIhYu3ZtzJo1a7+fc6Wwfv/A+oX9l7cIm6FvfetbhX+Z7tq1Kx544IGYM2dOrFmzpsbb7Ny5c3zqU5+KkSNHxnHHHRcROW+xnHLKKfF3f/d3hcfWPProozF9+vSyB9B269YtJk6cGKeffnrh9/wXf/EX8Z//+Z8pP99KnHMlsX73/Z6tX9j/CKxm5ktf+lJceeWVJcfWrl0b1157bTzzzDP1eoyhQ4fG2LFj47LLLqvXdtq1axf33ntvfOADHyg5/i//8i8xY8aMGm9vwoQJce6555YcW7NmTXz+85+Pbdu27XdzriTWr/UL7OEYrGbk6KOPjmnTpkWrVq32GVu9enVccsklsWLFino/zpo1a+LBBx+s93bGjh0bw4cPLzn21FNPxTXXXFOr7T3xxBNx4oknlvzl0aVLl9i2bVs8/fTT+92cK4X1a/0Cf+AVrGaiqqoq5s6dGwMGDNhnbMOGDTFmzJhavaXS0Dp06BAPPfRQdOnSZZ+xbdu2xRe+8IV49dVXa73dww8/PO65556SB0a/+eabcfbZZ9f5YpOVOOdKYf3uYf0C73CrnGbi3HPPLfnLKSLixhtvbFa/nCIiPve5z5V8oo+I+OlPf1qnJ/qIPa90PPDAAyXHunfvXq+zpipxzpXC+t3D+gXeIbCagdatW8e4ceNKji1evDgeffTRpp7iPkaMGFHy47t27Yq5c+fWa9vlvr7ocVvqnCuB9ft+1i8QIbCahREjRsTBBx9ccux73/teU09vH0ceeWQcffTRJceWLl1a57+k3/Hb3/42nn322ZJjxx57bBx++OH7xZwrhfX7ftYvECGwmoXRo0eX/PiyZcvqfcZVQ/j4xz9eOLZgwYKUxyi3nXKP35LmXCms39ptx/ptXG3atImPf/zjcfXVV8fs2bNj/vz58fjjj8cvf/nLWLBgQdx1110xbdq0OOecc+LAAw9s6unSgrjQaBPr169f4bErDz30UFNPr6STTjqpcGzJkiUpj1FuOyeddFLcddddLXLOkyZNis9+9rMlx5588sm4/PLLU25jUlVVFbfeemvhtaTmzZsXU6ZMqXY71m/tt9OS129jePLJJ0t+fO+13L59+xgzZkyMHj06unfvXvJr2rRpE127do0BAwbEGWecEdu3b4+f//znceutt9brVcFK249pGF7BamKf/vSnC8f+/d//vamnV9I7F3rc2+bNm+OFF15IeYznn38+tmzZUnJs0KBBLXbOM2bMKLyUwZAhQ+LSSy9Nmetll11W+KS8YsWKGl9LyfotbX9dv83FoEGD4u67747LLrusMK5KadOmTZx55pnxk5/8JL70pS/V+fErbT+mYQisJjZs2LCSH3/11VfrfVxFQ+jTp0907ty55NhvfvObtMfZvXt34fa6dOkShx12WIuc89tvvx3XXHNN4S+6iy++uN5XMB86dGhcdNFFJce2bNkS11xzTY1Py7d+S9tf129zcPrpp8ett94affr0qfM22rZtG1deeWXMmDEjWreu/Rs9lbYf0zC8RdiEOnToUHjgatEBp4cddlj88R//cZxwwgnRt2/fOOigg6JDhw6xffv22LRpU/zud7+Ll19+OZ555pl44okn4ve//33qnI866qjCsZdeein1sV566aXCv9yPOuqoGv8Cr7Q5r1ixIm666aaYNGnSPmOtWrWKqVOnxgUXXBBv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cteAq62m3o9pOAKrCW3YsKHs+PPPP5/2WOX+4qnNWyzl5lyfM2tKKfdkX93PrtLnXFM33HBDrF69uuznvPbaa3U6i6861m951m/jasxrgpX7OdVFU+7HNByB1YSq+4vrt7/9bdpjldtW0Vkqpbz55puFYz169Ej86ey5NUqR2jzZV+Kca2rz5s3VXltqzpw51b7aVBfWb3nWb+PKPiap3Pay35ptyv2YhiOwmlB1pxRnviRfblu1uQXG7373u8Kxclf2rotyT/avvfZai55zTY0ZMyaGDRtW9nPGjRvXIPeRs37Ls36pqabcj2k4AqsJvfLKK2XHG+sXVLt27Wq8nTVr1hSOZR34+Y7evXvXaR4tYc41ccwxx8QVV1xR7ef16tWrQW6lYf2WZ/02ruy37cptL/OA/6bej2k4AqsJFV0DpTkrd5zA4YcfnvpYpW4WXJN5tIQ5V6djx44xffr0Gl9de9iwYYW326gr67c867dxNeYB/1lvRzaH/ZiGI7CaUHUHAWcewFpuW7W5d1e52zL069cv8adT/loztbk9RCXOuToTJ06MPn361Oprxo4dW6tLGlTH+i3P+m1c2cejldtefS6e+17NYT+m4QisJvT666/HG2+8UTie+QuqS5cuhWPlDqLd2+rVqwvfrhkwYEDqz6doexs3bqzRTYMrec7ljBw5Ms4444zC7/V73/teybFWrVrF1KlT047bsX7Ls34b14c+9KFG21654+JqqrnsxzQcgdXEnn766cKxI488Mu1xjjjiiMKx2t6/q+iWFJ07d057wj/66KMLX/Ivd02kljTnUo488sj45je/WXJs+/btMWHChJg9e3YsXLiw5OccdNBBMX369LRbrFi/pVm/ja8xA2vFihX12nZz249pGAKrif3qV78qHMu439U7PvKRjxSO1fbJYvHixYVjJ554Ysp8y70EXu7xW9Kc99amTZu48cYbo0OHDiXHv/vd7757vajJkycXvuIwePDg+PM///OU79n6Lc36bXzHHXdc6vYGDhxYOFafK6k3x/2YhiGwmtgTTzxReJ+1j33sY2mPM2jQoMKxorvGF/mP//iPwrHTTjstZb6f/OQnC8eeeOKJWm+vEue8t2984xvx4Q9/uPD7u/POO9/996ZNm+Laa68tPNvpy1/+cpxyyin1npP1W5r12/gGDhwYhxxySMq2Dj30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QDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJDs/wFD6cSLsMga6wAAAABJRU5ErkJggg=="/>
+            </div>
+            <div class="sm-3">
+                <img class="round" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlgAAAJYCAYAAAC+ZpjcAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gkDCRogf9f7/AAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAgAElEQVR42u3dfbyWdX3A8e+R52dQwUTUgEjTEBNQpjnSapoSiZYsjUoFna4120wUZoACkg63tV644hWaTTSbluJLpjPC6aiBzhw6xBQJFBOWyABBHvcHL03hvu7z9D0P9+H9/kvO75zr/p3j77rP59z39VA1ePDg3QEAQJoDmnoCAAAtjcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAkgksAIBkrZt6Auyfdu/e/b5/V1VVNfWUACCNwKJR7R1We39caAHQEggsGkVRWBV9ntACoJIJLBpcqbiq7i3C3bt3iywAKpbAolG9N6ze+2qVV64AaEmcRUiDKhVUu3fv3ufj7x0r9bUAUEm8gkWjKhVSEX94FcsrWAC0BF7BosEUvRpV6pWs6j4XACqJwKLR1CSiBBUALYHAAgBIJrBoNO89vqom/w0AlUpg0WCqi6iqqqr3/Xd1XwcAlcJZhDSqcmcLiikAWgqvYNGgqnvlau9/e/UKgJbAK1g0qneiae9XscQUAC2JwKLBvfdWOO/9WHVfAwCVSmDRKN77ylVNPg8AKpnAolEVhZawAqAlEVg0CUEFQEvmLEIAgGQCCwAgmbcIK1Dr1q1j0KBBMWTIkOjfv38ceeSR0aNHj+jYsWO0atUqtm7dGps3b461a9fG6tWrY+XKlbF06dJYunRpvP322406z8GDB8fJJ58cAwYMiMMPPzy6dOkS7du3j61bt8bGjRtj1apV8eKLL8aiRYviqaeeih07djT5z7bS5lxprF9zhv1B1eDBg3fXfzM0hg996EPxhS98Ic4444zo3Llzrb9+x44d8eyzz8Zjjz0Wjz32WKxatapB5tmtW7e48MILY9SoUdGjR48af9369evjvvvuizvvvDP+7//+r8F+ji1lzpXG+m04lThnaOkEVgU49NBD42tf+1p8+tOfjgMOyHtXd8iQIelzPfvss+PKK6+s1ZP83tavXx+33HJLzJ8/P31+LWXOlcT6bViVOGfYHwisZm7kyJFx1VVXRceOHdO3nfkL6oADDojx48fHeeedl7bNe+65J26++eZqr521P8250li/1i/sr1r17t17clNPgn1VVVXFhAkT4s/+7M+iTZs2DfIY3//+99O2df3118fIkSNT53fsscdG7969Y+HChQ3y/VfinCuF9Wv9wv7OQe7N0AEHHBDf/va347TTTiv8nF27dsXTTz8dixYtiueeey5Wr14db775Zmzbti26dOkS3bp1i969e8dxxx0XgwYNihNOOCHatm3bIPP9+te/Hp/5zGcKxzds2BD3339/PPbYY7FixYrYvHlzdOrUKfr37x+f+MQnYuTIkdG1a9eSXztixIhYu3ZtzJo1a7+fc6Wwfv/A+oX9l7cIm6FvfetbhX+Z7tq1Kx544IGYM2dOrFmzpsbb7Ny5c3zqU5+KkSNHxnHHHRcROW+xnHLKKfF3f/d3hcfWPProozF9+vSyB9B269YtJk6cGKeffnrh9/wXf/EX8Z//+Z8pP99KnHMlsX73/Z6tX9j/CKxm5ktf+lJceeWVJcfWrl0b1157bTzzzDP1eoyhQ4fG2LFj47LLLqvXdtq1axf33ntvfOADHyg5/i//8i8xY8aMGm9vwoQJce6555YcW7NmTXz+85+Pbdu27XdzriTWr/UL7OEYrGbk6KOPjmnTpkWrVq32GVu9enVccsklsWLFino/zpo1a+LBBx+s93bGjh0bw4cPLzn21FNPxTXXXFOr7T3xxBNx4oknlvzl0aVLl9i2bVs8/fTT+92cK4X1a/0Cf+AVrGaiqqoq5s6dGwMGDNhnbMOGDTFmzJhavaXS0Dp06BAPPfRQdOnSZZ+xbdu2xRe+8IV49dVXa73dww8/PO65556SB0a/+eabcfbZZ9f5YpOVOOdKYf3uYf0C73CrnGbi3HPPLfnLKSLixhtvbFa/nCIiPve5z5V8oo+I+OlPf1qnJ/qIPa90PPDAAyXHunfvXq+zpipxzpXC+t3D+gXeIbCagdatW8e4ceNKji1evDgeffTRpp7iPkaMGFHy47t27Yq5c+fWa9vlvr7ocVvqnCuB9ft+1i8QIbCahREjRsTBBx9ccux73/teU09vH0ceeWQcffTRJceWLl1a57+k3/Hb3/42nn322ZJjxx57bBx++OH7xZwrhfX7ftYvECGwmoXRo0eX/PiyZcvqfcZVQ/j4xz9eOLZgwYKUxyi3nXKP35LmXCms39ptx/ptXG3atImPf/zjcfXVV8fs2bNj/vz58fjjj8cvf/nLWLBgQdx1110xbdq0OOecc+LAAw9s6unSgrjQaBPr169f4bErDz30UFNPr6STTjqpcGzJkiUpj1FuOyeddFLcddddLXLOkyZNis9+9rMlx5588sm4/PLLU25jUlVVFbfeemvhtaTmzZsXU6ZMqXY71m/tt9OS129jePLJJ0t+fO+13L59+xgzZkyMHj06unfvXvJr2rRpE127do0BAwbEGWecEdu3b4+f//znceutt9brVcFK249pGF7BamKf/vSnC8f+/d//vamnV9I7F3rc2+bNm+OFF15IeYznn38+tmzZUnJs0KBBLXbOM2bMKLyUwZAhQ+LSSy9Nmetll11W+KS8YsWKGl9LyfotbX9dv83FoEGD4u67747LLrusMK5KadOmTZx55pnxk5/8JL70pS/V+fErbT+mYQisJjZs2LCSH3/11VfrfVxFQ+jTp0907ty55NhvfvObtMfZvXt34fa6dOkShx12WIuc89tvvx3XXHNN4S+6iy++uN5XMB86dGhcdNFFJce2bNkS11xzTY1Py7d+S9tf129zcPrpp8ett94affr0qfM22rZtG1deeWXMmDEjWreu/Rs9lbYf0zC8RdiEOnToUHjgatEBp4cddlj88R//cZxwwgnRt2/fOOigg6JDhw6xffv22LRpU/zud7+Ll19+OZ555pl44okn4ve//33qnI866qjCsZdeein1sV566aXCv9yPOuqoGv8Cr7Q5r1ixIm666aaYNGnSPmOtWrWKqVOnxgUXXBBv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cteAq62m3o9pOAKrCW3YsKHs+PPPP5/2WOX+4qnNWyzl5lyfM2tKKfdkX93PrtLnXFM33HBDrF69uuznvPbaa3U6i6861m951m/jasxrgpX7OdVFU+7HNByB1YSq+4vrt7/9bdpjldtW0Vkqpbz55puFYz169Ej86ey5NUqR2jzZV+Kca2rz5s3VXltqzpw51b7aVBfWb3nWb+PKPiap3Pay35ptyv2YhiOwmlB1pxRnviRfblu1uQXG7373u8Kxclf2rotyT/avvfZai55zTY0ZMyaGDRtW9nPGjRvXIPeRs37Ls36pqabcj2k4AqsJvfLKK2XHG+sXVLt27Wq8nTVr1hSOZR34+Y7evXvXaR4tYc41ccwxx8QVV1xR7ef16tWrQW6lYf2WZ/02ruy37cptL/OA/6bej2k4AqsJFV0DpTkrd5zA4YcfnvpYpW4WXJN5tIQ5V6djx44xffr0Gl9de9iwYYW326gr67c867dxNeYB/1lvRzaH/ZiGI7CaUHUHAWcewFpuW7W5d1e52zL069cv8adT/loztbk9RCXOuToTJ06MPn361Oprxo4dW6tLGlTH+i3P+m1c2cejldtefS6e+17NYT+m4QisJvT666/HG2+8UTie+QuqS5cuhWPlDqLd2+rVqwvfrhkwYEDqz6doexs3bqzRTYMrec7ljBw5Ms4444zC7/V73/teybFWrVrF1KlT047bsX7Ls34b14c+9KFG21654+JqqrnsxzQcgdXEnn766cKxI488Mu1xjjjiiMKx2t6/q+iWFJ07d057wj/66KMLX/Ivd02kljTnUo488sj45je/WXJs+/btMWHChJg9e3YsXLiw5OccdNBBMX369LRbrFi/pVm/ja8xA2vFihX12nZz249pGAKrif3qV78qHMu439U7PvKRjxSO1fbJYvHixYVjJ554Ysp8y70EXu7xW9Kc99amTZu48cYbo0OHDiXHv/vd7757vajJkycXvuIwePDg+PM///OU79n6Lc36bXzHHXdc6vYGDhxYOFafK6k3x/2YhiGwmtgTTzxReJ+1j33sY2mPM2jQoMKxorvGF/mP//iPwrHTTjstZb6f/OQnC8eeeOKJWm+vEue8t2984xvx4Q9/uPD7u/POO9/996ZNm+Laa68tPNvpy1/+cpxyyin1npP1W5r12/gGDhwYhxxySMq2Dj300MJ7Ae7cuTP+67/+q87bbo77MQ1DYDWxdevWxVNPPVVybMiQISnvs/fs2bPwr9Ndu3aVfRWilJdffjleeOGFkmPHHXdc2TORauKII44ofHJbtmxZnc5eq8Q5v9fw4cPj/PPPLzm2bt26mDRp0j4f/5//+Z/4h3/4h5Jfc8ABB8SUKVPq/QvJ+t2X9dt0/uRP/qTBt7N06dI6X/Czue7HNAyB1Qzcf//9JT/eunXr+NznPlfv7Z9zzjnRqlWrkmNLly6t0w15582bV/LjBxxwQHzxi1+s13zLff2DDz5Y5+1W4pwjIg455JD41re+VXJs586dcd111xUe6P3jH/+48D5n3bt3jxkzZhSujZqyft/P+m06F1xwQa2ui1ZKhw4dyv48/vVf/7VO223u+zH5BFYz8G//9m+F77N/5StfqdeNRQ855JAYM2ZM4fi9995bp+3ef//9hX/FjRo1Kg499NA6bfewww6Lc845p+TYhg0bCn+Zt9Q5V1VVxdSpU6Nbt24lx2+//fZ48skny27j+uuvL7yG0cCBA+PrX/96necXYf2+l/XbtHr27Blf+cpX6rWNiy66qHDNbtq0KebPn1/rbVbCfkw+gdUM7Nq1K+bMmVNyrFOnTjFx4sQ6nS1SVVUVEydOLDwzaPXq1fHwww/Xac5vvfVW/PjHPy451q5du8K/1KozadKkwovu3X333bW65lFLmPNll11WeCzTr3/968JTuff+vsePHx9vv/12yfELL7wwhg8fXuc5Wr9/YP02va9+9at1Pv5vyJAh1QZ9XS4yWgn7MfkEVjNx//33x7PPPlty7NRTT63Tk+fkyZPj5JNPLhz/x3/8x8IDlGvitttuKzxFfujQoYWnIRe59tpr44QTTig59tprr8Udd9xR57lW4pxPOOGEuOiii0qObdiwISZOnBi7du2q0bZeeOGFmDlzZuH45MmTy94mpTrWr/XbXLRt2zZmzpxZ9qKppQwYMCBuvvnmwth84403Cv+QKKeS9mNyterdu/fkpp4EeyxdujRGjBhRcgc/6qijYtCgQfHMM89Ue4DlYYcdFjfddFN84hOfKPychx9+OH7wgx/Ua747d+6M1atXx5lnnlly/KMf/Wh88IMfjMWLF5e9d1fXrl1jypQpMWLEiJLju3btir/5m7+JlStX1vtnXClz7tatW8yaNavwApsTJ06s9dlzy5YtiyOOOKLk9X3atWsXxx9/fMybN6/GT/Z7s36t38Zw6aWXlvz4L37xi+jbt29E7FnPI0aMiM2bN9doPxk9enRMnz697O1xpkyZUuur2VfifkwegdWMrF+/Pl5//fXC06779OkTo0aNiv79+8euXbtix44dsW3btmjdunV84AMfiMGDB8e4cePiqquuKnuRx+XLl8df//Vfx44dO+o951WrVkWnTp0Kr0HTv3//OOecc6Jr166xdevW2Lx5c+zYsSM6deoUH/nIR+L888+PyZMnxzHHHFP4GHfccUedj7Wp1DnPmDGjcPv33HNPzJ07t07b/eUvfxmnn356dO/efZ+xnj17Rvfu3et8Sr71W9r+uH4bUlFgXX755fHZz3422rdvHxF7rjd1yimnxJlnnhmdO3eObdu2xa5du2Lbtm1x4IEHRr9+/WLkyJFx3XXXxVlnnRWtW7cufMz77rsvfvjDH9Z6rpW4H5OnavDgwbubehK834UXXhjf+MY3GmTbK1asiMsvv7xOZ16VM3369LRTpN9r/vz5cd111zXIz6K5zvlP//RP46qrrio5tnz58vjqV78a27dvr/P2+/fvH7fffnvhhQ4nTJgQjzzySJ23b/3+wf64fhta0cHgQ4YMiaFDh8Z3vvOdGt88uSYWLVoUV155Za1fEar0/Zj68wpWM7R06dJYu3ZtDBs2LPXU28WLF8df/uVfxvr169PnvHDhwjj44IPLXnG7tu69996YOnVq7N7dMH8DNMc5H3XUUXHjjTeW/P/+1ltvxde+9rWy9/+rifXr18fvf//7wgNihw0bFgsWLIgNGzbUafvW7x774/ptDEWvYH3/+9+PNWvWxMqVK2P48OEpa+8Xv/hFjB8/vtbH+rWE/Zj6E1jN1PPPPx+LFi2KY445pl6nuUfs2aFnzZoVM2bMaLAzgnbv3h2PP/54vPbaa3H88ce/+zJ9Xbz55psxY8aMmDNnToM+0Te3Obdv3z5mzZpVeHHOadOmxZIlS1K+9+XLl0fv3r1LXlG6bdu2ccIJJ8S8efPqfBC59bv/rd/GUi6wIvZclPWpp56KoUOHlr1JeDnbt2+PWbNmxc0331zrV65a0n5M/XiLsAKcddZZ8cUvfrHWf6muX78+HnjggZg7d276WyrldOvWLcaMGROjRo0qvO5LKW+++Wb89Kc/jX/+539u9L+6msOcJ0+eXHjQcUO8bdOuXbv40Y9+FP369Ss5/sADD8T1119f78exfs05U7m3CN+rY8eO8eUvfznOP//86Nq1a422vX379liwYEHceuut8corr9Rpfi11P6b2BFYF6du3b5x88snvnil08MEHR6dOnaKqqiq2bt0a69evj1dffTWWLVsWTz31VCxZsqRJzyRp27ZtDB06NE466aT48Ic/HH369IkuXbpE+/btY+vWrbFx48ZYvXp1/OY3v4lf/epXsWTJknodk7C/zrlSWL/mnKGmgfWOdu3axbBhw2LYsGExYMCA6P3YkksAAAU2SURBVNOnT3Tq1CnatGkTW7ZsibVr18ZLL70UTz75ZCxcuLDeb93BOwQWABWjtoEFTcWFRgEAkgksAIBkAgsAIJnAAgBIJrAAAJIJLACAZAILACCZwAIASCawAACSCSwAgGQCCwAgmcACAEgmsAAAklUNHjx4d1NPAgCgJfEKFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJBMYAEAJBNYAADJBBYAQDKBBQCQTGABACQTWAAAyQQWAEAygQUAkExgAQAkE1gAAMkEFgBAMoEFAJDs/wFD6cSLsMga6wAAAABJRU5ErkJggg=="/>
+            </div>
+            <div class="sm-6">
+                <pre>
+                    <code class="html">
+                    
+                    </code>
+                </pre>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="sm-6">
+                <div class="row">
+                    <div class="sm-6">
+                        <img class="circle" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlgAAAEsCAYAAAAfPc2WAAAABmJLR0QAMwAzADOGP0P2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gkDCSIuj/BqAAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAauElEQVR42u3deZBU1dkH4BeGkdUNAojih4I6Iu4gJgKiIC5gDFViogaXqkTLKhO3UsEVFaKDGoyJxEosQ1wwRjDRgCJLcGGJEiwjLoiKgGtkE2QHxe8Pi1SGvjPTM5yZngnPU+Ufnu5z39u3L9O/vvf0OQ26du36TQAAkEzDQu8AAMD/GgELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgsUaF3gHYpkGDBtG9e/c47rjjonPnzrHvvvtGixYtori4OLZs2RJr1qyJ5cuXx6effhqLFi2KBQsWxJtvvhnLly/fobqNGjWKPn36RK9evaKkpCTatGkTTZo0iY0bN8bnn38e7777bsyYMSOmT58eX331VfLXXej6tW233XaLo446Kg4//PDYb7/94v/+7/9ijz32iBYtWsRXX30Va9eujVWrVsXChQtj/vz58dJLL8VHH32UfD8KfdwLXR+oWQ26du36TaF3gp1bUVFRnHXWWXHeeedF27Ztq9y/W7du1a59xhlnxKWXXhqtWrWq9LnLly+P0aNHx4QJE5K99kLXry0dOnSIPn36RJ8+faKkpCQaNqzaxfN58+bF7373u3jllVeS7E+hj3uh6wM1T8CioA466KAYMWJEdOzYsdrbqE7AKi4ujuHDh8dJJ51U5b5TpkyJm2++eYeuKhS6fm2bO3duku1Mnjw5brvttti0aVO1+hf6uBe6PlB7jMGiYHr16hUPPvjgDoWr6mjQoEHcdddd1fqQi4g4+eSTo7S0tN7Wr89OOeWUGD16dDRr1qzKfQt93AtdH6hdxmBREMcee2zceeedUVxcXKZ969atMWfOnHj++efjX//6V6xcuTJWrVoVxcXF0axZs2jdunXss88+0blz5ygpKYmSkpIq177kkkuiZ8+eOe3z58+PRx99NN54441YtmxZtGnTJg477LAYPHhwHHzwwWWee8IJJ8RFF10UDzzwQL2rX2iffvppzJkzJ95666344IMP4pNPPom1a9fG5s2bo1mzZtG2bdsoKSn5z/ikoqKiMv2PPPLIuOqqq2LEiBH16rgXuj5Qu9wipNa1b98+Hn300WjRokWZ9nfffTfuuOOOeOONN2qsdqdOnWLs2LHRqFHZ7xZPPPFE3HnnneX2u+666+LMM88s07Zly5Y4++yzY8mSJfWmfqE8/vjjMXXq1Jg6dWp8+OGHVTped9xxR+ZVzvPPPz/efvvtvLfjfQdqU9Hee+99S6F3gp3Lr3/962jfvn2ZtldffTUuueSS+PTTT2u09s033xz7779/mbZp06bFrbfeWmG/mTNnxgEHHFCmb1FRUbRt2zamTJlSb+oXyvjx4+O1116L1atXV6nfF198EVOmTIn+/ftH8+bNyzy2efPmmD17dl7bKfRxL3R9oPYZg0WtGjhwYBx66KFl2hYtWhSXX355tQcu56tDhw7Ro0ePMm1r1qyp8ArCfxs5cmSsWbOmTNvxxx+fExbrav36avXq1Zm3xLp27ZpX/0If90LXBwpDwKLWFBUVxUUXXZTTXlpaGhs3bqzx+gMGDMiZHmDSpEmxcuXKvPqvWLEinnvuuTJtDRs2jAEDBtSL+vXZrFmzctratGmTV99CH/dC1wcKQ8Ci1vTr1y9nnquZM2fGq6++Wiv1TzzxxJy2p59+ukrbeOqpp3La+vTpUy/q12dZk8nusssuefUt9HEvdP3actxxx8WwYcNi3Lhx8eKLL8asWbPiqaeeitGjR8eZZ54Zu+66a6F3EWqVXxFSa/r375/TVtUPmupq3bp1zhiY5cuXx4IFC6q0nQULFsSKFSvKTBDZqVOnaNWqVaxYsaJO1h82bFh8//vfz2l/5plnYtiwYXnXvvHGG2PgwIE57RMmTKh0LNGO2n333XPali1bVmm/nfl9TylrHrNt88916NAhbr311pxb/xHf/qClffv2ceyxx8Zll10Wo0aNyvvf/P/CecvOzRUsakWzZs3imGOOKdO2Zs2aeOmll2ql/mGHHZbTNm/evGptK6tf1odLXalfWloaCxcuzGkfMGBAnHHGGXnVPO200zI/pBYuXFgrczNtf+5ERLz++uuV9tuZ3/facOihh8Yf//jHvPajefPmcdNNN8Utt9yS17b/F85bdm4CFrXiqKOOypnz6o033oivv/66VupnzZf11ltvVWtbb775Zl7bryv1N23aFEOGDIkNGzbkPHbNNddUOtFrhw4d4rrrrstp37BhQwwZMqTGf5ywyy67xE9/+tOc9r/85S+V9t2Z3/ea1qZNmxg1alSVb/2dfvrpcfXVV1f6vPp+3oKARa3I+oa7/XxX3bp1ixtuuCEef/zxePHFF2P27NkxadKkGDt2bNx4443Rt2/faNKkSbXq77vvvjlt1Z0S4rPPPstr+3Wp/uLFizO/sTdt2jRKS0ujcePGmf0aN24cI0eOzJw5feTIkbF48eJqvYZ8tW7dOu67776c22wTJ07M60pQoY97oevXpKFDh0bLli0j4tvQ8tBDD8XgwYOjd+/e0bt37xg8eHA8/PDDmQHp7LPPjr59+1Zao76etxBhDBa1JOvb5rZxKAcccEDceOONmSGsdevW0bp16ygpKYmBAwfGypUr4w9/+EOMGzeuSle/9tprr5y2zz//vFqvJatfu3bt6nT9iG/HrnTt2jXn9krHjh3juuuuy7x1M2TIkDjggANy2idMmBATJ06s1v5XpEmTJtGqVas48MADo1evXnHyySdH06ZNyzxn9uzZcfvtt+e1vUIf90LXr0nHH398RER8/PHHccUVV+SElnfeeSfeeeedmDBhQtx7772x9957l3n8yiuvjJkzZ1Z6Jak+nLeQRcCiVmz/xzUiYunSpXHiiSfG8OHD874y1bJly7j66qujT58+cfXVV8eXX36ZV78999wzs351ZH3QbfsmX1frbzNy5Mg45JBDcj58Tj/99Jg7d26ZD5/TTz89c6zLBx98kGT8SlUXgF6/fn2MGTMmHnroodi6dWtefQp93Atdv6atXbs2M1z9t0WLFsWVV14ZY8aMKXNFaa+99opBgwbF2LFjK61Tl85byJdbhNSK73znOzltHTt2jNtvv71at/2OPvroGDNmTM5yO+XZbbfdctqybl3kI2vOrqzt16X622wb17J+/fqcx4YMGfKfW3H7779/DBkyJHOfa3v8yvvvvx933313DBgwIMaMGZN3uCrvuOyM73tNeeihh/K63bZw4cJ45JFHctrzHaxeH89bELCoFVlB6Morrywz8P2zzz6LUaNGxaBBg6Jnz57Rs2fPGDRoUNxzzz3x73//O6f/tp+H5yMrxFX3j21Wv8pCYqHr/7clS5ZUOK5l9913j9LS0pxbcxHfXklYtGhRtfa7ujp27BgDBgyIU045Je+5ryo6Ljvr+57aunXr4rHHHsv7+Y8++mhOuOzUqVPOgtblqW/nLQhY1Irtf0EYUfb2yZQpU2LQoEHx2GOPxeLFi2Pjxo2xcePGWLx4cYwdOzbOPPPMmDZtWs42evfuHaeeemql9bdfZDfi27XsqiOrX9b261L97T377LOZ8xF16tQpxo8fH506dcp5bOLEiQUZv9KwYcPo3LlzDB06NJ588sm8l8gp77jszO97SrNmzapSWNywYUPmjPxHHHFE3tuoT+ctCFjUigYNGpT72Msvvxw33HBDhX+sN23aFNdff33885//zHnsggsuqNY+ffPNN8n6VfT66mr9O++8M957772c9qxxQx988EHccccd1drf8nTr1q3Mf927d4++ffvGOeecEyNGjIh//OMfObcD27VrF6NHj45+/fpVu26hj3uh66cyZ86cKvd55ZVXcto6d+5cpW0U+ryFfAlY1Iqvvvoqs33z5s0xfPjwvD50tm7dGrfddlts2bKlTPuBBx5Y6bfgrPrl/cS7Mln9tt+nulY/y6ZNm2Lo0KGZ41r+24YNG2Lo0KE1Pn5l69atsXr16njvvffiqaeeip///Odx7rnnxvz588s8r1GjRnHbbbdFly5dKt1moY97oevXpKxJQCvzwQcf5LRlXXWqSF07b6E8Aha1orzFnJ9//vkq/Wz9s88+ixdeeCGnfduyHeXJ+iNb3Q+6rHFAlS1WXej65VmyZEml3/DvvPPOzA/G2vD+++/HT37yk5z1KouLi/NaLqXQx73Q9WtSdebz+vjjj3PaspZBqkxdP28hQsCilqxevTqzfcaMGVXeVtbyOkcddVSV61d3gHDWINrKposodP2KTJo0Kf72t79lPjZx4sSYMGFCtbedwubNm+Paa6+NNWvWlGnv2LHjf+ZiKk+hj3uh69ekdevWVblP1lWn6i4CXdfPWxCwqBUrV67MbH/77bervK2sPpVNuPjFF1/ktLVp06ZaryWrX9b261L9ihQVFeXMlL5N1liXQli9enU88cQTOe19+vSpsF+hj3uh69ek6tx6y7rilhUc81Efzlt2bgIWtSJrmY+IiBUrVlR5W1l9KrvNkDXNQ9Ys2/nI6lfe66sr9Sty2WWXZS5KHBHxs5/9rEq/8qpJWVcuK1tkuNDHvdD1a1J1bnVmXb2r7rxg9eW8ZeclYFErPvzww8z26vxxzbrN0Lx58wr7fPTRRzltWbPL5yPrall5r6+u1C9P796948c//nG5jxcXF0dpaWm0atWqWttPKesYVrZfhT7uha5fkyr7N5cla23A7W/95qM+nbfsvAQsasU777yT2V6d2wNZf6TXrl1bYZ933303py2fX6FlybpqkrX9ulQ/S7t27fIaKN66desoLS2NoqKiau1vKlljfiq7ilLo417o+jWpOkGxffv2OW3ljc8sT307b9l5CVjUijfeeCNziZPqfMPM6rNq1aoK+8ybNy+nrbzbC5XJ6vfmm2/W6frbKyoqitLS0sylVpYtW5bTdtRRR8UVV1xRrf1NZY899shpK29s3zaFPu6Frl+Tqjq9QkT2ou9Vme6hPp637LwELGrFqlWrMr9tH3LIIVXeVlafTz75pMI+y5Yty1kqo3Xr1nHQQQdVqXZJSUnOuooLFy6M5cuX1+n627vqqqsyr6T8/e9/j8GDB2d+WJ1zzjk7NMHnjsr6QK8sYBX6uBe6fk3q3r17lfsce+yxOW3bz3NWkfp43rLzErCoNVlL3fTq1avK2+ndu3dOW9YM79vLmj9r4MCBVaqd9fznn38+r76Frr/NSSedFD/60Y9y2j/66KO47bbbYsWKFTF06NDMSSxvuummzKsQteGEE07IacvnCk6hj3uh69eUHj16VGmge9OmTaNHjx457a+//npe/evrecvOS8Ci1jz77LM5f/xOPPHEaNu2bd7baNeuXWbAevnllyvtm7Ue2WmnnRYtW7bMq3arVq1y1j3cunVrPPPMM3n1L3T9iG/HwNx444057dtmx942zun111+PX/3qVznPa9asWdx1113VGuC8I/bee+/4wQ9+kNOezzxqhT7uha5fU5o3bx7nnntu3s8fPHhwzpjLhQsXljs+87/V1/OWnZuARa1ZunRpTJ48uUzbLrvsEjfddFNea6o1aNAgbr755pyFo+fMmZPXOI4lS5bEzJkzy7Ttuuuuce211+a1/0OGDMmZFHHGjBmZvxSri/W3/bKqRYsWOY+NGjUqFixYUKbtz3/+czz33HM5z+3QoUPceuutedWMiLj77rurFKK3t+uuu8bdd9+dc7Xk008/zevKZaGPe6Hr16QLLrggOnToUOnzOnbsGOedd15Oez6TgRbqvIUdJWBRq+6///6cqRm++93vxi9+8YsKbzc0btw47rjjjjjmmGNyHnvggQfyrj969Oj4+uuvy7SddNJJlX7YXXfddTmTWm7ZsiVGjx5dpddfyPrXXHNNHHzwwTntkydPjieffDKzz/DhwzMnbTzhhBPiwgsvzKvuCSecEOPHj4/LL78881dkFenevXs8/PDDmWOW7r333nLXuNzezvy+16QWLVrEvffeW2HI2m+//eKee+7J+fXv559/HuPHj6+0RqHOW9hRRXvvvfcthd4Jdh7r1q2LL7/8MmfsVadOnaJ///4R8e28OBs3boxGjRpF+/btY8CAATFixIg4/PDDc7b38MMPx9NPP513/ZUrV0bjxo1zltbp0qVL9OrVK9avXx/r16+PTZs2xV577RU9evSIW265JXNJljFjxsTUqVOr9PoLVf/UU0+NSy+9NKd9yZIlccUVV5QbVL7++ut45ZVXYsCAATkBuGvXrjFv3rxKf2Bw8cUXR3FxcRxxxBHxwx/+MLp37x7t27ePXXbZ5T+LfG/ZsiWaNGkSe+65Zxx66KHRr1+/uPbaa+P888/PnER20qRJ8eCDD9b5415X6u+oiy++OKftpZdeig4dOsRuu+0WZ5xxRrRo0SJWrVoVGzZsiOLi4th///3j3HPPjZtuuinzduiIESMqnWaikOct7KgGXbt2/abQO8HOZ8iQIXHWWWft0DZmzpwZV1555X8+pPPVsGHDuOeeezIH3OZrxowZcdVVV1W5diHqd+jQIR555JGcKwgbN26MCy+8MN5///1Kt9GrV6/45S9/GQ0blr3o/cUXX8TgwYMrXLB77ty51X6dWaZPnx5Dhw7NnPajIjvb+55S1nvYv3//GDt2bOy5555V3t64ceNi5MiRFT6n0Oct7ChXsCiIWbNmRePGjePII4+sVv9x48bFsGHDqvVB880338T06dNj//33L3cts4pMmzYtrr/++pxbPnWxfuPGjWP06NGZY6BKS0tj9uzZedX88MMPo1GjRnH00UeXaW/atGkceeSRMXHixHIDT9bVj+rYsGFD/OY3v4lRo0Z532tZ1nt4zz33xGuvvRZ9+/at0q8JJ02aFMOHD6/wOXXhvIUdJWBRMHPmzInXXnstSkpK8p5wdP78+TFixIj405/+tEPf4r/++uuYOnVqLF26NLp06ZI5O/z2VqxYEaNGjYr77rtvh/8o11b9G264Ib73ve/ltD/77LNx//33V2mf586dG4cffnjOOKo2bdpEq1atyv1F37Rp0+LLL7+Mli1bZk4WWplVq1bFX//61xg2bFjeH6zl2Vne99SyAtbvf//7WLp0abzwwgvRpUuXShexXrduXdx1113x29/+ttJ6deG8hR3lFiF1Qrdu3aJ3795x2GGHxT777BMtWrSILVu2xBdffBHLli2LV199NWbPnp33nDlVUVxcHH379o2ePXtGSUlJtGnTJpo0aRIbN26MpUuXxoIFC2LmzJkxbdq0vAdV16f6talt27bRrVu3OOSQQ2K//faL9u3bx6677hpNmzaNLVu2xNq1a2Pt2rXx8ccfx/z58+Ott96KOXPm/E8e90LXr4qsW4TdunUr8/89evSIfv36RZcuXWKvvfaKoqKiWL58eXz88ccxffr0mDx5crXWHYT6SsACoEL5BCygLNM0AAAkJmABACQmYAEAJCZgAQAkJmABACQmYAEAJCZgAQAkJmABACRmolEAgMRcwQIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASOz/AR/RHe7KuE0IAAAAAElFTkSuQmCC"/>
+                    </div>
+                    <div class="sm-6">
+                        <img class="round" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlgAAAEsCAYAAAAfPc2WAAAABmJLR0QAMwAzADOGP0P2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gkDCSIuj/BqAAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAauElEQVR42u3deZBU1dkH4BeGkdUNAojih4I6Iu4gJgKiIC5gDFViogaXqkTLKhO3UsEVFaKDGoyJxEosQ1wwRjDRgCJLcGGJEiwjLoiKgGtkE2QHxe8Pi1SGvjPTM5yZngnPU+Ufnu5z39u3L9O/vvf0OQ26du36TQAAkEzDQu8AAMD/GgELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgsUaF3gHYpkGDBtG9e/c47rjjonPnzrHvvvtGixYtori4OLZs2RJr1qyJ5cuXx6effhqLFi2KBQsWxJtvvhnLly/fobqNGjWKPn36RK9evaKkpCTatGkTTZo0iY0bN8bnn38e7777bsyYMSOmT58eX331VfLXXej6tW233XaLo446Kg4//PDYb7/94v/+7/9ijz32iBYtWsRXX30Va9eujVWrVsXChQtj/vz58dJLL8VHH32UfD8KfdwLXR+oWQ26du36TaF3gp1bUVFRnHXWWXHeeedF27Ztq9y/W7du1a59xhlnxKWXXhqtWrWq9LnLly+P0aNHx4QJE5K99kLXry0dOnSIPn36RJ8+faKkpCQaNqzaxfN58+bF7373u3jllVeS7E+hj3uh6wM1T8CioA466KAYMWJEdOzYsdrbqE7AKi4ujuHDh8dJJ51U5b5TpkyJm2++eYeuKhS6fm2bO3duku1Mnjw5brvttti0aVO1+hf6uBe6PlB7jMGiYHr16hUPPvjgDoWr6mjQoEHcdddd1fqQi4g4+eSTo7S0tN7Wr89OOeWUGD16dDRr1qzKfQt93AtdH6hdxmBREMcee2zceeedUVxcXKZ969atMWfOnHj++efjX//6V6xcuTJWrVoVxcXF0axZs2jdunXss88+0blz5ygpKYmSkpIq177kkkuiZ8+eOe3z58+PRx99NN54441YtmxZtGnTJg477LAYPHhwHHzwwWWee8IJJ8RFF10UDzzwQL2rX2iffvppzJkzJ95666344IMP4pNPPom1a9fG5s2bo1mzZtG2bdsoKSn5z/ikoqKiMv2PPPLIuOqqq2LEiBH16rgXuj5Qu9wipNa1b98+Hn300WjRokWZ9nfffTfuuOOOeOONN2qsdqdOnWLs2LHRqFHZ7xZPPPFE3HnnneX2u+666+LMM88s07Zly5Y4++yzY8mSJfWmfqE8/vjjMXXq1Jg6dWp8+OGHVTped9xxR+ZVzvPPPz/efvvtvLfjfQdqU9Hee+99S6F3gp3Lr3/962jfvn2ZtldffTUuueSS+PTTT2u09s033xz7779/mbZp06bFrbfeWmG/mTNnxgEHHFCmb1FRUbRt2zamTJlSb+oXyvjx4+O1116L1atXV6nfF198EVOmTIn+/ftH8+bNyzy2efPmmD17dl7bKfRxL3R9oPYZg0WtGjhwYBx66KFl2hYtWhSXX355tQcu56tDhw7Ro0ePMm1r1qyp8ArCfxs5cmSsWbOmTNvxxx+fExbrav36avXq1Zm3xLp27ZpX/0If90LXBwpDwKLWFBUVxUUXXZTTXlpaGhs3bqzx+gMGDMiZHmDSpEmxcuXKvPqvWLEinnvuuTJtDRs2jAEDBtSL+vXZrFmzctratGmTV99CH/dC1wcKQ8Ci1vTr1y9nnquZM2fGq6++Wiv1TzzxxJy2p59+ukrbeOqpp3La+vTpUy/q12dZk8nusssuefUt9HEvdP3actxxx8WwYcNi3Lhx8eKLL8asWbPiqaeeitGjR8eZZ54Zu+66a6F3EWqVXxFSa/r375/TVtUPmupq3bp1zhiY5cuXx4IFC6q0nQULFsSKFSvKTBDZqVOnaNWqVaxYsaJO1h82bFh8//vfz2l/5plnYtiwYXnXvvHGG2PgwIE57RMmTKh0LNGO2n333XPali1bVmm/nfl9TylrHrNt88916NAhbr311pxb/xHf/qClffv2ceyxx8Zll10Wo0aNyvvf/P/CecvOzRUsakWzZs3imGOOKdO2Zs2aeOmll2ql/mGHHZbTNm/evGptK6tf1odLXalfWloaCxcuzGkfMGBAnHHGGXnVPO200zI/pBYuXFgrczNtf+5ERLz++uuV9tuZ3/facOihh8Yf//jHvPajefPmcdNNN8Utt9yS17b/F85bdm4CFrXiqKOOypnz6o033oivv/66VupnzZf11ltvVWtbb775Zl7bryv1N23aFEOGDIkNGzbkPHbNNddUOtFrhw4d4rrrrstp37BhQwwZMqTGf5ywyy67xE9/+tOc9r/85S+V9t2Z3/ea1qZNmxg1alSVb/2dfvrpcfXVV1f6vPp+3oKARa3I+oa7/XxX3bp1ixtuuCEef/zxePHFF2P27NkxadKkGDt2bNx4443Rt2/faNKkSbXq77vvvjlt1Z0S4rPPPstr+3Wp/uLFizO/sTdt2jRKS0ujcePGmf0aN24cI0eOzJw5feTIkbF48eJqvYZ8tW7dOu67776c22wTJ07M60pQoY97oevXpKFDh0bLli0j4tvQ8tBDD8XgwYOjd+/e0bt37xg8eHA8/PDDmQHp7LPPjr59+1Zao76etxBhDBa1JOvb5rZxKAcccEDceOONmSGsdevW0bp16ygpKYmBAwfGypUr4w9/+EOMGzeuSle/9tprr5y2zz//vFqvJatfu3bt6nT9iG/HrnTt2jXn9krHjh3juuuuy7x1M2TIkDjggANy2idMmBATJ06s1v5XpEmTJtGqVas48MADo1evXnHyySdH06ZNyzxn9uzZcfvtt+e1vUIf90LXr0nHH398RER8/PHHccUVV+SElnfeeSfeeeedmDBhQtx7772x9957l3n8yiuvjJkzZ1Z6Jak+nLeQRcCiVmz/xzUiYunSpXHiiSfG8OHD874y1bJly7j66qujT58+cfXVV8eXX36ZV78999wzs351ZH3QbfsmX1frbzNy5Mg45JBDcj58Tj/99Jg7d26ZD5/TTz89c6zLBx98kGT8SlUXgF6/fn2MGTMmHnroodi6dWtefQp93Atdv6atXbs2M1z9t0WLFsWVV14ZY8aMKXNFaa+99opBgwbF2LFjK61Tl85byJdbhNSK73znOzltHTt2jNtvv71at/2OPvroGDNmTM5yO+XZbbfdctqybl3kI2vOrqzt16X622wb17J+/fqcx4YMGfKfW3H7779/DBkyJHOfa3v8yvvvvx933313DBgwIMaMGZN3uCrvuOyM73tNeeihh/K63bZw4cJ45JFHctrzHaxeH89bELCoFVlB6Morrywz8P2zzz6LUaNGxaBBg6Jnz57Rs2fPGDRoUNxzzz3x73//O6f/tp+H5yMrxFX3j21Wv8pCYqHr/7clS5ZUOK5l9913j9LS0pxbcxHfXklYtGhRtfa7ujp27BgDBgyIU045Je+5ryo6Ljvr+57aunXr4rHHHsv7+Y8++mhOuOzUqVPOgtblqW/nLQhY1Irtf0EYUfb2yZQpU2LQoEHx2GOPxeLFi2Pjxo2xcePGWLx4cYwdOzbOPPPMmDZtWs42evfuHaeeemql9bdfZDfi27XsqiOrX9b261L97T377LOZ8xF16tQpxo8fH506dcp5bOLEiQUZv9KwYcPo3LlzDB06NJ588sm8l8gp77jszO97SrNmzapSWNywYUPmjPxHHHFE3tuoT+ctCFjUigYNGpT72Msvvxw33HBDhX+sN23aFNdff33885//zHnsggsuqNY+ffPNN8n6VfT66mr9O++8M957772c9qxxQx988EHccccd1drf8nTr1q3Mf927d4++ffvGOeecEyNGjIh//OMfObcD27VrF6NHj45+/fpVu26hj3uh66cyZ86cKvd55ZVXcto6d+5cpW0U+ryFfAlY1Iqvvvoqs33z5s0xfPjwvD50tm7dGrfddlts2bKlTPuBBx5Y6bfgrPrl/cS7Mln9tt+nulY/y6ZNm2Lo0KGZ41r+24YNG2Lo0KE1Pn5l69atsXr16njvvffiqaeeip///Odx7rnnxvz588s8r1GjRnHbbbdFly5dKt1moY97oevXpKxJQCvzwQcf5LRlXXWqSF07b6E8Aha1orzFnJ9//vkq/Wz9s88+ixdeeCGnfduyHeXJ+iNb3Q+6rHFAlS1WXej65VmyZEml3/DvvPPOzA/G2vD+++/HT37yk5z1KouLi/NaLqXQx73Q9WtSdebz+vjjj3PaspZBqkxdP28hQsCilqxevTqzfcaMGVXeVtbyOkcddVSV61d3gHDWINrKposodP2KTJo0Kf72t79lPjZx4sSYMGFCtbedwubNm+Paa6+NNWvWlGnv2LHjf+ZiKk+hj3uh69ekdevWVblP1lWn6i4CXdfPWxCwqBUrV67MbH/77bervK2sPpVNuPjFF1/ktLVp06ZaryWrX9b261L9ihQVFeXMlL5N1liXQli9enU88cQTOe19+vSpsF+hj3uh69ek6tx6y7rilhUc81Efzlt2bgIWtSJrmY+IiBUrVlR5W1l9KrvNkDXNQ9Ys2/nI6lfe66sr9Sty2WWXZS5KHBHxs5/9rEq/8qpJWVcuK1tkuNDHvdD1a1J1bnVmXb2r7rxg9eW8ZeclYFErPvzww8z26vxxzbrN0Lx58wr7fPTRRzltWbPL5yPrall5r6+u1C9P796948c//nG5jxcXF0dpaWm0atWqWttPKesYVrZfhT7uha5fkyr7N5cla23A7W/95qM+nbfsvAQsasU777yT2V6d2wNZf6TXrl1bYZ933303py2fX6FlybpqkrX9ulQ/S7t27fIaKN66desoLS2NoqKiau1vKlljfiq7ilLo417o+jWpOkGxffv2OW3ljc8sT307b9l5CVjUijfeeCNziZPqfMPM6rNq1aoK+8ybNy+nrbzbC5XJ6vfmm2/W6frbKyoqitLS0sylVpYtW5bTdtRRR8UVV1xRrf1NZY899shpK29s3zaFPu6Frl+Tqjq9QkT2ou9Vme6hPp637LwELGrFqlWrMr9tH3LIIVXeVlafTz75pMI+y5Yty1kqo3Xr1nHQQQdVqXZJSUnOuooLFy6M5cuX1+n627vqqqsyr6T8/e9/j8GDB2d+WJ1zzjk7NMHnjsr6QK8sYBX6uBe6fk3q3r17lfsce+yxOW3bz3NWkfp43rLzErCoNVlL3fTq1avK2+ndu3dOW9YM79vLmj9r4MCBVaqd9fznn38+r76Frr/NSSedFD/60Y9y2j/66KO47bbbYsWKFTF06NDMSSxvuummzKsQteGEE07IacvnCk6hj3uh69eUHj16VGmge9OmTaNHjx457a+//npe/evrecvOS8Ci1jz77LM5f/xOPPHEaNu2bd7baNeuXWbAevnllyvtm7Ue2WmnnRYtW7bMq3arVq1y1j3cunVrPPPMM3n1L3T9iG/HwNx444057dtmx942zun111+PX/3qVznPa9asWdx1113VGuC8I/bee+/4wQ9+kNOezzxqhT7uha5fU5o3bx7nnntu3s8fPHhwzpjLhQsXljs+87/V1/OWnZuARa1ZunRpTJ48uUzbLrvsEjfddFNea6o1aNAgbr755pyFo+fMmZPXOI4lS5bEzJkzy7Ttuuuuce211+a1/0OGDMmZFHHGjBmZvxSri/W3/bKqRYsWOY+NGjUqFixYUKbtz3/+czz33HM5z+3QoUPceuutedWMiLj77rurFKK3t+uuu8bdd9+dc7Xk008/zevKZaGPe6Hr16QLLrggOnToUOnzOnbsGOedd15Oez6TgRbqvIUdJWBRq+6///6cqRm++93vxi9+8YsKbzc0btw47rjjjjjmmGNyHnvggQfyrj969Oj4+uuvy7SddNJJlX7YXXfddTmTWm7ZsiVGjx5dpddfyPrXXHNNHHzwwTntkydPjieffDKzz/DhwzMnbTzhhBPiwgsvzKvuCSecEOPHj4/LL78881dkFenevXs8/PDDmWOW7r333nLXuNzezvy+16QWLVrEvffeW2HI2m+//eKee+7J+fXv559/HuPHj6+0RqHOW9hRRXvvvfcthd4Jdh7r1q2LL7/8MmfsVadOnaJ///4R8e28OBs3boxGjRpF+/btY8CAATFixIg4/PDDc7b38MMPx9NPP513/ZUrV0bjxo1zltbp0qVL9OrVK9avXx/r16+PTZs2xV577RU9evSIW265JXNJljFjxsTUqVOr9PoLVf/UU0+NSy+9NKd9yZIlccUVV5QbVL7++ut45ZVXYsCAATkBuGvXrjFv3rxKf2Bw8cUXR3FxcRxxxBHxwx/+MLp37x7t27ePXXbZ5T+LfG/ZsiWaNGkSe+65Zxx66KHRr1+/uPbaa+P888/PnER20qRJ8eCDD9b5415X6u+oiy++OKftpZdeig4dOsRuu+0WZ5xxRrRo0SJWrVoVGzZsiOLi4th///3j3HPPjZtuuinzduiIESMqnWaikOct7KgGXbt2/abQO8HOZ8iQIXHWWWft0DZmzpwZV1555X8+pPPVsGHDuOeeezIH3OZrxowZcdVVV1W5diHqd+jQIR555JGcKwgbN26MCy+8MN5///1Kt9GrV6/45S9/GQ0blr3o/cUXX8TgwYMrXLB77ty51X6dWaZPnx5Dhw7NnPajIjvb+55S1nvYv3//GDt2bOy5555V3t64ceNi5MiRFT6n0Oct7ChXsCiIWbNmRePGjePII4+sVv9x48bFsGHDqvVB880338T06dNj//33L3cts4pMmzYtrr/++pxbPnWxfuPGjWP06NGZY6BKS0tj9uzZedX88MMPo1GjRnH00UeXaW/atGkceeSRMXHixHIDT9bVj+rYsGFD/OY3v4lRo0Z532tZ1nt4zz33xGuvvRZ9+/at0q8JJ02aFMOHD6/wOXXhvIUdJWBRMHPmzInXXnstSkpK8p5wdP78+TFixIj405/+tEPf4r/++uuYOnVqLF26NLp06ZI5O/z2VqxYEaNGjYr77rtvh/8o11b9G264Ib73ve/ltD/77LNx//33V2mf586dG4cffnjOOKo2bdpEq1atyv1F37Rp0+LLL7+Mli1bZk4WWplVq1bFX//61xg2bFjeH6zl2Vne99SyAtbvf//7WLp0abzwwgvRpUuXShexXrduXdx1113x29/+ttJ6deG8hR3lFiF1Qrdu3aJ3795x2GGHxT777BMtWrSILVu2xBdffBHLli2LV199NWbPnp33nDlVUVxcHH379o2ePXtGSUlJtGnTJpo0aRIbN26MpUuXxoIFC2LmzJkxbdq0vAdV16f6talt27bRrVu3OOSQQ2K//faL9u3bx6677hpNmzaNLVu2xNq1a2Pt2rXx8ccfx/z58+Ott96KOXPm/E8e90LXr4qsW4TdunUr8/89evSIfv36RZcuXWKvvfaKoqKiWL58eXz88ccxffr0mDx5crXWHYT6SsACoEL5BCygLNM0AAAkJmABACQmYAEAJCZgAQAkJmABACQmYAEAJCZgAQAkJmABACRmolEAgMRcwQIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASOz/AR/RHe7KuE0IAAAAAElFTkSuQmCC"/>
+                    </div>
+                    <div class="sm-12">
+                        <pre>
+                            <code class="html">
+                        
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="sm-6">
+                <img class="radius" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlgAAAEsCAYAAAAfPc2WAAAABmJLR0QAMwAzADOGP0P2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gkDCSIuj/BqAAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAauElEQVR42u3deZBU1dkH4BeGkdUNAojih4I6Iu4gJgKiIC5gDFViogaXqkTLKhO3UsEVFaKDGoyJxEosQ1wwRjDRgCJLcGGJEiwjLoiKgGtkE2QHxe8Pi1SGvjPTM5yZngnPU+Ufnu5z39u3L9O/vvf0OQ26du36TQAAkEzDQu8AAMD/GgELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgMQELACAxAQsAIDEBCwAgsUaF3gHYpkGDBtG9e/c47rjjonPnzrHvvvtGixYtori4OLZs2RJr1qyJ5cuXx6effhqLFi2KBQsWxJtvvhnLly/fobqNGjWKPn36RK9evaKkpCTatGkTTZo0iY0bN8bnn38e7777bsyYMSOmT58eX331VfLXXej6tW233XaLo446Kg4//PDYb7/94v/+7/9ijz32iBYtWsRXX30Va9eujVWrVsXChQtj/vz58dJLL8VHH32UfD8KfdwLXR+oWQ26du36TaF3gp1bUVFRnHXWWXHeeedF27Ztq9y/W7du1a59xhlnxKWXXhqtWrWq9LnLly+P0aNHx4QJE5K99kLXry0dOnSIPn36RJ8+faKkpCQaNqzaxfN58+bF7373u3jllVeS7E+hj3uh6wM1T8CioA466KAYMWJEdOzYsdrbqE7AKi4ujuHDh8dJJ51U5b5TpkyJm2++eYeuKhS6fm2bO3duku1Mnjw5brvttti0aVO1+hf6uBe6PlB7jMGiYHr16hUPPvjgDoWr6mjQoEHcdddd1fqQi4g4+eSTo7S0tN7Wr89OOeWUGD16dDRr1qzKfQt93AtdH6hdxmBREMcee2zceeedUVxcXKZ969atMWfOnHj++efjX//6V6xcuTJWrVoVxcXF0axZs2jdunXss88+0blz5ygpKYmSkpIq177kkkuiZ8+eOe3z58+PRx99NN54441YtmxZtGnTJg477LAYPHhwHHzwwWWee8IJJ8RFF10UDzzwQL2rX2iffvppzJkzJ95666344IMP4pNPPom1a9fG5s2bo1mzZtG2bdsoKSn5z/ikoqKiMv2PPPLIuOqqq2LEiBH16rgXuj5Qu9wipNa1b98+Hn300WjRokWZ9nfffTfuuOOOeOONN2qsdqdOnWLs2LHRqFHZ7xZPPPFE3HnnneX2u+666+LMM88s07Zly5Y4++yzY8mSJfWmfqE8/vjjMXXq1Jg6dWp8+OGHVTped9xxR+ZVzvPPPz/efvvtvLfjfQdqU9Hee+99S6F3gp3Lr3/962jfvn2ZtldffTUuueSS+PTTT2u09s033xz7779/mbZp06bFrbfeWmG/mTNnxgEHHFCmb1FRUbRt2zamTJlSb+oXyvjx4+O1116L1atXV6nfF198EVOmTIn+/ftH8+bNyzy2efPmmD17dl7bKfRxL3R9oPYZg0WtGjhwYBx66KFl2hYtWhSXX355tQcu56tDhw7Ro0ePMm1r1qyp8ArCfxs5cmSsWbOmTNvxxx+fExbrav36avXq1Zm3xLp27ZpX/0If90LXBwpDwKLWFBUVxUUXXZTTXlpaGhs3bqzx+gMGDMiZHmDSpEmxcuXKvPqvWLEinnvuuTJtDRs2jAEDBtSL+vXZrFmzctratGmTV99CH/dC1wcKQ8Ci1vTr1y9nnquZM2fGq6++Wiv1TzzxxJy2p59+ukrbeOqpp3La+vTpUy/q12dZk8nusssuefUt9HEvdP3actxxx8WwYcNi3Lhx8eKLL8asWbPiqaeeitGjR8eZZ54Zu+66a6F3EWqVXxFSa/r375/TVtUPmupq3bp1zhiY5cuXx4IFC6q0nQULFsSKFSvKTBDZqVOnaNWqVaxYsaJO1h82bFh8//vfz2l/5plnYtiwYXnXvvHGG2PgwIE57RMmTKh0LNGO2n333XPali1bVmm/nfl9TylrHrNt88916NAhbr311pxb/xHf/qClffv2ceyxx8Zll10Wo0aNyvvf/P/CecvOzRUsakWzZs3imGOOKdO2Zs2aeOmll2ql/mGHHZbTNm/evGptK6tf1odLXalfWloaCxcuzGkfMGBAnHHGGXnVPO200zI/pBYuXFgrczNtf+5ERLz++uuV9tuZ3/facOihh8Yf//jHvPajefPmcdNNN8Utt9yS17b/F85bdm4CFrXiqKOOypnz6o033oivv/66VupnzZf11ltvVWtbb775Zl7bryv1N23aFEOGDIkNGzbkPHbNNddUOtFrhw4d4rrrrstp37BhQwwZMqTGf5ywyy67xE9/+tOc9r/85S+V9t2Z3/ea1qZNmxg1alSVb/2dfvrpcfXVV1f6vPp+3oKARa3I+oa7/XxX3bp1ixtuuCEef/zxePHFF2P27NkxadKkGDt2bNx4443Rt2/faNKkSbXq77vvvjlt1Z0S4rPPPstr+3Wp/uLFizO/sTdt2jRKS0ujcePGmf0aN24cI0eOzJw5feTIkbF48eJqvYZ8tW7dOu67776c22wTJ07M60pQoY97oevXpKFDh0bLli0j4tvQ8tBDD8XgwYOjd+/e0bt37xg8eHA8/PDDmQHp7LPPjr59+1Zao76etxBhDBa1JOvb5rZxKAcccEDceOONmSGsdevW0bp16ygpKYmBAwfGypUr4w9/+EOMGzeuSle/9tprr5y2zz//vFqvJatfu3bt6nT9iG/HrnTt2jXn9krHjh3juuuuy7x1M2TIkDjggANy2idMmBATJ06s1v5XpEmTJtGqVas48MADo1evXnHyySdH06ZNyzxn9uzZcfvtt+e1vUIf90LXr0nHH398RER8/PHHccUVV+SElnfeeSfeeeedmDBhQtx7772x9957l3n8yiuvjJkzZ1Z6Jak+nLeQRcCiVmz/xzUiYunSpXHiiSfG8OHD874y1bJly7j66qujT58+cfXVV8eXX36ZV78999wzs351ZH3QbfsmX1frbzNy5Mg45JBDcj58Tj/99Jg7d26ZD5/TTz89c6zLBx98kGT8SlUXgF6/fn2MGTMmHnroodi6dWtefQp93Atdv6atXbs2M1z9t0WLFsWVV14ZY8aMKXNFaa+99opBgwbF2LFjK61Tl85byJdbhNSK73znOzltHTt2jNtvv71at/2OPvroGDNmTM5yO+XZbbfdctqybl3kI2vOrqzt16X622wb17J+/fqcx4YMGfKfW3H7779/DBkyJHOfa3v8yvvvvx933313DBgwIMaMGZN3uCrvuOyM73tNeeihh/K63bZw4cJ45JFHctrzHaxeH89bELCoFVlB6Morrywz8P2zzz6LUaNGxaBBg6Jnz57Rs2fPGDRoUNxzzz3x73//O6f/tp+H5yMrxFX3j21Wv8pCYqHr/7clS5ZUOK5l9913j9LS0pxbcxHfXklYtGhRtfa7ujp27BgDBgyIU045Je+5ryo6Ljvr+57aunXr4rHHHsv7+Y8++mhOuOzUqVPOgtblqW/nLQhY1Irtf0EYUfb2yZQpU2LQoEHx2GOPxeLFi2Pjxo2xcePGWLx4cYwdOzbOPPPMmDZtWs42evfuHaeeemql9bdfZDfi27XsqiOrX9b261L97T377LOZ8xF16tQpxo8fH506dcp5bOLEiQUZv9KwYcPo3LlzDB06NJ588sm8l8gp77jszO97SrNmzapSWNywYUPmjPxHHHFE3tuoT+ctCFjUigYNGpT72Msvvxw33HBDhX+sN23aFNdff33885//zHnsggsuqNY+ffPNN8n6VfT66mr9O++8M957772c9qxxQx988EHccccd1drf8nTr1q3Mf927d4++ffvGOeecEyNGjIh//OMfObcD27VrF6NHj45+/fpVu26hj3uh66cyZ86cKvd55ZVXcto6d+5cpW0U+ryFfAlY1Iqvvvoqs33z5s0xfPjwvD50tm7dGrfddlts2bKlTPuBBx5Y6bfgrPrl/cS7Mln9tt+nulY/y6ZNm2Lo0KGZ41r+24YNG2Lo0KE1Pn5l69atsXr16njvvffiqaeeip///Odx7rnnxvz588s8r1GjRnHbbbdFly5dKt1moY97oevXpKxJQCvzwQcf5LRlXXWqSF07b6E8Aha1orzFnJ9//vkq/Wz9s88+ixdeeCGnfduyHeXJ+iNb3Q+6rHFAlS1WXej65VmyZEml3/DvvPPOzA/G2vD+++/HT37yk5z1KouLi/NaLqXQx73Q9WtSdebz+vjjj3PaspZBqkxdP28hQsCilqxevTqzfcaMGVXeVtbyOkcddVSV61d3gHDWINrKposodP2KTJo0Kf72t79lPjZx4sSYMGFCtbedwubNm+Paa6+NNWvWlGnv2LHjf+ZiKk+hj3uh69ekdevWVblP1lWn6i4CXdfPWxCwqBUrV67MbH/77bervK2sPpVNuPjFF1/ktLVp06ZaryWrX9b261L9ihQVFeXMlL5N1liXQli9enU88cQTOe19+vSpsF+hj3uh69ek6tx6y7rilhUc81Efzlt2bgIWtSJrmY+IiBUrVlR5W1l9KrvNkDXNQ9Ys2/nI6lfe66sr9Sty2WWXZS5KHBHxs5/9rEq/8qpJWVcuK1tkuNDHvdD1a1J1bnVmXb2r7rxg9eW8ZeclYFErPvzww8z26vxxzbrN0Lx58wr7fPTRRzltWbPL5yPrall5r6+u1C9P796948c//nG5jxcXF0dpaWm0atWqWttPKesYVrZfhT7uha5fkyr7N5cla23A7W/95qM+nbfsvAQsasU777yT2V6d2wNZf6TXrl1bYZ933303py2fX6FlybpqkrX9ulQ/S7t27fIaKN66desoLS2NoqKiau1vKlljfiq7ilLo417o+jWpOkGxffv2OW3ljc8sT307b9l5CVjUijfeeCNziZPqfMPM6rNq1aoK+8ybNy+nrbzbC5XJ6vfmm2/W6frbKyoqitLS0sylVpYtW5bTdtRRR8UVV1xRrf1NZY899shpK29s3zaFPu6Frl+Tqjq9QkT2ou9Vme6hPp637LwELGrFqlWrMr9tH3LIIVXeVlafTz75pMI+y5Yty1kqo3Xr1nHQQQdVqXZJSUnOuooLFy6M5cuX1+n627vqqqsyr6T8/e9/j8GDB2d+WJ1zzjk7NMHnjsr6QK8sYBX6uBe6fk3q3r17lfsce+yxOW3bz3NWkfp43rLzErCoNVlL3fTq1avK2+ndu3dOW9YM79vLmj9r4MCBVaqd9fznn38+r76Frr/NSSedFD/60Y9y2j/66KO47bbbYsWKFTF06NDMSSxvuummzKsQteGEE07IacvnCk6hj3uh69eUHj16VGmge9OmTaNHjx457a+//npe/evrecvOS8Ci1jz77LM5f/xOPPHEaNu2bd7baNeuXWbAevnllyvtm7Ue2WmnnRYtW7bMq3arVq1y1j3cunVrPPPMM3n1L3T9iG/HwNx444057dtmx942zun111+PX/3qVznPa9asWdx1113VGuC8I/bee+/4wQ9+kNOezzxqhT7uha5fU5o3bx7nnntu3s8fPHhwzpjLhQsXljs+87/V1/OWnZuARa1ZunRpTJ48uUzbLrvsEjfddFNea6o1aNAgbr755pyFo+fMmZPXOI4lS5bEzJkzy7Ttuuuuce211+a1/0OGDMmZFHHGjBmZvxSri/W3/bKqRYsWOY+NGjUqFixYUKbtz3/+czz33HM5z+3QoUPceuutedWMiLj77rurFKK3t+uuu8bdd9+dc7Xk008/zevKZaGPe6Hr16QLLrggOnToUOnzOnbsGOedd15Oez6TgRbqvIUdJWBRq+6///6cqRm++93vxi9+8YsKbzc0btw47rjjjjjmmGNyHnvggQfyrj969Oj4+uuvy7SddNJJlX7YXXfddTmTWm7ZsiVGjx5dpddfyPrXXHNNHHzwwTntkydPjieffDKzz/DhwzMnbTzhhBPiwgsvzKvuCSecEOPHj4/LL78881dkFenevXs8/PDDmWOW7r333nLXuNzezvy+16QWLVrEvffeW2HI2m+//eKee+7J+fXv559/HuPHj6+0RqHOW9hRRXvvvfcthd4Jdh7r1q2LL7/8MmfsVadOnaJ///4R8e28OBs3boxGjRpF+/btY8CAATFixIg4/PDDc7b38MMPx9NPP513/ZUrV0bjxo1zltbp0qVL9OrVK9avXx/r16+PTZs2xV577RU9evSIW265JXNJljFjxsTUqVOr9PoLVf/UU0+NSy+9NKd9yZIlccUVV5QbVL7++ut45ZVXYsCAATkBuGvXrjFv3rxKf2Bw8cUXR3FxcRxxxBHxwx/+MLp37x7t27ePXXbZ5T+LfG/ZsiWaNGkSe+65Zxx66KHRr1+/uPbaa+P888/PnER20qRJ8eCDD9b5415X6u+oiy++OKftpZdeig4dOsRuu+0WZ5xxRrRo0SJWrVoVGzZsiOLi4th///3j3HPPjZtuuinzduiIESMqnWaikOct7KgGXbt2/abQO8HOZ8iQIXHWWWft0DZmzpwZV1555X8+pPPVsGHDuOeeezIH3OZrxowZcdVVV1W5diHqd+jQIR555JGcKwgbN26MCy+8MN5///1Kt9GrV6/45S9/GQ0blr3o/cUXX8TgwYMrXLB77ty51X6dWaZPnx5Dhw7NnPajIjvb+55S1nvYv3//GDt2bOy5555V3t64ceNi5MiRFT6n0Oct7ChXsCiIWbNmRePGjePII4+sVv9x48bFsGHDqvVB880338T06dNj//33L3cts4pMmzYtrr/++pxbPnWxfuPGjWP06NGZY6BKS0tj9uzZedX88MMPo1GjRnH00UeXaW/atGkceeSRMXHixHIDT9bVj+rYsGFD/OY3v4lRo0Z532tZ1nt4zz33xGuvvRZ9+/at0q8JJ02aFMOHD6/wOXXhvIUdJWBRMHPmzInXXnstSkpK8p5wdP78+TFixIj405/+tEPf4r/++uuYOnVqLF26NLp06ZI5O/z2VqxYEaNGjYr77rtvh/8o11b9G264Ib73ve/ltD/77LNx//33V2mf586dG4cffnjOOKo2bdpEq1atyv1F37Rp0+LLL7+Mli1bZk4WWplVq1bFX//61xg2bFjeH6zl2Vne99SyAtbvf//7WLp0abzwwgvRpUuXShexXrduXdx1113x29/+ttJ6deG8hR3lFiF1Qrdu3aJ3795x2GGHxT777BMtWrSILVu2xBdffBHLli2LV199NWbPnp33nDlVUVxcHH379o2ePXtGSUlJtGnTJpo0aRIbN26MpUuXxoIFC2LmzJkxbdq0vAdV16f6talt27bRrVu3OOSQQ2K//faL9u3bx6677hpNmzaNLVu2xNq1a2Pt2rXx8ccfx/z58+Ott96KOXPm/E8e90LXr4qsW4TdunUr8/89evSIfv36RZcuXWKvvfaKoqKiWL58eXz88ccxffr0mDx5crXWHYT6SsACoEL5BCygLNM0AAAkJmABACQmYAEAJCZgAQAkJmABACQmYAEAJCZgAQAkJmABACRmolEAgMRcwQIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASEzAAgBITMACAEhMwAIASOz/AR/RHe7KuE0IAAAAAElFTkSuQmCC"/>
+            </div>
+        </div>
+
+        <hr>
+        </div>
+        
+    </div>
+</section>
+<section id="less">
+    <div class="row">
+        <div class="xs-12">
+            <h2>Less</h2>
+            <p>В исходных файлах less Вы можете сменить базовые свойства через переменные.</p>
+            <p>Так же присутствуют множество классов для примешивания. Они начинаются с <mark>.to-*</mark>.</p>
+            <hr>
+        </div>
+    </div>
+</section>
+
+
+
+    </div>
+</div>
+    
+<div id="one-modal" data-modal>
+    <h2>Модальное окно</h2>
+    <p>Это модальное окно.</p>
+    <p>
+        <a class="btn-base" data-modal-id="two-modal">Малое модальное окно</a>
+        <a class="btn-base" data-modal-id="three-modal">Модальное окно на весь экран</a>
+    </p>
+    <a class="btn-border" data-modal-close href="#">Закрыть</a>
+    <span data-modal-close></span>
+</div>
+
+<div id="two-modal" class="modal-xs" data-modal>
+    <h2>Малое модальное окно</h2>
+    <p>Это модальное окно с классом <code>.modal-xs</code></p>
+    <a class="btn-base expand" data-modal-id="three-modal">Модальное окно на весь экран</a>
+    <span data-modal-close></span>
+</div>
+
+<div id="three-modal" class="modal-full" data-modal>
+    <h2>Модальное окно на весь экран</h2>
+    <p>Это модальное окно с классом <code>.modal-full</code></p>
+    <p><a class="btn-base" data-modal-id="two-modal">Маленькое модальное окно</a></p>
+    <span data-modal-close></span>
+    <a class="btn-border" data-modal-close>Закрыть</a>
+</div>
+    
+<footer>
+    <p><a>footer</a></p>
+</footer>
+</body>
