@@ -14,7 +14,7 @@
     
 <div data-wrapper>
     <div data-topbar>
-        <a class="menu-icon sidebar-menu"></a>
+        <a class="icon-menu toggle"></a>
     </div>
     <aside data-menu>
         <ul>
@@ -54,7 +54,7 @@
     </ul>
     </aside>
     <div data-content style="padding-top: 50px;">
-        <nav class="procyon-menu fixed-top dark" role="navigation">
+        <nav class="topbar fixed-top dark" role="navigation">
     <ul>
         <li>
             <a href="#grid">Сетка</a>
@@ -842,9 +842,8 @@
         </div>
         
         <div class="xs-12">
-            <div class="row">
                 
-                <div class="md-6">
+                <div class="md-6 no-padding">
                     <pre>
                         <code>
                     
@@ -852,26 +851,25 @@
                     </pre>
                 </div>
                 
-                <div class="md-6">
+                <div class="md-6 no-padding">
             
                 <form>
-                <div class="form-item">
-                    <label for="text1">Input Label</label>
-                    <input type="text" placeholder="Ширина 100% всегда. Не оборачивать в .row" id="text1" />
-                </div>
+                    <div class="form-item">
+                        <label for="text1">Input Label</label>
+                        <input type="text" placeholder="Ширина 100% всегда. Не оборачивать в .row" id="text1" />
+                    </div>
 
-                <div class="row">
-                    <div class="xs-4 form-item">
-                        <label for="text2">Label</label>
-                        <input type="text" placeholder="xs-4" id="text2" />
+                    <div class="xs-4">
+                        <div class="form-item">
+                            <label for="text2">Label</label>
+                            <input type="text" placeholder="xs-4" id="text2" />
+                        </div>
                     </div>
                     <div class="xs-8 form-item">
                         <label for="text3">Disabled input</label>
                         <input type="text" disabled placeholder="xs-8 disabled" id="text3" />
                     </div>
-                </div>
         
-                <div class="row">
                     <div class="xs-12 form-item">
                         <label for="select1">Select</label>
                         <select id="select1">
@@ -880,14 +878,11 @@
                             <option value="hotdog">Palpatin</option>
                         </select>
                     </div>
-                </div>
             
-                <div class="row">
                     <div class="xs-12 form-item">
                         <label id="textarea1">Textarea</label>
                         <textarea placeholder="xs-12" id="textarea1"></textarea>
                     </div>
-                </div>
 
                 <fieldset class="form-item">
                     <legend>Fieldset Legend</legend>
@@ -898,7 +893,6 @@
             
                 </div>
                 
-            </div>
             <hr>
         </div>
     
@@ -960,7 +954,7 @@
             <h3>В линию</h3>
             <div class="row">
                 
-                <div class="md-6">
+                <div class="md-6 no-padding">
                     <pre>
                         <code>
                     
@@ -968,9 +962,9 @@
                     </pre>
                 </div>
                 
-                <div class="md-6">
+                <div class="md-6 no-padding">
                 <form>
-                <div class="row form-item">
+                <div class="form-item">
                     <div class="xs-2">
                         <label class="inline">Label</label>
                     </div>
@@ -979,8 +973,8 @@
                     </div>
                 </div>
                 
-                <div class="row">
-                    <div class="xs-3 form-item">
+                <div class="form-item">
+                    <div class="xs-3">
                         <label class="right inline">Label</label>
                     </div>
                     <div class="xs-9">
@@ -988,20 +982,20 @@
                     </div>
                 </div>
                     
-                <div class="row">
-                    <div class="xs-3 form-item">
+                <div class="form-item">
+                    <div class="xs-3">
                         <label class="right inline">Label label</label>
                     </div>
-                    <div class="xs-9 form-item">
+                    <div class="xs-9">
                         <input type="text" placeholder="Inline Text Input">
                     </div>
                 </div>
                     
-                <div class="row">
-                    <div class="xs-3 form-item">
+                <div class="form-item">
+                    <div class="xs-3">
                         <label class="right inline">Label label label</label>
                     </div>
-                    <div class="xs-9 form-item">
+                    <div class="xs-9">
                         <input type="text"placeholder="Inline Text Input">
                     </div>
                 </div>
@@ -1024,16 +1018,15 @@
                 </div>
                 
                 <div class="md-6">
-                    <div class="row">
+
                     <form>
                         <div class="md-6">
-                            <div class="row">
-                            <div class="xs-12 form-item">
+                            <div class="form-item">
                                 <label for="prefix1">Label</label>
-                                <div class="xs-3">
+                                <div class="xs-3 no-padding">
                                     <span class="prefix">http://</span>
                                 </div>
-                                <div class="xs-9">
+                                <div class="xs-9 no-padding">
                                     <input type="text" placeholder="xs-7" id="prefix1"/>
                                 </div>
                             </div>
@@ -1055,21 +1048,19 @@
                                     <input class="suffix round" type="text" placeholder="xs-7"/>
                                 </div>
                             </div>
-                            </div>
                         </div>
                     
                         <div class="md-6">
-                            <div class="row">
-                            <div class="xs-12 form-item">
+                            <div class="form-item">
                                 <label class="text-right" for="prefix2">Label</label>
-                                <div class="xs-10">
+                                <div class="xs-10 no-padding">
                                     <input type="text" placeholder="xs-7" id="prefix2"/>
                                 </div>
-                                <div class="xs-2">
+                                <div class="xs-2 no-padding">
                                     <span class="suffix">.ru</span>
                                 </div>
                             </div>
-                    
+                            
                             <div class="xs-12 form-item">
                                 <div class="xs-10">
                                     <input class="prefix radius" type="text" placeholder="xs-7"/>
@@ -1086,7 +1077,6 @@
                                 <div class="xs-2">
                                     <span class="suffix round">.ru</span>
                                 </div>
-                            </div>
                             </div>
                         </div>
                     
@@ -1153,9 +1143,9 @@
                         </div>
                     </div>
                     </form>
-                    </div>
+
                 </div>
-            </div>
+
             <hr>
         </div>
         
@@ -1262,7 +1252,7 @@
         <div class="xs-12">
             <h2>Навигация</h2>
             
-            <nav class="procyon-menu inline dark">
+            <nav class="topbar inline dark">
                 <ul class="left">
                     <li>
                         <a>Ссылка</a>

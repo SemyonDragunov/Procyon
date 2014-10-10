@@ -145,9 +145,9 @@ summary {
     -webkit-border-radius:  @radius;
     -moz-border-radius:     @radius;
     border-radius:          @radius;
-    -moz-background-clip: padding;
+    /*-moz-background-clip: padding;
     -webkit-background-clip: padding;
-    background-clip: padding-box;
+    background-clip: padding-box;*/
 }
 
 .to-icon-content () {
@@ -379,6 +379,8 @@ embed {
         display: table;
         width: 100%;
         height: 100%;
+	left: 0;
+	right: 0;
     }
     &-v-inner-center {
         vertical-align: middle;
@@ -392,9 +394,6 @@ embed {
     }
     &-inline {
         display: inline-block;
-    }
-    &-tile {
-        padding: 0px !important;
     }
 }
 
@@ -685,10 +684,10 @@ textarea,
 select {
     width: 100%;
     height: 40px;
-    padding: 8px 12px;
+    padding: 6px 12px;
     border: 1px solid @color-grey-border;
     display: block;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1) inset;
+    //box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1) inset;
     background-color: white;
     .to-radius(0px);
     color: @color-text;
@@ -709,11 +708,14 @@ select {
     &:hover {
         border-color: @color-g;
     }
-    &:disabled {
+    &:disabled,
+    &[readonly] {
         background: @color-grey;
         
-        &:hover {
+        &:hover,
+	&:focus {
             border: 1px solid @color-grey-border;
+	    box-shadow: 0 0 0 0 transparent;
         }
     }
     
@@ -844,12 +846,12 @@ span {
     }
 }
 
-input[type="radio"],
-input[type="checkbox"] {
-    .to-hide();
-}
-
 .switch {
+    input[type="radio"],
+    input[type="checkbox"] {
+	.to-hide();
+    }
+    
     label {
         width: 40px;
 	height: 20px;
@@ -1289,7 +1291,7 @@ code {
     
 }
 
-// Buttons | Кнопки
+/* Buttons | Кнопки */
 
 button,
 [type="submit"] {
@@ -1309,7 +1311,7 @@ button,
 button, {
     display: inline-block;
     cursor: pointer;
-    padding: 8px 18px;
+    padding: 6px 18px;
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
@@ -1348,7 +1350,7 @@ button, {
         height: 40px;
         width: 100%;
         text-align: center;
-        line-height: 40px;
+        line-height: 35px;
         border: medium none;
         
         &.radius {
@@ -1691,9 +1693,9 @@ span[data-modal-close] {
     .to-transition(all, .6s, ease, 0s);
     
     @media @smartphone {
-	width: 100%;
-	min-height: 100%;
-	margin: 0;
+	width: 100% !important;
+	min-height: 100% !important;
+	margin: 0 !important;
     }
     
     .modal-xs& {
@@ -1717,48 +1719,12 @@ span[data-modal-close] {
 
 // Navigation | Навигация
 
-nav.procyon-menu {
-    ul {
-        padding: 0px;
-        margin: 0px;
-        
-        > li {
-            display: block;
-            list-style: none outside none;
-        }
-    }
-    
-    [class*="btn-"]:not(input),
-    button {
-	top: 5px;
-	float: left;
-    }
-    
-    form {
-	position: relative;
-	top: 5px;
+.to-nav-inline () {
+    overflow: hidden;
+    width: 100%;
+    height: 50px;
 	
-	input:not([type="submit"]) {
-	    &:hover,
-	    &:focus {
-		border: 1px solid white;
-		box-shadow: 0px 0px 5px white;
-	    }
-	}
-    }
-    
-    a {
-	@media @smartphone {
-	    text-decoration: none;
-	}
-    }
-    
-    // Type menu
-    
-    &[class*="inline"] {
-	width: 100%;
-	height: 50px;
-	position: relative;
+	// Top level
 	
 	ul {
             > li {
@@ -1782,10 +1748,12 @@ nav.procyon-menu {
 		&.dropdown {
 		    > a {
 			&:after {
-			    padding: 0 0 0 15px;
+			    padding: 0 0 0 5px;
 			    content: '\25BC';
 			}
 		    }
+		    
+		    // First level
 		    
 		    ul {
 			display: none;
@@ -1798,6 +1766,8 @@ nav.procyon-menu {
 			    
 			    &.dropdown {
 				position: relative;
+				
+				// Other levels
 				
 				ul {
 				    top: 0px;
@@ -1816,7 +1786,7 @@ nav.procyon-menu {
 		    
 		    &:hover > ul,
 		    &:focus > ul {
-			display: block;	
+			display: block;
 		    }
 		}
             }
@@ -1829,28 +1799,30 @@ nav.procyon-menu {
 		left: auto;
 	    }
 	}
+    li.back {
+	display: none;
+	
+	@media @smartphone {
+	    display: block;
+	}
+    }
+}
+
+.topbar {
+    
+    // Type menu
+    
+    &[class*="inline"] {
+	position: relative;
+	.to-nav-inline();
     }
     
     &[class*="fixed-top"] {
-        width: 100%;
         position: fixed;
         top: 0px;
         left: 0px;
-        height: 50px;
         z-index: 1000;
-	
-        ul {
-            > li {
-                float: left;
-                
-                a {
-                    padding: 0px @padding-columns;
-                    display: block;
-                    height: 50px;
-                    line-height: 50px;
-                }
-            }
-        }
+	.to-nav-inline();
     }
     
     // Color menu
@@ -1891,7 +1863,7 @@ nav.procyon-menu {
         color: white;
 	    
 	ul {
-	    > li {
+	    > li:not(.title) {
 		.to-transition();
 		
 		&:hover,
@@ -1906,6 +1878,151 @@ nav.procyon-menu {
 		a {
 		    color: white;
 	        }
+		
+		ul {
+		    background-color: @color-g;
+		}
+	    }
+	    li.title {
+		color: white;
+	    }
+	}
+    }
+    
+    ul {
+        padding: 0px;
+        margin: 0px;
+	width: auto;
+	height: auto;
+        
+        > li {
+            display: block;
+            list-style: none outside none;
+        }
+    }
+    
+    [class*="btn-"]:not(input),
+    button {
+	top: 5px;
+	float: left;
+    }
+    
+    form {
+	position: relative;
+	top: 5px;
+	
+	input:not([type="submit"]) {
+	    border: 1px solid white;
+	    box-shadow: none;
+	    .to-transition();
+	    
+	    &:hover,
+	    &:focus {
+		border: 1px solid white;
+		box-shadow: 0px 0px 5px white;
+	    }
+	}
+    }
+    
+    a {
+	@media @smartphone {
+	    text-decoration: none;
+	}
+	
+	@media @tablet {
+	    text-decoration: none;
+	}
+    }
+    
+    // Mobile menu
+    
+    &.open {
+	height: auto;
+    }
+    
+    .mobile {
+	float: left;
+	@media @smartphone {
+	    width: 100%;
+	}
+	
+	.brand {
+	    height: 50px;
+	    line-height: 50px;
+	    padding-left: @padding-columns;
+	    padding-right: @padding-columns;
+	}
+	.toggle {
+	    float: right !important;
+	    display: none;
+	
+	    @media @smartphone {
+	        display: block; 
+	    }
+	}
+    }
+    
+    .topbar-section {
+	@media @smartphone {
+	    width: auto;
+	    float: left;
+	    position: relative;
+	    .to-transition();
+	
+	    // First level
+	
+	    ul {
+	        width: 100%;
+	        
+	        > li {
+		    width: 100%;
+	    	
+		    &.dropdown {
+
+			> a {
+			    &:after {
+			        float: right;
+				content: '\25B6';
+			    }
+			}
+		    
+			// Open Second level
+		    
+			&.open {
+			    ul {
+			        left: 0 !important;
+			    }
+			}
+		    
+			// Second & other levels
+		    
+			ul {
+			    display: block;
+			    left: 100%;
+			    top: 0;
+			
+			    > li {
+			        &.dropdown {
+				    position: static;
+				
+				    ul {
+				        left: 100% !important;
+				    }
+				
+				    // Open level
+				
+				    &.open {
+				        position: static;
+				        
+				        ul {
+					    left: 0 !important;
+					}
+				    }
+				}
+			    }
+			}
+		    }
+		}
 	    }
 	}
     }
@@ -1950,7 +2067,7 @@ nav.procyon-menu {
     }
 }
 
-.sidebar-open {
+.mobilebar-open {
     [data-menu] {
 	left: 0px;
     }
@@ -1963,7 +2080,7 @@ nav.procyon-menu {
     }
 }
 
-.menu-icon {
+.icon-menu {
     display: block;
     margin: 5px 15px;
     width:            40px;
@@ -2157,13 +2274,13 @@ nav.procyon-menu {
         display: table;
     }
     
-    > .row {
+    /*> .row {
         width: auto;
         margin: 0px;
         max-width: none;
-    }
+    }*/
     
-    [class*="xs-"] > &,
+    /*[class*="xs-"] > &,
     [class*="sm-"] > &,
     [class*="md-"] > &,
     [class*="lg-"] > &,
@@ -2172,7 +2289,7 @@ nav.procyon-menu {
         width: auto;
         margin: 0px -@padding-columns;
         max-width: none;
-    }
+    }*/
     
     &.fluid {
         &-sm {
@@ -2474,6 +2591,6 @@ nav.procyon-menu {
 	
         &.end {
             float: right;
-        }
+	}
     }
 }
