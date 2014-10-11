@@ -1719,10 +1719,75 @@ span[data-modal-close] {
 
 // Navigation | Навигация
 
+@topbar-height: 50px;
+
 .to-nav-inline () {
-    overflow: hidden;
     width: 100%;
-    height: 50px;
+    height: @topbar-height;
+    
+    @media @smartphone {
+	overflow: hidden;
+    }
+    
+    // Setting
+    
+    ul {
+        padding: 0px;
+        margin: 0px;
+	width: auto;
+	height: auto;
+        
+        > li {
+	    height: @topbar-height;
+            display: block;
+            list-style: none outside none;
+        }
+    }
+    
+    [class*="btn-"]:not(input),
+    button {
+	top: 5px;
+	height: 40px;
+	line-height: 36px;
+	float: left;
+	
+	@media @smartphone {
+	    display: block;
+	    width: 100%;
+	}
+    }
+    
+    form {
+	position: relative;
+	top: 5px;
+	
+	.form-item,
+	.form-actions {
+	    margin-bottom: 0 !important;
+	}
+	
+	input:not([type="submit"]) {
+	    border: 1px solid white;
+	    box-shadow: none;
+	    .to-transition();
+	    
+	    &:hover,
+	    &:focus {
+		border: 1px solid white;
+		box-shadow: 0px 0px 5px white;
+	    }
+	}
+    }
+    
+    a {
+	@media @smartphone {
+	    text-decoration: none;
+	}
+	
+	@media @tablet {
+	    text-decoration: none;
+	}
+    }
 	
 	// Top level
 	
@@ -1733,8 +1798,8 @@ span[data-modal-close] {
                 a {
                     padding: 0px @padding-columns;
                     display: block;
-                    height: 50px;
-                    line-height: 50px;
+                    height: @topbar-height;
+                    line-height: @topbar-height;
                 }
 		
 		&.title {
@@ -1758,7 +1823,7 @@ span[data-modal-close] {
 		    ul {
 			display: none;
 			position: absolute !important;
-			z-index: 100;
+			z-index: 1000;
 			.to-transition();
 			
 			> li {
@@ -1790,20 +1855,110 @@ span[data-modal-close] {
 		    }
 		}
             }
-        }
-	.right .dropdown ul {
-	    right: 0;
+	    &.right .dropdown ul {
+	        right: 0;
 	    
-	    .dropdown ul {
-		right: 100%;
-		left: auto;
+	        .dropdown ul {
+		    right: 100%;
+		    left: auto;
+		    
+		    @media @smartphone {
+			right: 0;
+			left: 100%;
+		    }
+	        }
 	    }
-	}
+        }
+
     li.back {
+	height: @topbar-height;
+	line-height: @topbar-height;
+	padding-left: @padding-columns;
 	display: none;
 	
 	@media @smartphone {
 	    display: block;
+	}
+    }
+    
+    // Mobile menu
+    
+    &.open {
+	height: auto;
+    }
+    
+    .mobile {
+	height: @topbar-height;
+	float: left;
+	@media @smartphone {
+	    width: 100%;
+	}
+	
+	.brand {
+	    height: @topbar-height;
+	    line-height: @topbar-height;
+	    padding-left: @padding-columns;
+	    padding-right: @padding-columns;
+	}
+	.toggle {
+	    height: 40px;
+	    float: right !important;
+	    display: none;
+	
+	    @media @smartphone {
+	        display: block; 
+	    }
+	}
+    }
+    
+    .topbar-section {
+	@media @smartphone {
+	    width: 100%;
+	    float: left;
+	    position: relative;
+	    .to-transition();
+	
+	    // First level
+	    
+	    ul {
+	        width: 100%;
+	        
+	        > li {
+		    width: 100%;
+	    	
+		    &.dropdown {
+
+			> a {
+			    &:after {
+			        float: right;
+				content: '\25B6';
+			    }
+			}
+		    
+			// Open Second level
+		    
+			&.open {
+			    > ul {
+			        left: 0;
+			    }
+			}
+		    
+			// Second & other levels
+		    
+			ul {
+			    display: block;
+			    left: 100%;
+			    top: 0;
+			
+			    > li {
+			        &.dropdown {
+				    position: static;
+				}
+			    }
+			}
+		    }
+		}
+	    }
 	}
     }
 }
@@ -1832,7 +1987,7 @@ span[data-modal-close] {
         color: white;
 	    
 	ul {
-	    > li:not(.title) {
+	    > li:not(.title):not(.no-hover) {
 		.to-transition();
 		
 		&:hover,
@@ -1863,7 +2018,7 @@ span[data-modal-close] {
         color: white;
 	    
 	ul {
-	    > li:not(.title) {
+	    > li:not(.title):not(.no-hover) {
 		.to-transition();
 		
 		&:hover,
@@ -1885,144 +2040,6 @@ span[data-modal-close] {
 	    }
 	    li.title {
 		color: white;
-	    }
-	}
-    }
-    
-    ul {
-        padding: 0px;
-        margin: 0px;
-	width: auto;
-	height: auto;
-        
-        > li {
-            display: block;
-            list-style: none outside none;
-        }
-    }
-    
-    [class*="btn-"]:not(input),
-    button {
-	top: 5px;
-	float: left;
-    }
-    
-    form {
-	position: relative;
-	top: 5px;
-	
-	input:not([type="submit"]) {
-	    border: 1px solid white;
-	    box-shadow: none;
-	    .to-transition();
-	    
-	    &:hover,
-	    &:focus {
-		border: 1px solid white;
-		box-shadow: 0px 0px 5px white;
-	    }
-	}
-    }
-    
-    a {
-	@media @smartphone {
-	    text-decoration: none;
-	}
-	
-	@media @tablet {
-	    text-decoration: none;
-	}
-    }
-    
-    // Mobile menu
-    
-    &.open {
-	height: auto;
-    }
-    
-    .mobile {
-	float: left;
-	@media @smartphone {
-	    width: 100%;
-	}
-	
-	.brand {
-	    height: 50px;
-	    line-height: 50px;
-	    padding-left: @padding-columns;
-	    padding-right: @padding-columns;
-	}
-	.toggle {
-	    float: right !important;
-	    display: none;
-	
-	    @media @smartphone {
-	        display: block; 
-	    }
-	}
-    }
-    
-    .topbar-section {
-	@media @smartphone {
-	    width: auto;
-	    float: left;
-	    position: relative;
-	    .to-transition();
-	
-	    // First level
-	
-	    ul {
-	        width: 100%;
-	        
-	        > li {
-		    width: 100%;
-	    	
-		    &.dropdown {
-
-			> a {
-			    &:after {
-			        float: right;
-				content: '\25B6';
-			    }
-			}
-		    
-			// Open Second level
-		    
-			&.open {
-			    ul {
-			        left: 0 !important;
-			    }
-			}
-		    
-			// Second & other levels
-		    
-			ul {
-			    display: block;
-			    left: 100%;
-			    top: 0;
-			
-			    > li {
-			        &.dropdown {
-				    position: static;
-				
-				    ul {
-				        left: 100% !important;
-				    }
-				
-				    // Open level
-				
-				    &.open {
-				        position: static;
-				        
-				        ul {
-					    left: 0 !important;
-					}
-				    }
-				}
-			    }
-			}
-		    }
-		}
 	    }
 	}
     }
@@ -2055,7 +2072,7 @@ span[data-modal-close] {
 [data-topbar] {
     display: none;
     width: 100%;
-    height: 50px;
+    height: @topbar-height;
     background-color: @color-dark-bg;
     position: absolute;
     top: 0;
@@ -2088,9 +2105,9 @@ span[data-modal-close] {
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gkVCjk0rJDu+gAAAHdJREFUWMPtlTEKgDAQBHfT+AJBnxfwWYLPU/AFVrFRCVpLIs50l2q5y91IAACv4rxIKXWSoqSmUJ5N0mR7eQQ8ws2VNK4/Q4bsMVY02StL+MwfrHXE9yVpJQ2Fl2S0vXK/AJNgEkyCSTAJYBJMgkkwCSYBgB+wAwb7RF8maPcgAAAAAElFTkSuQmCC');
 }
 
-/* Grid system | Система блоков */
+/* Grid system */
 
-// Variables for responsive | Переменные для адаптивной верстки
+// Variables for responsive
 
 @screen-xs-max: 767px;
 @screen-sm-min: 768px;

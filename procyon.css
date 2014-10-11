@@ -2006,9 +2006,70 @@ span[data-modal-close]:before {
 }
 .topbar[class*="inline"] {
   position: relative;
-  overflow: hidden;
   width: 100%;
   height: 50px;
+}
+@media only screen and (max-width:  767px ) {
+  .topbar[class*="inline"] {
+    overflow: hidden;
+  }
+}
+.topbar[class*="inline"] ul {
+  padding: 0px;
+  margin: 0px;
+  width: auto;
+  height: auto;
+}
+.topbar[class*="inline"] ul > li {
+  height: 50px;
+  display: block;
+  list-style: none outside none;
+}
+.topbar[class*="inline"] [class*="btn-"]:not(input),
+.topbar[class*="inline"] button {
+  top: 5px;
+  height: 40px;
+  line-height: 36px;
+  float: left;
+}
+@media only screen and (max-width:  767px ) {
+  .topbar[class*="inline"] [class*="btn-"]:not(input),
+  .topbar[class*="inline"] button {
+    display: block;
+    width: 100%;
+  }
+}
+.topbar[class*="inline"] form {
+  position: relative;
+  top: 5px;
+}
+.topbar[class*="inline"] form .form-item,
+.topbar[class*="inline"] form .form-actions {
+  margin-bottom: 0 !important;
+}
+.topbar[class*="inline"] form input:not([type="submit"]) {
+  border: 1px solid white;
+  box-shadow: none;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+.topbar[class*="inline"] form input:not([type="submit"]):hover,
+.topbar[class*="inline"] form input:not([type="submit"]):focus {
+  border: 1px solid white;
+  box-shadow: 0px 0px 5px white;
+}
+@media only screen and (max-width:  767px ) {
+  .topbar[class*="inline"] a {
+    text-decoration: none;
+  }
+}
+@media only screen and (min-width:  768px ) and (max-width:  991px ) {
+  .topbar[class*="inline"] a {
+    text-decoration: none;
+  }
 }
 .topbar[class*="inline"] ul > li {
   float: left;
@@ -2033,7 +2094,7 @@ span[data-modal-close]:before {
 .topbar[class*="inline"] ul > li.dropdown ul {
   display: none;
   position: absolute !important;
-  z-index: 100;
+  z-index: 1000;
   -webkit-transition: all 0.3s ease-out 0s;
   -moz-transition: all 0.3s ease-out 0s;
   -ms-transition: all 0.3s ease-out 0s;
@@ -2058,14 +2119,23 @@ span[data-modal-close]:before {
 .topbar[class*="inline"] ul > li.dropdown:focus > ul {
   display: block;
 }
-.topbar[class*="inline"] .right .dropdown ul {
+.topbar[class*="inline"] ul.right .dropdown ul {
   right: 0;
 }
-.topbar[class*="inline"] .right .dropdown ul .dropdown ul {
+.topbar[class*="inline"] ul.right .dropdown ul .dropdown ul {
   right: 100%;
   left: auto;
 }
+@media only screen and (max-width:  767px ) {
+  .topbar[class*="inline"] ul.right .dropdown ul .dropdown ul {
+    right: 0;
+    left: 100%;
+  }
+}
 .topbar[class*="inline"] li.back {
+  height: 50px;
+  line-height: 50px;
+  padding-left: 15px;
   display: none;
 }
 @media only screen and (max-width:  767px ) {
@@ -2073,14 +2143,136 @@ span[data-modal-close]:before {
     display: block;
   }
 }
+.topbar[class*="inline"].open {
+  height: auto;
+}
+.topbar[class*="inline"] .mobile {
+  height: 50px;
+  float: left;
+}
+@media only screen and (max-width:  767px ) {
+  .topbar[class*="inline"] .mobile {
+    width: 100%;
+  }
+}
+.topbar[class*="inline"] .mobile .brand {
+  height: 50px;
+  line-height: 50px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.topbar[class*="inline"] .mobile .toggle {
+  height: 40px;
+  float: right !important;
+  display: none;
+}
+@media only screen and (max-width:  767px ) {
+  .topbar[class*="inline"] .mobile .toggle {
+    display: block;
+  }
+}
+@media only screen and (max-width:  767px ) {
+  .topbar[class*="inline"] .topbar-section {
+    width: 100%;
+    float: left;
+    position: relative;
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -ms-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+  }
+  .topbar[class*="inline"] .topbar-section ul {
+    width: 100%;
+  }
+  .topbar[class*="inline"] .topbar-section ul > li {
+    width: 100%;
+  }
+  .topbar[class*="inline"] .topbar-section ul > li.dropdown > a:after {
+    float: right;
+    content: '\25B6';
+  }
+  .topbar[class*="inline"] .topbar-section ul > li.dropdown.open > ul {
+    left: 0;
+  }
+  .topbar[class*="inline"] .topbar-section ul > li.dropdown ul {
+    display: block;
+    left: 100%;
+    top: 0;
+  }
+  .topbar[class*="inline"] .topbar-section ul > li.dropdown ul > li.dropdown {
+    position: static;
+  }
+}
 .topbar[class*="fixed-top"] {
   position: fixed;
   top: 0px;
   left: 0px;
   z-index: 1000;
-  overflow: hidden;
   width: 100%;
   height: 50px;
+}
+@media only screen and (max-width:  767px ) {
+  .topbar[class*="fixed-top"] {
+    overflow: hidden;
+  }
+}
+.topbar[class*="fixed-top"] ul {
+  padding: 0px;
+  margin: 0px;
+  width: auto;
+  height: auto;
+}
+.topbar[class*="fixed-top"] ul > li {
+  height: 50px;
+  display: block;
+  list-style: none outside none;
+}
+.topbar[class*="fixed-top"] [class*="btn-"]:not(input),
+.topbar[class*="fixed-top"] button {
+  top: 5px;
+  height: 40px;
+  line-height: 36px;
+  float: left;
+}
+@media only screen and (max-width:  767px ) {
+  .topbar[class*="fixed-top"] [class*="btn-"]:not(input),
+  .topbar[class*="fixed-top"] button {
+    display: block;
+    width: 100%;
+  }
+}
+.topbar[class*="fixed-top"] form {
+  position: relative;
+  top: 5px;
+}
+.topbar[class*="fixed-top"] form .form-item,
+.topbar[class*="fixed-top"] form .form-actions {
+  margin-bottom: 0 !important;
+}
+.topbar[class*="fixed-top"] form input:not([type="submit"]) {
+  border: 1px solid white;
+  box-shadow: none;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+.topbar[class*="fixed-top"] form input:not([type="submit"]):hover,
+.topbar[class*="fixed-top"] form input:not([type="submit"]):focus {
+  border: 1px solid white;
+  box-shadow: 0px 0px 5px white;
+}
+@media only screen and (max-width:  767px ) {
+  .topbar[class*="fixed-top"] a {
+    text-decoration: none;
+  }
+}
+@media only screen and (min-width:  768px ) and (max-width:  991px ) {
+  .topbar[class*="fixed-top"] a {
+    text-decoration: none;
+  }
 }
 .topbar[class*="fixed-top"] ul > li {
   float: left;
@@ -2105,7 +2297,7 @@ span[data-modal-close]:before {
 .topbar[class*="fixed-top"] ul > li.dropdown ul {
   display: none;
   position: absolute !important;
-  z-index: 100;
+  z-index: 1000;
   -webkit-transition: all 0.3s ease-out 0s;
   -moz-transition: all 0.3s ease-out 0s;
   -ms-transition: all 0.3s ease-out 0s;
@@ -2130,14 +2322,23 @@ span[data-modal-close]:before {
 .topbar[class*="fixed-top"] ul > li.dropdown:focus > ul {
   display: block;
 }
-.topbar[class*="fixed-top"] .right .dropdown ul {
+.topbar[class*="fixed-top"] ul.right .dropdown ul {
   right: 0;
 }
-.topbar[class*="fixed-top"] .right .dropdown ul .dropdown ul {
+.topbar[class*="fixed-top"] ul.right .dropdown ul .dropdown ul {
   right: 100%;
   left: auto;
 }
+@media only screen and (max-width:  767px ) {
+  .topbar[class*="fixed-top"] ul.right .dropdown ul .dropdown ul {
+    right: 0;
+    left: 100%;
+  }
+}
 .topbar[class*="fixed-top"] li.back {
+  height: 50px;
+  line-height: 50px;
+  padding-left: 15px;
   display: none;
 }
 @media only screen and (max-width:  767px ) {
@@ -2145,28 +2346,89 @@ span[data-modal-close]:before {
     display: block;
   }
 }
+.topbar[class*="fixed-top"].open {
+  height: auto;
+}
+.topbar[class*="fixed-top"] .mobile {
+  height: 50px;
+  float: left;
+}
+@media only screen and (max-width:  767px ) {
+  .topbar[class*="fixed-top"] .mobile {
+    width: 100%;
+  }
+}
+.topbar[class*="fixed-top"] .mobile .brand {
+  height: 50px;
+  line-height: 50px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.topbar[class*="fixed-top"] .mobile .toggle {
+  height: 40px;
+  float: right !important;
+  display: none;
+}
+@media only screen and (max-width:  767px ) {
+  .topbar[class*="fixed-top"] .mobile .toggle {
+    display: block;
+  }
+}
+@media only screen and (max-width:  767px ) {
+  .topbar[class*="fixed-top"] .topbar-section {
+    width: 100%;
+    float: left;
+    position: relative;
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -ms-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+  }
+  .topbar[class*="fixed-top"] .topbar-section ul {
+    width: 100%;
+  }
+  .topbar[class*="fixed-top"] .topbar-section ul > li {
+    width: 100%;
+  }
+  .topbar[class*="fixed-top"] .topbar-section ul > li.dropdown > a:after {
+    float: right;
+    content: '\25B6';
+  }
+  .topbar[class*="fixed-top"] .topbar-section ul > li.dropdown.open > ul {
+    left: 0;
+  }
+  .topbar[class*="fixed-top"] .topbar-section ul > li.dropdown ul {
+    display: block;
+    left: 100%;
+    top: 0;
+  }
+  .topbar[class*="fixed-top"] .topbar-section ul > li.dropdown ul > li.dropdown {
+    position: static;
+  }
+}
 .topbar[class*="dark"] {
   background-color: #333333;
   color: white;
 }
-.topbar[class*="dark"] ul > li:not(.title) {
+.topbar[class*="dark"] ul > li:not(.title):not(.no-hover) {
   -webkit-transition: all 0.3s ease-out 0s;
   -moz-transition: all 0.3s ease-out 0s;
   -ms-transition: all 0.3s ease-out 0s;
   -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
 }
-.topbar[class*="dark"] ul > li:not(.title):hover,
-.topbar[class*="dark"] ul > li:not(.title):focus {
+.topbar[class*="dark"] ul > li:not(.title):not(.no-hover):hover,
+.topbar[class*="dark"] ul > li:not(.title):not(.no-hover):focus {
   background-color: #1a1a1a;
 }
-.topbar[class*="dark"] ul > li:not(.title).active {
+.topbar[class*="dark"] ul > li:not(.title):not(.no-hover).active {
   background-color: #0099e6;
 }
-.topbar[class*="dark"] ul > li:not(.title) a {
+.topbar[class*="dark"] ul > li:not(.title):not(.no-hover) a {
   color: white;
 }
-.topbar[class*="dark"] ul > li:not(.title) ul {
+.topbar[class*="dark"] ul > li:not(.title):not(.no-hover) ul {
   background-color: #333333;
 }
 .topbar[class*="dark"] ul li.title {
@@ -2176,139 +2438,28 @@ span[data-modal-close]:before {
   background-color: #0099e6;
   color: white;
 }
-.topbar[class*="base"] ul > li:not(.title) {
+.topbar[class*="base"] ul > li:not(.title):not(.no-hover) {
   -webkit-transition: all 0.3s ease-out 0s;
   -moz-transition: all 0.3s ease-out 0s;
   -ms-transition: all 0.3s ease-out 0s;
   -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
 }
-.topbar[class*="base"] ul > li:not(.title):hover,
-.topbar[class*="base"] ul > li:not(.title):focus {
+.topbar[class*="base"] ul > li:not(.title):not(.no-hover):hover,
+.topbar[class*="base"] ul > li:not(.title):not(.no-hover):focus {
   background-color: #0077b3;
 }
-.topbar[class*="base"] ul > li:not(.title).active {
+.topbar[class*="base"] ul > li:not(.title):not(.no-hover).active {
   background-color: #0077b3;
 }
-.topbar[class*="base"] ul > li:not(.title) a {
+.topbar[class*="base"] ul > li:not(.title):not(.no-hover) a {
   color: white;
 }
-.topbar[class*="base"] ul > li:not(.title) ul {
+.topbar[class*="base"] ul > li:not(.title):not(.no-hover) ul {
   background-color: #0099e6;
 }
 .topbar[class*="base"] ul li.title {
   color: white;
-}
-.topbar ul {
-  padding: 0px;
-  margin: 0px;
-  width: auto;
-  height: auto;
-}
-.topbar ul > li {
-  display: block;
-  list-style: none outside none;
-}
-.topbar [class*="btn-"]:not(input),
-.topbar button {
-  top: 5px;
-  float: left;
-}
-.topbar form {
-  position: relative;
-  top: 5px;
-}
-.topbar form input:not([type="submit"]) {
-  border: 1px solid white;
-  box-shadow: none;
-  -webkit-transition: all 0.3s ease-out 0s;
-  -moz-transition: all 0.3s ease-out 0s;
-  -ms-transition: all 0.3s ease-out 0s;
-  -o-transition: all 0.3s ease-out 0s;
-  transition: all 0.3s ease-out 0s;
-}
-.topbar form input:not([type="submit"]):hover,
-.topbar form input:not([type="submit"]):focus {
-  border: 1px solid white;
-  box-shadow: 0px 0px 5px white;
-}
-@media only screen and (max-width:  767px ) {
-  .topbar a {
-    text-decoration: none;
-  }
-}
-@media only screen and (min-width:  768px ) and (max-width:  991px ) {
-  .topbar a {
-    text-decoration: none;
-  }
-}
-.topbar.open {
-  height: auto;
-}
-.topbar .mobile {
-  float: left;
-}
-@media only screen and (max-width:  767px ) {
-  .topbar .mobile {
-    width: 100%;
-  }
-}
-.topbar .mobile .brand {
-  height: 50px;
-  line-height: 50px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-.topbar .mobile .toggle {
-  float: right !important;
-  display: none;
-}
-@media only screen and (max-width:  767px ) {
-  .topbar .mobile .toggle {
-    display: block;
-  }
-}
-@media only screen and (max-width:  767px ) {
-  .topbar .topbar-section {
-    width: auto;
-    float: left;
-    position: relative;
-    -webkit-transition: all 0.3s ease-out 0s;
-    -moz-transition: all 0.3s ease-out 0s;
-    -ms-transition: all 0.3s ease-out 0s;
-    -o-transition: all 0.3s ease-out 0s;
-    transition: all 0.3s ease-out 0s;
-  }
-  .topbar .topbar-section ul {
-    width: 100%;
-  }
-  .topbar .topbar-section ul > li {
-    width: 100%;
-  }
-  .topbar .topbar-section ul > li.dropdown > a:after {
-    float: right;
-    content: '\25B6';
-  }
-  .topbar .topbar-section ul > li.dropdown.open ul {
-    left: 0 !important;
-  }
-  .topbar .topbar-section ul > li.dropdown ul {
-    display: block;
-    left: 100%;
-    top: 0;
-  }
-  .topbar .topbar-section ul > li.dropdown ul > li.dropdown {
-    position: static;
-  }
-  .topbar .topbar-section ul > li.dropdown ul > li.dropdown ul {
-    left: 100% !important;
-  }
-  .topbar .topbar-section ul > li.dropdown ul > li.dropdown.open {
-    position: static;
-  }
-  .topbar .topbar-section ul > li.dropdown ul > li.dropdown.open ul {
-    left: 0 !important;
-  }
 }
 [data-menu] {
   width: 300px;
@@ -2361,7 +2512,7 @@ span[data-modal-close]:before {
   height: 40px;
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gkVCjk0rJDu+gAAAHdJREFUWMPtlTEKgDAQBHfT+AJBnxfwWYLPU/AFVrFRCVpLIs50l2q5y91IAACv4rxIKXWSoqSmUJ5N0mR7eQQ8ws2VNK4/Q4bsMVY02StL+MwfrHXE9yVpJQ2Fl2S0vXK/AJNgEkyCSTAJYBJMgkkwCSYBgB+wAwb7RF8maPcgAAAAAElFTkSuQmCC');
 }
-/* Grid system | Система блоков */
+/* Grid system */
 [class*="show"] {
   display: none;
 }
