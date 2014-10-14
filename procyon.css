@@ -117,6 +117,7 @@ a {
   color: #0099e6;
   text-decoration: none;
   cursor: pointer;
+  outline: none;
   -webkit-transition: all 0.3s ease-out 0s;
   -moz-transition: all 0.3s ease-out 0s;
   -ms-transition: all 0.3s ease-out 0s;
@@ -229,77 +230,77 @@ embed {
 }
 @media only screen and (max-width:  767px ) {
   .text-left-xs {
-    text-align: left;
+    text-align: left !important;
   }
 }
 @media only screen and (min-width:  768px ) and (max-width:  991px ) {
   .text-left-sm {
-    text-align: left;
+    text-align: left !important;
   }
 }
 @media only screen and (min-width:  768px ) {
   .text-left-sm-up {
-    text-align: left;
+    text-align: left !important;
   }
 }
 @media only screen and (max-width:  991px ) {
   .text-left-sm-down {
-    text-align: left;
+    text-align: left !important;
   }
 }
 @media only screen and (min-width:  992px ) and (max-width:  1199px ) {
   .text-left-md {
-    text-align: left;
+    text-align: left !important;
   }
 }
 @media only screen and (min-width:  992px ) {
   .text-left-md-up {
-    text-align: left;
+    text-align: left !important;
   }
 }
 @media only screen and (max-width:  1199px ) {
   .text-left-md-down {
-    text-align: left;
+    text-align: left !important;
   }
 }
 @media only screen and (min-width:  1200px ) {
   .text-left-lg {
-    text-align: left;
+    text-align: left !important;
   }
 }
 @media only screen and (orientation: landscape) {
   .text-left-landscape {
-    text-align: left;
+    text-align: left !important;
   }
 }
 @media only screen and (orientation: portrait) {
   .text-left-portrait {
-    text-align: left;
+    text-align: left !important;
   }
 }
 @media only screen and (device-aspect-ratio: 4/3) {
   .text-left-4by3 {
-    text-align: left;
+    text-align: left !important;
   }
 }
 @media only screen and (device-aspect-ratio: 16/9) {
   .text-left-16by9 {
-    text-align: left;
+    text-align: left !important;
   }
 }
 @media only screen and (device-aspect-ratio: 16/10) {
   .text-left-16by10 {
-    text-align: left;
+    text-align: left !important;
   }
 }
 @media only screen and (device-aspect-ratio: 16/9), only screen and (device-aspect-ratio: 16/10) {
   .text-left-16by9and10 {
-    text-align: left;
+    text-align: left !important;
   }
 }
 @media print {
   .text-left-print {
-    text-align: left;
+    text-align: left !important;
   }
 }
 .text-right {
@@ -307,77 +308,77 @@ embed {
 }
 @media only screen and (max-width:  767px ) {
   .text-right-xs {
-    text-align: right;
+    text-align: right !important;
   }
 }
 @media only screen and (min-width:  768px ) and (max-width:  991px ) {
   .text-right-sm {
-    text-align: right;
+    text-align: right !important;
   }
 }
 @media only screen and (min-width:  768px ) {
   .text-right-sm-up {
-    text-align: right;
+    text-align: right !important;
   }
 }
 @media only screen and (max-width:  991px ) {
   .text-right-sm-down {
-    text-align: right;
+    text-align: right !important;
   }
 }
 @media only screen and (min-width:  992px ) and (max-width:  1199px ) {
   .text-right-md {
-    text-align: right;
+    text-align: right !important;
   }
 }
 @media only screen and (min-width:  992px ) {
   .text-right-md-up {
-    text-align: right;
+    text-align: right !important;
   }
 }
 @media only screen and (max-width:  1199px ) {
   .text-right-md-down {
-    text-align: right;
+    text-align: right !important;
   }
 }
 @media only screen and (min-width:  1200px ) {
   .text-right-lg {
-    text-align: right;
+    text-align: right !important;
   }
 }
 @media only screen and (orientation: landscape) {
   .text-right-landscape {
-    text-align: right;
+    text-align: right !important;
   }
 }
 @media only screen and (orientation: portrait) {
   .text-right-portrait {
-    text-align: right;
+    text-align: right !important;
   }
 }
 @media only screen and (device-aspect-ratio: 4/3) {
   .text-right-4by3 {
-    text-align: right;
+    text-align: right !important;
   }
 }
 @media only screen and (device-aspect-ratio: 16/9) {
   .text-right-16by9 {
-    text-align: right;
+    text-align: right !important;
   }
 }
 @media only screen and (device-aspect-ratio: 16/10) {
   .text-right-16by10 {
-    text-align: right;
+    text-align: right !important;
   }
 }
 @media only screen and (device-aspect-ratio: 16/9), only screen and (device-aspect-ratio: 16/10) {
   .text-right-16by9and10 {
-    text-align: right;
+    text-align: right !important;
   }
 }
 @media print {
   .text-right-print {
-    text-align: right;
+    text-align: right !important;
   }
 }
 .text-justify {
@@ -385,77 +386,77 @@ embed {
 }
 @media only screen and (max-width:  767px ) {
   .text-justify-xs {
-    text-align: justify;
+    text-align: justify !important;
   }
 }
 @media only screen and (min-width:  768px ) and (max-width:  991px ) {
   .text-justify-sm {
-    text-align: justify;
+    text-align: justify !important;
   }
 }
 @media only screen and (min-width:  768px ) {
   .text-justify-sm-up {
-    text-align: justify;
+    text-align: justify !important;
   }
 }
 @media only screen and (max-width:  991px ) {
   .text-justify-sm-down {
-    text-align: justify;
+    text-align: justify !important;
   }
 }
 @media only screen and (min-width:  992px ) and (max-width:  1199px ) {
   .text-justify-md {
-    text-align: justify;
+    text-align: justify !important;
   }
 }
 @media only screen and (min-width:  992px ) {
   .text-justify-md-up {
-    text-align: justify;
+    text-align: justify !important;
   }
 }
 @media only screen and (max-width:  1199px ) {
   .text-justify-md-down {
-    text-align: justify;
+    text-align: justify !important;
   }
 }
 @media only screen and (min-width:  1200px ) {
   .text-justify-lg {
-    text-align: justify;
+    text-align: justify !important;
   }
 }
 @media only screen and (orientation: landscape) {
   .text-justify-landscape {
-    text-align: justify;
+    text-align: justify !important;
   }
 }
 @media only screen and (orientation: portrait) {
   .text-justify-portrait {
-    text-align: justify;
+    text-align: justify !important;
   }
 }
 @media only screen and (device-aspect-ratio: 4/3) {
   .text-justify-4by3 {
-    text-align: justify;
+    text-align: justify !important;
   }
 }
 @media only screen and (device-aspect-ratio: 16/9) {
   .text-justify-16by9 {
-    text-align: justify;
+    text-align: justify !important;
   }
 }
 @media only screen and (device-aspect-ratio: 16/10) {
   .text-justify-16by10 {
-    text-align: justify;
+    text-align: justify !important;
   }
 }
 @media only screen and (device-aspect-ratio: 16/9), only screen and (device-aspect-ratio: 16/10) {
   .text-justify-16by9and10 {
-    text-align: justify;
+    text-align: justify !important;
   }
 }
 @media print {
   .text-justify-print {
-    text-align: justify;
+    text-align: justify !important;
   }
 }
 .text-center {
@@ -463,77 +464,77 @@ embed {
 }
 @media only screen and (max-width:  767px ) {
   .text-center-xs {
-    text-align: center;
+    text-align: center !important;
   }
 }
 @media only screen and (min-width:  768px ) and (max-width:  991px ) {
   .text-center-sm {
-    text-align: center;
+    text-align: center !important;
   }
 }
 @media only screen and (min-width:  768px ) {
   .text-center-sm-up {
-    text-align: center;
+    text-align: center !important;
   }
 }
 @media only screen and (max-width:  991px ) {
   .text-center-sm-down {
-    text-align: center;
+    text-align: center !important;
   }
 }
 @media only screen and (min-width:  992px ) and (max-width:  1199px ) {
   .text-center-md {
-    text-align: center;
+    text-align: center !important;
   }
 }
 @media only screen and (min-width:  992px ) {
   .text-center-md-up {
-    text-align: center;
+    text-align: center !important;
   }
 }
 @media only screen and (max-width:  1199px ) {
   .text-center-md-down {
-    text-align: center;
+    text-align: center !important;
   }
 }
 @media only screen and (min-width:  1200px ) {
   .text-center-lg {
-    text-align: center;
+    text-align: center !important;
   }
 }
 @media only screen and (orientation: landscape) {
   .text-center-landscape {
-    text-align: center;
+    text-align: center !important;
   }
 }
 @media only screen and (orientation: portrait) {
   .text-center-portrait {
-    text-align: center;
+    text-align: center !important;
   }
 }
 @media only screen and (device-aspect-ratio: 4/3) {
   .text-center-4by3 {
-    text-align: center;
+    text-align: center !important;
   }
 }
 @media only screen and (device-aspect-ratio: 16/9) {
   .text-center-16by9 {
-    text-align: center;
+    text-align: center !important;
   }
 }
 @media only screen and (device-aspect-ratio: 16/10) {
   .text-center-16by10 {
-    text-align: center;
+    text-align: center !important;
   }
 }
 @media only screen and (device-aspect-ratio: 16/9), only screen and (device-aspect-ratio: 16/10) {
   .text-center-16by9and10 {
-    text-align: center;
+    text-align: center !important;
   }
 }
 @media print {
   .text-center-print {
-    text-align: center;
+    text-align: center !important;
   }
 }
 .text-nowrap {
@@ -1582,7 +1583,7 @@ mark,
   padding: 0px 4px;
 }
 kbd {
-  background-color: #333333;
+  background-color: #0099e6;
   margin: 0px;
   padding: 3px 4px 0px;
   border-radius: 3px;
@@ -2146,6 +2147,10 @@ span[data-modal-close]:before {
 .topbar[class*="inline"].open {
   height: auto;
 }
+.topbar[class*="inline"] .no-hover {
+  padding-left: 15px;
+  padding-right: 15px;
+}
 .topbar[class*="inline"] .mobile {
   height: 50px;
   float: left;
@@ -2348,6 +2353,10 @@ span[data-modal-close]:before {
 }
 .topbar[class*="fixed-top"].open {
   height: auto;
+}
+.topbar[class*="fixed-top"] .no-hover {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .topbar[class*="fixed-top"] .mobile {
   height: 50px;

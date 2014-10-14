@@ -55,6 +55,13 @@
     </aside>
     <div data-content style="padding-top: 50px;">
         <nav class="topbar fixed-top dark" role="navigation">
+            
+            <ul class="mobile">
+                <li class="brand">Procyon</li>
+                <li class="icon-menu toggle"></li>
+            </ul>
+            
+            <section class="topbar-section">
     <ul>
         <li>
             <a href="#grid">Сетка</a>
@@ -90,13 +97,15 @@
             <a href="#less">Less</a>
         </li>
     </ul>
+            </section>
 </nav>
 <section id="grid">
     <div class="row">
         <div class="xs-12">
 
         <h2>Адаптивная сетка</h2>
-        <div class="row">
+        
+        <div>
             <div class="xs-4 sm-2">
                 <span class="xs-hide">sm-2</span>
                 <span class="xs-show">xs-4</span>
@@ -110,7 +119,7 @@
             </div>
         </div>
         
-        <div class="row">
+        <div>
             <div class="sm-4 md-6">
                 <span class="xs-show">100%</span>
                 <span class="xs-hide md-hide-up">.sm-4</span>
@@ -127,7 +136,7 @@
             </div>
         </div>
         
-        <div class="row">
+        <div>
             <div class="sm-4 md-5 lg-7">
                 <span class="xs-show">100%</span>
                 <span class="sm-show">.sm-4</span>
@@ -146,6 +155,7 @@
                 <span class="md-hide-down">.lg-2</span>
             </div>
         </div>
+        <div class="clearfix"></div>
         
         <hr>
         
@@ -174,18 +184,9 @@
         
         <hr>
         
-        <h3>Вложенные .row</h3>
-        <ul>
-            <li>Певый .row в разметке - по середине страницы (<a href="#">см. пункт</a>).</li>
-            <li>.row > .row (прямой потомок) - у второго .row отступа не будет. Можно добавлять другие блоки.</li>
-            <li>[xs-# sm-# md-# ld-# block-*] > .row (прямое наследование) - у второго .row появляются отпицательные левые и правые отступы для выравнивания отступов. Поэтому его надо помещать непосредственно в адаптивные ячейки .xs-#. (<a href="#">см. пункт</a>)</li>
-        </ul>
-        
-        <hr>
-        
         <h3>Вложенные блоки</h3>
         <p>Если Вы захотели разбить блок ещё на несколько частей, то добавьте внутрь элемент <mark>.row</mark> (нужно для компенсации отступов в ячейках) и можете снова разбивать ячейку на 12 частей.</p>
-        <div class="row">
+        <div>
             <div class="xs-8">
                 <div class="row">
                     <div class="xs-8">
@@ -208,7 +209,7 @@
             
         <h3>Положение блоков</h3>
         <p>Если один блок выше другого, то следующий не будет переносится под него, а перейдет на позицию к более низкому. Для обычного построчного вывода сетки необходимо добавить элемент с классом <mark>.clearfix</mark> между элементами.</p>
-        <div class="row">
+        <div>
             
             <div class="md-6">
                 <div class="xs-6">.xs-6<br />2я строка<br />3я строка<br />4я строка</div>
@@ -239,12 +240,13 @@
                 </pre>
             </div>
         </div>
+        <div class="clearfix"></div>
         
         <hr>
         
         <h3>Отступы</h3>
         <p>Класс <mark>.xs-2-offset</mark> означает, что блок сделает отступ на 2 блока вправо для смартфонов и выше.</p>
-        <div class="row">
+        <div>
             <div class="xs-12">.xs-12</div>
             <div class="xs-10 xs-2-offset">.xs-10 .xs-2-offset</div>
         </div>
@@ -258,7 +260,7 @@
         
         <h3>Замена</h3>
         <p>Смена местами блоков. Для этого используются 2 класса <mark>.-push</mark> (отступающий) и <mark>.-pull</mark> (заменяемый). Этот приём пригодится если надо, чтобы при нужном разрешении экрана была другая последовательность.</p>
-        <div class="row">
+        <div>
             <div class="sm-4 sm-8-push">Первый (.sm-4 .sm-8-push)</div>
             <div class="sm-8 sm-4-pull">Последний (.sm-8 .sm-4-pull)</div>
         </div>
@@ -272,7 +274,7 @@
         
         <h3>Неполные строки</h3>
         <p>Добавьте класс <mark>.end</mark> в нужный блок и он станет последним в этой строке.</p>
-        <div class="row">
+        <div>
             <div class="xs-3">.xs-3</div>
             <div class="xs-3">.xs-3</div>
             <div class="xs-3 end">.xs-3 .end</div>
@@ -287,7 +289,7 @@
         
         <h3>Адаптивное центрирование сетки</h3>
         <p>Ширина 4 колонки (.xs-4) для смартфонов и выше. Центрирование для средних дисплеев и выше (.md-center-up).</p>
-        <div class="row">
+        <div>
             <div class="md-center-up xs-4">.xs-4 .md-center-up</div>
         </div>
         <p>Возможны такие варианты:</p>
@@ -306,7 +308,7 @@
         
         <hr>
         
-        <div class="row">
+        <div>
         <div class="md-6">
                 <h3>Скрыть элемент</h3>
                 <p>Элемент виден всегда, но скрыт для следующих условий.</p>
@@ -525,6 +527,8 @@
         
         </div>
         
+        <div class="clearfix"></div>
+        
         <hr>
         
         </div>
@@ -535,31 +539,6 @@
         <div class="xs-12">
             
         <h2>Блоки</h2>
-        
-        <h3>Плитка</h3>
-        <p>Для использования адаптивных блоков в виде плитки, добавьте класс <mark>.block-tile</mark>. Он уберет все внешние отступы.</p>
-        <div class="warning">
-            <p>Не добавляйте <strong>.block-tile</strong> непосредственно во второстепенный <strong>.row</strong></p>
-        </div>
-        
-        <div class="block-tile xs-6">
-            <div class="xs-4" style="background-color: #DDD; height: 200px;"></div>
-            <div class="xs-4" style="background-color: #5BC0DE; height: 200px;"></div>
-            <div class="xs-4" style="background-color: #F04124; height: 200px;"></div>
-            <div class="xs-6" style="background-color: #F04124; height: 200px;"></div>
-            <div class="xs-6" style="background-color: #F08A24; height: 200px;"></div>
-        </div>
-        <div class="block-tile xs-6" style="background-color: #333; height: 400px;"></div>
-        
-        <div class="clearfix"></div>
-        
-        <pre>
-            <code>
-                
-            </code>
-        </pre>
-        
-        <hr>
             
         <h3>Информационные блоки</h3>
         <p>Для блока с иконкой "Закрыть" используйте <code>div.messages</code> + необходимые подклассы. Если без кнопки, то  не пишите класс <code>.messages</code> для родительского элемента. Как Вы могли заметить - это применимо только к элементу <code>div</code>.</p>
@@ -650,9 +629,9 @@
         <h3>Горизонтальное центрирование</h3>
         <div class="xs-8 block-h-center" style="background: green;">
             .xs-6 .block-h-center
-            <div class="row">
-                <div class="xs-6">.xs-6</div>
-                <div class="xs-6">.xs-6</div>
+            <div>
+                <div class="xs-6 no-padding">.xs-6</div>
+                <div class="xs-6 no-padding">.xs-6</div>
             </div>
         </div>
         
@@ -667,6 +646,7 @@
         </div>
     </div>
 </section>
+
 <section style="padding-bottom: 300px;">    
     <div class="block-v-outer-center text-center" style="background: rgba(0,0,0,0.5); height: 300px; color: white;">
         <div class="block-v-inner-center">
@@ -674,7 +654,7 @@
             <h3>Вертикальное и горизонтальное центрирование</h3>
             
             <div class="sm-6 block-h-center text-left"  style="background: green;">
-                <div class="row">
+                <div>
                     dfhgsdrjfgjkh
                     <div class="xs-8 block-h-center text-center">
                         <h4>Вложенное горизонтальное центрирование</h4>
@@ -710,7 +690,7 @@
         
         <div class="xs-12">
             <h3>.btn-base</h3>
-            <div class="row">
+            <div>
                 <div class="sm-6">
                     <pre>
                         <code>
@@ -732,6 +712,7 @@
                     </p>
                 </div>
             </div>
+            <div class="clearfix"></div>
             <hr>
         </div>
         
@@ -1251,6 +1232,7 @@
         
         <div class="xs-12">
             <h2>Навигация</h2>
+            <p>Топбар с мобильной многоуровневой версией.</p>
             
             <nav class="topbar inline dark">
                 

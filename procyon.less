@@ -277,6 +277,7 @@ a {
     color: @color-g;
     text-decoration: none;
     cursor: pointer;
+    outline: none;
     .to-transition();
     
     @media @smartphone, @tablet {
@@ -415,78 +416,78 @@ embed {
     
         &-xs {
             @media @smartphone {
-                text-align: @align;
+                text-align: @align !important;
             }
         }
         &-sm {
             @media @tablet {
-                text-align: @align;
+                text-align: @align !important;
             }
             &-up {
                 @media @tablet-up {
-                    text-align: @align;
+                    text-align: @align !important;
                 }
             }
             &-down {
                 @media @tablet-down {
-                    text-align: @align;
+                    text-align: @align !important;
                 }
             }
         }
         &-md {
             @media @mini-display {
-                text-align: @align;
+                text-align: @align !important;
             }
             &-up {
                 @media @mini-display-up {
-                    text-align: @align;
+                    text-align: @align !important;
                 }
             }
             &-down {
                 @media @mini-display-down {
-                    text-align: @align;
+                    text-align: @align !important;
                 }
             }
         }
         &-lg {
             @media @large-display {
-                text-align: @align;
+                text-align: @align !important;
             }
         }
         
         &-landscape {
             @media @mobile-landscape {
-                text-align: @align;
+                text-align: @align !important;
             }
         }
         &-portrait {
             @media @mobile-portrait {
-                text-align: @align;
+                text-align: @align !important;
             }
         }
         &-4by3 {
             @media @screen-4by3 {
-                text-align: @align;
+                text-align: @align !important;
             }
         }
         &-16by9 {
             @media @screen-16by9 {
-                text-align: @align;
+                text-align: @align !important;
             }
         }
         &-16by10 {
             @media @screen-16by10 {
-                text-align: @align;
+                text-align: @align !important;
             }
         }
         &-16by9and10 {
             @media @screen-16by9and10 {
-                text-align: @align;
+                text-align: @align !important;
             }
         }
         &-print {
             @media print {
-                text-align: @align;
+                text-align: @align !important;
             }
         }
     }
@@ -1268,7 +1269,7 @@ mark,
 }
 
 kbd {
-    background-color: @color-dark-bg;
+    background-color: @color-g;
     margin: 0px;
     padding: 3px 4px 0px;
     border-radius: 3px;
@@ -1885,6 +1886,11 @@ span[data-modal-close] {
     
     &.open {
 	height: auto;
+    }
+    
+    .no-hover {
+	padding-left: @padding-columns;
+	padding-right: @padding-columns;
     }
     
     .mobile {
