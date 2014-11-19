@@ -6,12 +6,19 @@
 
 (function ($) {
     
-    function widDoc() {
-	var winWidth = $(window).width();
-	return winWidth;
-    }
-    
     $(document).ready(function () {
+	
+	function winWidth() {
+	    var winWidthVal = $(window).width();
+	    return winWidthVal;
+	}
+	$(window).resize(winWidth);
+	
+	function winHeight() {
+	    var winHeightVal = $(window).height();
+	    return winHeightVal;
+	}
+	$(window).resize(winHeight);
 	
         // Spoiler
         
@@ -69,7 +76,17 @@
 	// Topbar mobile
 
 	var nameBack = '<<<<<<<',
+	    mobileWidth = 991,
 	    heightTopMenu = 50;
+	
+	$(window).resize(function() {
+	    if (winWidth() > mobileWidth) {
+		$('.topbar.open').css('height', '').removeClass('open');
+		$('.topbar').css('overflow-y', 'visible');
+	    } else {
+		$('.topbar').css('overflow-y', 'hidden');
+	    }
+	});
 	
 	$('.topbar li.dropdown > ul').prepend('<li class="back">' + nameBack + '</li>');
 	
@@ -84,7 +101,7 @@
 		var fixedMenu = true;
 	    }
 	    
-	    if ($topbar.outerHeight() > $(window).height() && fixedMenu) {
+	    if ($topbar.outerHeight() > winHeight() && fixedMenu) {
 		$topbar.css({'bottom' : '0' , 'overflow-y' : 'scroll'});
 	    } else {
 		$topbar.css({'bottom' : '' , 'overflow-y' : 'hidden'});
@@ -99,11 +116,19 @@
 	    $(this).closest('.topbar').css('height', '').removeClass('open').find('li.dropdown.open').removeClass('open');
 	});
 	
-	$('.topbar li.dropdown > a').bind('click', function(e) {	    
-	    if (widDoc() <= 767) {
-		var heightMenu = $(this).parent('li.dropdown').children('ul').outerHeight(true) + heightTopMenu;
+	$('.topbar li.dropdown > a').bind('click', function(e) {   
+	    if (winWidth() <= mobileWidth) {
+		var $topbar = $(this).closest('.topbar');
+		var heightMenu = $(this).parent('li.dropdown').children('ul').outerHeight() + heightTopMenu;
+		
 		$(this).parent('li.dropdown').toggleClass('open');
-		$(this).closest('.topbar').css('height', heightMenu);
+		$topbar.css('height', heightMenu);
+		
+		if (winHeight() < heightMenu) {
+		    $topbar.css({'bottom' : '0' , 'overflow-y' : 'scroll'});
+		} else {
+		    $topbar.css({'bottom' : '' , 'overflow-y' : 'hidden'});
+		}
 	    }
 	    
 	    if (window.location.hash) {
@@ -113,16 +138,24 @@
 	    e.preventDefault();
 	});
 	
-	$('.back').bind('click', function() {
-	    if (widDoc() <= 767) {
-		var heightMenu = $(this).parent('ul').parent('li.dropdown').parent('ul').outerHeight(true) + heightTopMenu;
+	$('.topbar .back').bind('click', function() {
+	    var $topbar = $(this).closest('.topbar');
+	    var heightMenu = $(this).parent('ul').parent('li.dropdown').parent('ul').outerHeight() + heightTopMenu;
+	    
+	    if (winWidth() <= mobileWidth) {
 		$(this).parent('ul').parent('li.dropdown').removeClass('open').find('.open').removeClass('open');
+		
+		if (winHeight() < heightMenu) {
+		    $topbar.css({'bottom' : '0' , 'overflow-y' : 'scroll'});
+		} else {
+		    $topbar.css({'bottom' : '' , 'overflow-y' : 'hidden'});
+		}
 	    }
 	    
 	    if ($(this).closest('li.dropdown').parent('ul').parent('li.dropdown').length) {
-		$(this).closest('.topbar').css('height', heightMenu);
+		$topbar.css('height', heightMenu);
 	    } else {
-		$(this).closest('.topbar').css('height', '');
+		$topbar.css('height', '');
 	    }
 	});
 	
@@ -148,14 +181,23 @@
             });
 
 
-        menuItems.click(function(e) {
+        /*menuItems.click(function(e) {
             var href = $(this).attr('href'),
                 offsetTop = href === '#' ? 0 : $(href).offset().top-topMenuHeight + 1;
             $('html, body').stop().animate({
                 scrollTop: offsetTop
             }, 1000, 'swing');
             e.preventDefault();
-        });
+        });*/
+	
+	$('a[href*="#"]:not(.no-click)').bind('click', function() {
+	    var href = $(this).attr('href'),
+                offsetTop = href === '#' ? 0 : $(href).offset().top-topMenuHeight + 1;
+            $('html, body').stop().animate({
+                scrollTop: offsetTop
+            }, 1000, 'swing');
+            e.preventDefault();
+	});
 
         $(window).scroll(function() {
             var fromTop = $(this).scrollTop()+topMenuHeight;
@@ -171,7 +213,9 @@
                 lastId = id;
                 menuItems
                     .removeClass('active').parent().removeClass('active')
-                    .end().filter('[href=#'+id+']').addClass('active').parent().addClass('active');
+		    //.parents('li.dropdown').removeClass('active').children('a.no-click').removeClass('active')
+                    .end().filter('[href=#'+id+']').addClass('active').parent().addClass('active')
+		    //.parents('li.dropdown').addClass('active').children('a.no-click').addClass('active');
             }
         });
 	

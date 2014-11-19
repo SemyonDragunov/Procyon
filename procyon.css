@@ -138,6 +138,7 @@ p {
 }
 p.lead {
   font-size: 20px;
+  line-height: normal;
 }
 dl {
   margin-top: 0px;
@@ -173,7 +174,6 @@ ul.list-inline,
 ol.list-inline {
   list-style: none outside none;
   padding-left: 0px;
-  margin-left: -5px;
 }
 ul.list-inline > li,
 ol.list-inline > li {
@@ -2010,7 +2010,7 @@ span[data-modal-close]:before {
   width: 100%;
   height: 50px;
 }
-@media only screen and (max-width:  767px ) {
+@media only screen and (max-width:  991px ) {
   .topbar[class*="inline"] {
     overflow: hidden;
   }
@@ -2033,7 +2033,7 @@ span[data-modal-close]:before {
   line-height: 36px;
   float: left;
 }
-@media only screen and (max-width:  767px ) {
+@media only screen and (max-width:  991px ) {
   .topbar[class*="inline"] [class*="btn-"]:not(input),
   .topbar[class*="inline"] button {
     display: block;
@@ -2062,12 +2062,7 @@ span[data-modal-close]:before {
   border: 1px solid white;
   box-shadow: 0px 0px 5px white;
 }
-@media only screen and (max-width:  767px ) {
-  .topbar[class*="inline"] a {
-    text-decoration: none;
-  }
-}
-@media only screen and (min-width:  768px ) and (max-width:  991px ) {
+@media only screen and (max-width:  991px ) {
   .topbar[class*="inline"] a {
     text-decoration: none;
   }
@@ -2127,7 +2122,7 @@ span[data-modal-close]:before {
   right: 100%;
   left: auto;
 }
-@media only screen and (max-width:  767px ) {
+@media only screen and (max-width:  991px ) {
   .topbar[class*="inline"] ul.right .dropdown ul .dropdown ul {
     right: 0;
     left: 100%;
@@ -2139,7 +2134,7 @@ span[data-modal-close]:before {
   padding-left: 15px;
   display: none;
 }
-@media only screen and (max-width:  767px ) {
+@media only screen and (max-width:  991px ) {
   .topbar[class*="inline"] li.back {
     display: block;
   }
@@ -2155,7 +2150,7 @@ span[data-modal-close]:before {
   height: 50px;
   float: left;
 }
-@media only screen and (max-width:  767px ) {
+@media only screen and (max-width:  991px ) {
   .topbar[class*="inline"] .mobile {
     width: 100%;
   }
@@ -2171,12 +2166,12 @@ span[data-modal-close]:before {
   float: right !important;
   display: none;
 }
-@media only screen and (max-width:  767px ) {
+@media only screen and (max-width:  991px ) {
   .topbar[class*="inline"] .mobile .toggle {
     display: block;
   }
 }
-@media only screen and (max-width:  767px ) {
+@media only screen and (max-width:  991px ) {
   .topbar[class*="inline"] .topbar-section {
     width: 100%;
     float: left;
@@ -2217,7 +2212,7 @@ span[data-modal-close]:before {
   width: 100%;
   height: 50px;
 }
-@media only screen and (max-width:  767px ) {
+@media only screen and (max-width:  991px ) {
   .topbar[class*="fixed-top"] {
     overflow: hidden;
   }
@@ -2240,7 +2235,7 @@ span[data-modal-close]:before {
   line-height: 36px;
   float: left;
 }
-@media only screen and (max-width:  767px ) {
+@media only screen and (max-width:  991px ) {
   .topbar[class*="fixed-top"] [class*="btn-"]:not(input),
   .topbar[class*="fixed-top"] button {
     display: block;
@@ -2269,12 +2264,7 @@ span[data-modal-close]:before {
   border: 1px solid white;
   box-shadow: 0px 0px 5px white;
 }
-@media only screen and (max-width:  767px ) {
-  .topbar[class*="fixed-top"] a {
-    text-decoration: none;
-  }
-}
-@media only screen and (min-width:  768px ) and (max-width:  991px ) {
+@media only screen and (max-width:  991px ) {
   .topbar[class*="fixed-top"] a {
     text-decoration: none;
   }
@@ -2334,7 +2324,7 @@ span[data-modal-close]:before {
   right: 100%;
   left: auto;
 }
-@media only screen and (max-width:  767px ) {
+@media only screen and (max-width:  991px ) {
   .topbar[class*="fixed-top"] ul.right .dropdown ul .dropdown ul {
     right: 0;
     left: 100%;
@@ -2346,7 +2336,7 @@ span[data-modal-close]:before {
   padding-left: 15px;
   display: none;
 }
-@media only screen and (max-width:  767px ) {
+@media only screen and (max-width:  991px ) {
   .topbar[class*="fixed-top"] li.back {
     display: block;
   }
@@ -2362,7 +2352,7 @@ span[data-modal-close]:before {
   height: 50px;
   float: left;
 }
-@media only screen and (max-width:  767px ) {
+@media only screen and (max-width:  991px ) {
   .topbar[class*="fixed-top"] .mobile {
     width: 100%;
   }
@@ -2378,12 +2368,12 @@ span[data-modal-close]:before {
   float: right !important;
   display: none;
 }
-@media only screen and (max-width:  767px ) {
+@media only screen and (max-width:  991px ) {
   .topbar[class*="fixed-top"] .mobile .toggle {
     display: block;
   }
 }
-@media only screen and (max-width:  767px ) {
+@media only screen and (max-width:  991px ) {
   .topbar[class*="fixed-top"] .topbar-section {
     width: 100%;
     float: left;

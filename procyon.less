@@ -295,6 +295,7 @@ p {
     
     &.lead {
         font-size: @font-size + 4;
+	line-height: normal;
     }
 }
 
@@ -335,7 +336,7 @@ ol {
     &.list-inline {
         list-style: none outside none;
         padding-left: 0px;
-        margin-left: -5px;
+        //margin-left: -5px;
         
         > li {
             display: inline-block;
@@ -746,7 +747,7 @@ textarea {
 
 fieldset {
     border: 1px solid @color-grey-border;
-    padding: 15px;
+    padding: @padding-columns;
     
     legend {
         font-weight: bold;
@@ -1726,7 +1727,7 @@ span[data-modal-close] {
     width: 100%;
     height: @topbar-height;
     
-    @media @smartphone {
+    @media @tablet-down {
 	overflow: hidden;
     }
     
@@ -1752,7 +1753,7 @@ span[data-modal-close] {
 	line-height: 36px;
 	float: left;
 	
-	@media @smartphone {
+	@media @tablet-down {
 	    display: block;
 	    width: 100%;
 	}
@@ -1781,11 +1782,7 @@ span[data-modal-close] {
     }
     
     a {
-	@media @smartphone {
-	    text-decoration: none;
-	}
-	
-	@media @tablet {
+	@media @tablet-down {
 	    text-decoration: none;
 	}
     }
@@ -1863,7 +1860,7 @@ span[data-modal-close] {
 		    right: 100%;
 		    left: auto;
 		    
-		    @media @smartphone {
+		    @media @tablet-down {
 			right: 0;
 			left: 100%;
 		    }
@@ -1877,7 +1874,7 @@ span[data-modal-close] {
 	padding-left: @padding-columns;
 	display: none;
 	
-	@media @smartphone {
+	@media @tablet-down {
 	    display: block;
 	}
     }
@@ -1896,7 +1893,8 @@ span[data-modal-close] {
     .mobile {
 	height: @topbar-height;
 	float: left;
-	@media @smartphone {
+	
+	@media @tablet-down {
 	    width: 100%;
 	}
 	
@@ -1911,14 +1909,14 @@ span[data-modal-close] {
 	    float: right !important;
 	    display: none;
 	
-	    @media @smartphone {
+	    @media @tablet-down {
 	        display: block; 
 	    }
 	}
     }
     
     .topbar-section {
-	@media @smartphone {
+	@media @tablet-down {
 	    width: 100%;
 	    float: left;
 	    position: relative;
