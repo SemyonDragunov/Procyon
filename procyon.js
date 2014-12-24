@@ -8,17 +8,19 @@
     
     $(document).ready(function () {
 	
+	var $window = $(window);
+	
 	function winWidth() {
-	    var winWidthVal = $(window).width();
+	    var winWidthVal = $window.width();
 	    return winWidthVal;
 	}
-	$(window).resize(winWidth);
+	$window.resize(winWidth);
 	
 	function winHeight() {
-	    var winHeightVal = $(window).height();
+	    var winHeightVal = $window.height();
 	    return winHeightVal;
 	}
-	$(window).resize(winHeight);
+	$window.resize(winHeight);
 	
         // Spoiler
         
@@ -73,13 +75,27 @@
 	    event.stopPropagation();
 	});
 	
+	// Sticky topbar
+	
+	var $stickyBar = $('.topbar.sticky'),
+	    startPos = $stickyBar.offset().top;
+	
+	$window.scroll(function() {
+	    if (!$stickyBar.hasClass('fixed-top') && ($window.scrollTop() > startPos)) {
+		$stickyBar.addClass('fixed-top');
+	    }
+	    else if ($stickyBar.hasClass('fixed-top') && ($window.scrollTop() < startPos)) {
+		$stickyBar.removeClass('fixed-top');
+	    }
+        });
+	
 	// Topbar mobile
 
 	var nameBack = '<<<<<<<',
 	    mobileWidth = 991,
 	    heightTopMenu = 50;
 	
-	$(window).resize(function() {
+	$window.resize(function() {
 	    if (winWidth() > mobileWidth) {
 		$('.topbar.open').css('height', '').removeClass('open');
 		$('.topbar').css('overflow-y', 'visible');
@@ -199,7 +215,7 @@
             e.preventDefault();
 	});
 
-        $(window).scroll(function() {
+        $window.scroll(function() {
             var fromTop = $(this).scrollTop()+topMenuHeight;
 
             var cur = scrollItems.map(function(){

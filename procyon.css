@@ -1158,7 +1158,7 @@ span.suffix.round {
   color: white;
   position: absolute;
   top: 44px;
-  padding: 5px !important;
+  padding: 10px !important;
   z-index: 1006;
   font-size: 12px;
 }
@@ -1518,6 +1518,34 @@ span.close:before {
 }
 .progress.round .meter {
   border-radius: 1000px;
+}
+.helping {
+  position: relative;
+}
+.helping span {
+  display: none;
+  background-color: #333333;
+  color: white;
+  position: absolute;
+  padding: 10px !important;
+  z-index: 1006;
+  font-size: 12px;
+}
+.helping span:after {
+  content: '';
+  display: block;
+  left: 5px;
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #333333;
+  top: -10px;
+}
+.helping:hover span,
+.helping:focus span {
+  display: block;
 }
 .badge {
   margin-left: 4px;
@@ -2005,50 +2033,50 @@ span[data-modal-close]:before {
   min-height: 100%;
   margin: 0;
 }
-.topbar[class*="inline"] {
+.topbar.inline {
   position: relative;
   width: 100%;
   height: 50px;
 }
 @media only screen and (max-width:  991px ) {
-  .topbar[class*="inline"] {
+  .topbar.inline {
     overflow: hidden;
   }
 }
-.topbar[class*="inline"] ul {
+.topbar.inline ul {
   padding: 0px;
   margin: 0px;
   width: auto;
   height: auto;
 }
-.topbar[class*="inline"] ul > li {
+.topbar.inline ul > li {
   height: 50px;
   display: block;
   list-style: none outside none;
 }
-.topbar[class*="inline"] [class*="btn-"]:not(input),
-.topbar[class*="inline"] button {
+.topbar.inline [class*="btn-"]:not(input),
+.topbar.inline button {
   top: 5px;
   height: 40px;
   line-height: 36px;
   float: left;
 }
 @media only screen and (max-width:  991px ) {
-  .topbar[class*="inline"] [class*="btn-"]:not(input),
-  .topbar[class*="inline"] button {
+  .topbar.inline [class*="btn-"]:not(input),
+  .topbar.inline button {
     display: block;
     width: 100%;
   }
 }
-.topbar[class*="inline"] form {
+.topbar.inline form {
   position: relative;
   top: 5px;
 }
-.topbar[class*="inline"] form .form-item,
-.topbar[class*="inline"] form .form-actions {
+.topbar.inline form .form-item,
+.topbar.inline form .form-actions {
   margin-bottom: 0 !important;
 }
-.topbar[class*="inline"] form input:not([type="submit"]) {
+.topbar.inline form input:not([type="submit"]) {
   border: 1px solid white;
   box-shadow: none;
   -webkit-transition: all 0.3s ease-out 0s;
@@ -2057,37 +2085,37 @@ span[data-modal-close]:before {
   -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
 }
-.topbar[class*="inline"] form input:not([type="submit"]):hover,
-.topbar[class*="inline"] form input:not([type="submit"]):focus {
+.topbar.inline form input:not([type="submit"]):hover,
+.topbar.inline form input:not([type="submit"]):focus {
   border: 1px solid white;
   box-shadow: 0px 0px 5px white;
 }
 @media only screen and (max-width:  991px ) {
-  .topbar[class*="inline"] a {
+  .topbar.inline a {
     text-decoration: none;
   }
 }
-.topbar[class*="inline"] ul > li {
+.topbar.inline ul > li {
   float: left;
 }
-.topbar[class*="inline"] ul > li a {
+.topbar.inline ul > li a {
   padding: 0px 15px;
   display: block;
   height: 50px;
   line-height: 50px;
 }
-.topbar[class*="inline"] ul > li.title {
+.topbar.inline ul > li.title {
   height: 22px;
   padding: 0px 15px;
   font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
 }
-.topbar[class*="inline"] ul > li.dropdown > a:after {
+.topbar.inline ul > li.dropdown > a:after {
   padding: 0 0 0 5px;
   content: '\25BC';
 }
-.topbar[class*="inline"] ul > li.dropdown ul {
+.topbar.inline ul > li.dropdown ul {
   display: none;
   position: absolute !important;
   z-index: 1000;
@@ -2097,82 +2125,90 @@ span[data-modal-close]:before {
   -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
 }
-.topbar[class*="inline"] ul > li.dropdown ul > li {
+.topbar.inline ul > li.dropdown ul > li {
   float: none;
 }
-.topbar[class*="inline"] ul > li.dropdown ul > li.dropdown {
+.topbar.inline ul > li.dropdown ul > li.dropdown {
   position: relative;
 }
-.topbar[class*="inline"] ul > li.dropdown ul > li.dropdown ul {
+.topbar.inline ul > li.dropdown ul > li.dropdown ul {
   top: 0px;
   left: 100%;
   min-width: 100%;
 }
-.topbar[class*="inline"] ul > li.dropdown ul > li.dropdown > a:after {
+.topbar.inline ul > li.dropdown ul > li.dropdown > a:after {
   content: '\25B6';
 }
-.topbar[class*="inline"] ul > li.dropdown:hover > ul,
-.topbar[class*="inline"] ul > li.dropdown:focus > ul {
+@media only screen and (min-width:  992px ) {
+  .topbar.inline ul > li.dropdown ul > li.dropdown > a:after {
+    padding: 0 0 0 13px;
+    right: 10px;
+    width: 20px;
+    position: absolute;
+  }
+}
+.topbar.inline ul > li.dropdown:hover > ul,
+.topbar.inline ul > li.dropdown:focus > ul {
   display: block;
 }
-.topbar[class*="inline"] ul.right .dropdown ul {
+.topbar.inline ul.right .dropdown ul {
   right: 0;
 }
-.topbar[class*="inline"] ul.right .dropdown ul .dropdown ul {
+.topbar.inline ul.right .dropdown ul .dropdown ul {
   right: 100%;
   left: auto;
 }
 @media only screen and (max-width:  991px ) {
-  .topbar[class*="inline"] ul.right .dropdown ul .dropdown ul {
+  .topbar.inline ul.right .dropdown ul .dropdown ul {
     right: 0;
     left: 100%;
   }
 }
-.topbar[class*="inline"] li.back {
+.topbar.inline li.back {
   height: 50px;
   line-height: 50px;
   padding-left: 15px;
   display: none;
 }
 @media only screen and (max-width:  991px ) {
-  .topbar[class*="inline"] li.back {
+  .topbar.inline li.back {
     display: block;
   }
 }
-.topbar[class*="inline"].open {
+.topbar.inline.open {
   height: auto;
 }
-.topbar[class*="inline"] .no-hover {
+.topbar.inline .no-hover {
   padding-left: 15px;
   padding-right: 15px;
 }
-.topbar[class*="inline"] .mobile {
+.topbar.inline .mobile {
   height: 50px;
   float: left;
 }
 @media only screen and (max-width:  991px ) {
-  .topbar[class*="inline"] .mobile {
+  .topbar.inline .mobile {
     width: 100%;
   }
 }
-.topbar[class*="inline"] .mobile .brand {
+.topbar.inline .mobile .brand {
   height: 50px;
   line-height: 50px;
   padding-left: 15px;
   padding-right: 15px;
 }
-.topbar[class*="inline"] .mobile .toggle {
+.topbar.inline .mobile .toggle {
   height: 40px;
   float: right !important;
   display: none;
 }
 @media only screen and (max-width:  991px ) {
-  .topbar[class*="inline"] .mobile .toggle {
+  .topbar.inline .mobile .toggle {
     display: block;
   }
 }
 @media only screen and (max-width:  991px ) {
-  .topbar[class*="inline"] .topbar-section {
+  .topbar.inline .topbar-section {
     width: 100%;
     float: left;
     position: relative;
@@ -2182,75 +2218,77 @@ span[data-modal-close]:before {
     -o-transition: all 0.3s ease-out 0s;
     transition: all 0.3s ease-out 0s;
   }
-  .topbar[class*="inline"] .topbar-section ul {
+  .topbar.inline .topbar-section ul {
     width: 100%;
   }
-  .topbar[class*="inline"] .topbar-section ul > li {
+  .topbar.inline .topbar-section ul > li {
     width: 100%;
   }
-  .topbar[class*="inline"] .topbar-section ul > li.dropdown > a:after {
+  .topbar.inline .topbar-section ul > li.dropdown > a:after {
     float: right;
     content: '\25B6';
   }
-  .topbar[class*="inline"] .topbar-section ul > li.dropdown.open > ul {
+  .topbar.inline .topbar-section ul > li.dropdown.open > ul {
     left: 0;
   }
-  .topbar[class*="inline"] .topbar-section ul > li.dropdown ul {
+  .topbar.inline .topbar-section ul > li.dropdown ul {
     display: block;
     left: 100%;
     top: 0;
   }
-  .topbar[class*="inline"] .topbar-section ul > li.dropdown ul > li.dropdown {
+  .topbar.inline .topbar-section ul > li.dropdown ul > li.dropdown {
     position: static;
   }
 }
-.topbar[class*="fixed-top"] {
+.topbar.fixed-top {
   position: fixed;
   top: 0px;
   left: 0px;
   z-index: 1000;
+}
+.topbar.fixed-top:not(.sticky) {
   width: 100%;
   height: 50px;
 }
 @media only screen and (max-width:  991px ) {
-  .topbar[class*="fixed-top"] {
+  .topbar.fixed-top:not(.sticky) {
     overflow: hidden;
   }
 }
-.topbar[class*="fixed-top"] ul {
+.topbar.fixed-top:not(.sticky) ul {
   padding: 0px;
   margin: 0px;
   width: auto;
   height: auto;
 }
-.topbar[class*="fixed-top"] ul > li {
+.topbar.fixed-top:not(.sticky) ul > li {
   height: 50px;
   display: block;
   list-style: none outside none;
 }
-.topbar[class*="fixed-top"] [class*="btn-"]:not(input),
-.topbar[class*="fixed-top"] button {
+.topbar.fixed-top:not(.sticky) [class*="btn-"]:not(input),
+.topbar.fixed-top:not(.sticky) button {
   top: 5px;
   height: 40px;
   line-height: 36px;
   float: left;
 }
 @media only screen and (max-width:  991px ) {
-  .topbar[class*="fixed-top"] [class*="btn-"]:not(input),
-  .topbar[class*="fixed-top"] button {
+  .topbar.fixed-top:not(.sticky) [class*="btn-"]:not(input),
+  .topbar.fixed-top:not(.sticky) button {
     display: block;
     width: 100%;
   }
 }
-.topbar[class*="fixed-top"] form {
+.topbar.fixed-top:not(.sticky) form {
   position: relative;
   top: 5px;
 }
-.topbar[class*="fixed-top"] form .form-item,
-.topbar[class*="fixed-top"] form .form-actions {
+.topbar.fixed-top:not(.sticky) form .form-item,
+.topbar.fixed-top:not(.sticky) form .form-actions {
   margin-bottom: 0 !important;
 }
-.topbar[class*="fixed-top"] form input:not([type="submit"]) {
+.topbar.fixed-top:not(.sticky) form input:not([type="submit"]) {
   border: 1px solid white;
   box-shadow: none;
   -webkit-transition: all 0.3s ease-out 0s;
@@ -2259,37 +2297,37 @@ span[data-modal-close]:before {
   -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
 }
-.topbar[class*="fixed-top"] form input:not([type="submit"]):hover,
-.topbar[class*="fixed-top"] form input:not([type="submit"]):focus {
+.topbar.fixed-top:not(.sticky) form input:not([type="submit"]):hover,
+.topbar.fixed-top:not(.sticky) form input:not([type="submit"]):focus {
   border: 1px solid white;
   box-shadow: 0px 0px 5px white;
 }
 @media only screen and (max-width:  991px ) {
-  .topbar[class*="fixed-top"] a {
+  .topbar.fixed-top:not(.sticky) a {
     text-decoration: none;
   }
 }
-.topbar[class*="fixed-top"] ul > li {
+.topbar.fixed-top:not(.sticky) ul > li {
   float: left;
 }
-.topbar[class*="fixed-top"] ul > li a {
+.topbar.fixed-top:not(.sticky) ul > li a {
   padding: 0px 15px;
   display: block;
   height: 50px;
   line-height: 50px;
 }
-.topbar[class*="fixed-top"] ul > li.title {
+.topbar.fixed-top:not(.sticky) ul > li.title {
   height: 22px;
   padding: 0px 15px;
   font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
 }
-.topbar[class*="fixed-top"] ul > li.dropdown > a:after {
+.topbar.fixed-top:not(.sticky) ul > li.dropdown > a:after {
   padding: 0 0 0 5px;
   content: '\25BC';
 }
-.topbar[class*="fixed-top"] ul > li.dropdown ul {
+.topbar.fixed-top:not(.sticky) ul > li.dropdown ul {
   display: none;
   position: absolute !important;
   z-index: 1000;
@@ -2299,82 +2337,90 @@ span[data-modal-close]:before {
   -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
 }
-.topbar[class*="fixed-top"] ul > li.dropdown ul > li {
+.topbar.fixed-top:not(.sticky) ul > li.dropdown ul > li {
   float: none;
 }
-.topbar[class*="fixed-top"] ul > li.dropdown ul > li.dropdown {
+.topbar.fixed-top:not(.sticky) ul > li.dropdown ul > li.dropdown {
   position: relative;
 }
-.topbar[class*="fixed-top"] ul > li.dropdown ul > li.dropdown ul {
+.topbar.fixed-top:not(.sticky) ul > li.dropdown ul > li.dropdown ul {
   top: 0px;
   left: 100%;
   min-width: 100%;
 }
-.topbar[class*="fixed-top"] ul > li.dropdown ul > li.dropdown > a:after {
+.topbar.fixed-top:not(.sticky) ul > li.dropdown ul > li.dropdown > a:after {
   content: '\25B6';
 }
-.topbar[class*="fixed-top"] ul > li.dropdown:hover > ul,
-.topbar[class*="fixed-top"] ul > li.dropdown:focus > ul {
+@media only screen and (min-width:  992px ) {
+  .topbar.fixed-top:not(.sticky) ul > li.dropdown ul > li.dropdown > a:after {
+    padding: 0 0 0 13px;
+    right: 10px;
+    width: 20px;
+    position: absolute;
+  }
+}
+.topbar.fixed-top:not(.sticky) ul > li.dropdown:hover > ul,
+.topbar.fixed-top:not(.sticky) ul > li.dropdown:focus > ul {
   display: block;
 }
-.topbar[class*="fixed-top"] ul.right .dropdown ul {
+.topbar.fixed-top:not(.sticky) ul.right .dropdown ul {
   right: 0;
 }
-.topbar[class*="fixed-top"] ul.right .dropdown ul .dropdown ul {
+.topbar.fixed-top:not(.sticky) ul.right .dropdown ul .dropdown ul {
   right: 100%;
   left: auto;
 }
 @media only screen and (max-width:  991px ) {
-  .topbar[class*="fixed-top"] ul.right .dropdown ul .dropdown ul {
+  .topbar.fixed-top:not(.sticky) ul.right .dropdown ul .dropdown ul {
     right: 0;
     left: 100%;
   }
 }
-.topbar[class*="fixed-top"] li.back {
+.topbar.fixed-top:not(.sticky) li.back {
   height: 50px;
   line-height: 50px;
   padding-left: 15px;
   display: none;
 }
 @media only screen and (max-width:  991px ) {
-  .topbar[class*="fixed-top"] li.back {
+  .topbar.fixed-top:not(.sticky) li.back {
     display: block;
   }
 }
-.topbar[class*="fixed-top"].open {
+.topbar.fixed-top:not(.sticky).open {
   height: auto;
 }
-.topbar[class*="fixed-top"] .no-hover {
+.topbar.fixed-top:not(.sticky) .no-hover {
   padding-left: 15px;
   padding-right: 15px;
 }
-.topbar[class*="fixed-top"] .mobile {
+.topbar.fixed-top:not(.sticky) .mobile {
   height: 50px;
   float: left;
 }
 @media only screen and (max-width:  991px ) {
-  .topbar[class*="fixed-top"] .mobile {
+  .topbar.fixed-top:not(.sticky) .mobile {
     width: 100%;
   }
 }
-.topbar[class*="fixed-top"] .mobile .brand {
+.topbar.fixed-top:not(.sticky) .mobile .brand {
   height: 50px;
   line-height: 50px;
   padding-left: 15px;
   padding-right: 15px;
 }
-.topbar[class*="fixed-top"] .mobile .toggle {
+.topbar.fixed-top:not(.sticky) .mobile .toggle {
   height: 40px;
   float: right !important;
   display: none;
 }
 @media only screen and (max-width:  991px ) {
-  .topbar[class*="fixed-top"] .mobile .toggle {
+  .topbar.fixed-top:not(.sticky) .mobile .toggle {
     display: block;
   }
 }
 @media only screen and (max-width:  991px ) {
-  .topbar[class*="fixed-top"] .topbar-section {
+  .topbar.fixed-top:not(.sticky) .topbar-section {
     width: 100%;
     float: left;
     position: relative;
@@ -2384,80 +2430,88 @@ span[data-modal-close]:before {
     -o-transition: all 0.3s ease-out 0s;
     transition: all 0.3s ease-out 0s;
   }
-  .topbar[class*="fixed-top"] .topbar-section ul {
+  .topbar.fixed-top:not(.sticky) .topbar-section ul {
     width: 100%;
   }
-  .topbar[class*="fixed-top"] .topbar-section ul > li {
+  .topbar.fixed-top:not(.sticky) .topbar-section ul > li {
     width: 100%;
   }
-  .topbar[class*="fixed-top"] .topbar-section ul > li.dropdown > a:after {
+  .topbar.fixed-top:not(.sticky) .topbar-section ul > li.dropdown > a:after {
     float: right;
     content: '\25B6';
   }
-  .topbar[class*="fixed-top"] .topbar-section ul > li.dropdown.open > ul {
+  .topbar.fixed-top:not(.sticky) .topbar-section ul > li.dropdown.open > ul {
     left: 0;
   }
-  .topbar[class*="fixed-top"] .topbar-section ul > li.dropdown ul {
+  .topbar.fixed-top:not(.sticky) .topbar-section ul > li.dropdown ul {
     display: block;
     left: 100%;
     top: 0;
   }
-  .topbar[class*="fixed-top"] .topbar-section ul > li.dropdown ul > li.dropdown {
+  .topbar.fixed-top:not(.sticky) .topbar-section ul > li.dropdown ul > li.dropdown {
     position: static;
   }
 }
-.topbar[class*="dark"] {
+.topbar.dark {
   background-color: #333333;
   color: white;
 }
-.topbar[class*="dark"] ul > li:not(.title):not(.no-hover) {
+.topbar.dark ul > li:not(.title):not(.no-hover):not(.brand):not(.toggle) {
   -webkit-transition: all 0.3s ease-out 0s;
   -moz-transition: all 0.3s ease-out 0s;
   -ms-transition: all 0.3s ease-out 0s;
   -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
 }
-.topbar[class*="dark"] ul > li:not(.title):not(.no-hover):hover,
-.topbar[class*="dark"] ul > li:not(.title):not(.no-hover):focus {
+.topbar.dark ul > li:not(.title):not(.no-hover):not(.brand):not(.toggle):hover,
+.topbar.dark ul > li:not(.title):not(.no-hover):not(.brand):not(.toggle):focus {
   background-color: #1a1a1a;
 }
-.topbar[class*="dark"] ul > li:not(.title):not(.no-hover).active {
+.topbar.dark ul > li:not(.title):not(.no-hover):not(.brand):not(.toggle).active {
   background-color: #0099e6;
 }
-.topbar[class*="dark"] ul > li:not(.title):not(.no-hover) a {
+.topbar.dark ul > li:not(.title):not(.no-hover):not(.brand):not(.toggle).active:hover,
+.topbar.dark ul > li:not(.title):not(.no-hover):not(.brand):not(.toggle).active:focus {
+  background-color: #0077b3;
+}
+.topbar.dark ul > li:not(.title):not(.no-hover):not(.brand):not(.toggle) a {
   color: white;
 }
-.topbar[class*="dark"] ul > li:not(.title):not(.no-hover) ul {
+.topbar.dark ul > li:not(.title):not(.no-hover):not(.brand):not(.toggle) ul {
   background-color: #333333;
 }
-.topbar[class*="dark"] ul li.title {
+.topbar.dark ul li.title {
   color: #aaaaaa;
 }
-.topbar[class*="base"] {
+.topbar.base {
   background-color: #0099e6;
   color: white;
 }
-.topbar[class*="base"] ul > li:not(.title):not(.no-hover) {
+.topbar.base ul > li:not(.title):not(.no-hover):not(.brand):not(.toggle) {
   -webkit-transition: all 0.3s ease-out 0s;
   -moz-transition: all 0.3s ease-out 0s;
   -ms-transition: all 0.3s ease-out 0s;
   -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
 }
-.topbar[class*="base"] ul > li:not(.title):not(.no-hover):hover,
-.topbar[class*="base"] ul > li:not(.title):not(.no-hover):focus {
+.topbar.base ul > li:not(.title):not(.no-hover):not(.brand):not(.toggle):hover,
+.topbar.base ul > li:not(.title):not(.no-hover):not(.brand):not(.toggle):focus {
   background-color: #0077b3;
 }
-.topbar[class*="base"] ul > li:not(.title):not(.no-hover).active {
+.topbar.base ul > li:not(.title):not(.no-hover):not(.brand):not(.toggle).active {
   background-color: #0077b3;
 }
-.topbar[class*="base"] ul > li:not(.title):not(.no-hover) a {
+.topbar.base ul > li:not(.title):not(.no-hover):not(.brand):not(.toggle).active:hover,
+.topbar.base ul > li:not(.title):not(.no-hover):not(.brand):not(.toggle).active:focus {
+  background-color: #0077b3;
+}
+.topbar.base ul > li:not(.title):not(.no-hover):not(.brand):not(.toggle) a {
   color: white;
 }
-.topbar[class*="base"] ul > li:not(.title):not(.no-hover) ul {
+.topbar.base ul > li:not(.title):not(.no-hover):not(.brand):not(.toggle) ul {
   background-color: #0099e6;
 }
-.topbar[class*="base"] ul li.title {
+.topbar.base ul li.title {
   color: white;
 }
 [data-menu] {
@@ -2667,21 +2721,6 @@ span[data-modal-close]:before {
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
-  /*> .row {
-        width: auto;
-        margin: 0px;
-        max-width: none;
-    }*/
-  /*[class*="xs-"] > &,
-    [class*="sm-"] > &,
-    [class*="md-"] > &,
-    [class*="lg-"] > &,
-    [class*="block-"] > &,
-    form > & {
-        width: auto;
-        margin: 0px -@padding-columns;
-        max-width: none;
-    }*/
 }
 .row:after {
   clear: both;
@@ -2698,6 +2737,21 @@ span[data-modal-close]:before {
 .row:before {
   content: " ";
   display: table;
+}
+.row > .row {
+  width: auto;
+  margin: 0px;
+  max-width: none;
+}
+[class*="xs-"] > .row,
+[class*="sm-"] > .row,
+[class*="md-"] > .row,
+[class*="lg-"] > .row,
+[class*="block-"] > .row,
+form > .row {
+  width: auto;
+  margin: 0px -15px;
+  max-width: none;
 }
 @media only screen and (min-width:  768px ) and (max-width:  991px ) {
   .row.fluid-sm {
