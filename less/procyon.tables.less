@@ -1,0 +1,140 @@
+/*
+ * Procyon Beta 1 (http://procyon.sl-7.ru)
+ * Copyright SL7 (http://sl-7.ru)
+ * Licensed under GNU GPL v2
+ *
+ * Tables (functional & design)
+ *
+ * Dependence:  procyon.less
+ *              procyon.grid.less
+ */
+
+.table {
+    background-color: transparent;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: @base-margin;
+    
+    > thead {
+        > tr {
+            > th {
+                text-align: left;
+                vertical-align: bottom;
+                border-bottom: 2px solid @grey-color-border;
+                padding: 8px;
+                
+                @media @xs {
+                    padding: 0px;
+                }
+            }
+        }
+    }
+    
+    > tbody {
+        > tr {
+            .to-transition();
+            
+            &.odd {
+                background-color: @grey-color-stripe;
+            }
+            &.even {
+                background-color: transparent;
+            }
+            
+            &:hover {
+                background-color: @grey-color;
+            }
+            
+            > td,
+	    > th {
+                padding: 8px;
+                line-height: 1.42857;
+                vertical-align: top;
+                border-top: 1px solid @grey-color-border;
+                
+                @media @xs {
+                    padding: 0px;
+                }
+            }
+	    
+	    > th {
+		text-align: left;
+	    }
+        }
+    }
+    
+    .error {
+        background-color: lighten(@error-color, 30%);
+        
+        &:hover {
+            background-color: lighten(@error-color, 35%);
+        }
+    }
+    .warning {
+        background-color: lighten(@warning-color, 30%);
+        
+        &:hover {
+            background-color: lighten(@warning-color, 35%);
+        }
+    }
+    .success {
+        background-color: lighten(@success-color, 30%);
+        
+        &:hover {
+            background-color: lighten(@success-color, 35%);
+        }
+    }
+    
+    .info {
+        background-color: lighten(@info-color, 30%);
+        
+        &:hover {
+            background-color: lighten(@info-color, 35%);
+        }
+    }
+    
+    /* Stripe table */
+    
+    &.stripe {
+	> tbody {
+	    > tr {
+		&:nth-child(2n+1) {
+		    background-color: @grey-color-stripe;
+		    
+		    &:hover {
+			background-color: @grey-color;
+		    }
+		}
+	    }
+	}
+    }
+    
+    /* Table with borders */
+    
+    &.border {
+	> thead {
+	    > tr {
+		> th {
+		    border: 1px solid @grey-color-border;
+		    border-bottom-width: 2px;
+		    
+		    &:first-child:empty {
+			border-top: none;
+			border-left: none;
+		    }
+		}
+	    }
+	}
+	
+	> tbody {
+	    > tr {
+		> td,
+		> th {
+		    border: 1px solid @grey-color-border;
+		}
+	    }
+	}
+    }
+}

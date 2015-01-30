@@ -1,0 +1,370 @@
+/*
+ * Procyon Beta 1 (http://procyon.sl-7.ru)
+ * Copyright SL7 (http://sl-7.ru)
+ * Licensed under GNU GPL v2
+ *
+ * Menu (functional)
+ *
+ * Dependence:  procyon.less
+ *              procyon.grid.less
+ */
+
+@topbar-height: 50px; // Высота пунктов меню и самого меню
+
+.to-nav-inline () {
+    width: 100%;
+    height: @topbar-height;
+    
+    @media @sm-down {
+	overflow: hidden;
+    }
+    
+    /* Setting */
+    
+    ul {
+        padding: 0px;
+        margin: 0px;
+	width: auto;
+	height: auto;
+        
+        > li {
+	    height: @topbar-height;
+            display: block;
+            list-style: none outside none;
+        }
+    }
+    
+    .button:not(input):not(button) {
+	top: 5px;
+	height: 40px;
+	width: 100%;
+	float: left;
+	
+	@media @sm-down {
+	    display: block;
+	    width: 100%;
+	}
+    }
+    
+    form {
+	position: relative;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	
+	.form-item,
+	.form-actions {
+	    margin-bottom: 0 !important;
+	    padding: 0 !important;
+	    
+	    &:after {
+		display: none;
+	    }
+	}
+	
+	input:not([type="submit"]) {
+	    border: 1px solid white;
+	    box-shadow: none;
+	    .to-transition();
+	    
+	    &:hover,
+	    &:focus {
+		border: 1px solid white;
+		box-shadow: 0px 0px 5px white;
+	    }
+	}
+    }
+    
+    a {
+	@media @sm-down {
+	    text-decoration: none;
+	}
+    }
+	
+	/* Top level */
+	
+	ul {
+            > li {
+                float: left;
+                
+                a:not(.button) {
+                    padding: 0px @base-padding;
+                    display: block;
+                    height: @topbar-height;
+                    line-height: @topbar-height;
+                }
+		
+		&.title {
+		    height: 22px;
+		    padding: 0px @base-padding;
+		    font-size: @font-size - 6;
+		    font-weight: 700;
+		    text-transform: uppercase;
+		}
+		
+		&.dropdown {
+		    > a {
+			&:after {
+			    padding: 0 0 0 5px;
+			    content: '\25BC';
+			}
+		    }
+		    
+		    /* First level */
+		    
+		    ul {
+			display: none;
+			position: absolute !important;
+			z-index: 1000;
+			.to-transition();
+			
+			> li {
+			    float: none;
+			    
+			    &.dropdown {
+				position: relative;
+				
+				/* Other levels */
+				
+				ul {
+				    top: 0px;
+				    left: 100%;
+				    min-width: 100%;
+				}
+			    
+				> a {
+				    &:after {
+					content: '\25B6';
+					
+					@media @md-up {
+					    padding: 0 0 0 13px;
+					    right: 10px;
+					    width: 20px;
+					    position: absolute;
+					}
+				    }
+				}
+			    }
+			}
+		    }
+		    
+		    &:hover > ul,
+		    &:focus > ul {
+			display: block;
+		    }
+		}
+            }
+	    &.right .dropdown ul {
+	        right: 0;
+	    
+	        .dropdown ul {
+		    right: 100%;
+		    left: auto;
+		    
+		    @media @sm-down {
+			right: 0;
+			left: 100%;
+		    }
+	        }
+	    }
+        }
+
+    li.back {
+	height: @topbar-height;
+	line-height: @topbar-height;
+	padding-left: @base-padding;
+	display: none;
+	
+	@media @sm-down {
+	    display: block;
+	}
+    }
+    
+    /* Mobile menu */
+    
+    &.open {
+	height: auto;
+    }
+    
+    .no-hover {
+	padding-left: @base-padding;
+	padding-right: @base-padding;
+    }
+    
+    .mobile {
+	height: @topbar-height;
+	float: left;
+	
+	@media @sm-down {
+	    width: 100%;
+	}
+	
+	.brand {
+	    height: @topbar-height;
+	    line-height: @topbar-height;
+	    padding-left: @base-padding;
+	    padding-right: @base-padding;
+	}
+	.toggle {
+	    height: 40px;
+	    float: right !important;
+	    display: none;
+	
+	    @media @sm-down {
+	        display: block; 
+	    }
+	}
+    }
+    
+    .topbar-section {
+	@media @sm-down {
+	    width: 100%;
+	    float: left;
+	    position: relative;
+	    .to-transition();
+	
+	    /* First level */
+	    
+	    ul {
+	        width: 100%;
+	        
+	        > li {
+		    width: 100%;
+	    	
+		    &.dropdown {
+
+			> a {
+			    &:after {
+			        float: right;
+				content: '\25B6';
+			    }
+			}
+		    
+			/* Open Second level */
+		    
+			&.open {
+			    > ul {
+			        left: 0;
+			    }
+			}
+		    
+			/* Open second & other levels */
+		    
+			ul {
+			    display: block;
+			    left: 100%;
+			    top: 0;
+			
+			    > li {
+			        &.dropdown {
+				    position: static;
+				}
+			    }
+			}
+		    }
+		}
+	    }
+	}
+    }
+}
+
+.topbar {
+    .to-nav-inline();
+    
+    &.fixed-top {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        z-index: 1000;
+	
+	&:not(.sticky) {
+	    .to-nav-inline();
+	}
+    }
+}
+
+/* Superbar & Verticalbar */
+
+.to-verticalbar () {
+    a {
+	text-decoration: none;
+	
+	@media @sm-down {
+	    text-decoration: none;
+	}
+    }
+    
+    ul {
+	padding: 0;
+	margin: 0;
+	
+	> li {
+	    .to-transition();
+	    list-style: none outside none;
+	    
+	    &.dropdown {
+		&.open {
+		    > a {
+			 &:after {
+			    padding: 0 0 0 5px;
+			    content: '\25B2';
+			}
+		    }
+		}
+		
+		> a {
+		    &:after {
+			padding: 0 0 0 5px;
+			content: '\25BC';
+		    }
+		}
+	    }
+	    
+	    a {
+		display: block;
+	    }
+	}
+	
+	ul {
+	    display: none;
+	}
+    }
+}
+
+/* Superbar */
+
+.superbar {
+    width: 300px;
+    height: 100%;
+    min-height: 100%;
+    top: 0px;
+    bottom: 0px;
+    position: fixed;
+    overflow-y: auto;
+    overflow-x: hidden;
+    left: -300px;
+    z-index: 1003;
+    
+    .to-transition();
+    .to-verticalbar();
+    
+    &.open {
+	left: 0;
+    }
+    
+    @media @xs {
+	width: 250px;
+    }
+}
+
+.toggle-superbar {
+    cursor: pointer;
+}
+
+/* Verticalbar */
+
+.verticalbar {
+    width: 100%;
+    position: relative;
+    
+    .to-verticalbar();
+}

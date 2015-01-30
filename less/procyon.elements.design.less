@@ -1,0 +1,376 @@
+/*
+ * Procyon Beta 1 (http://procyon.sl-7.ru)
+ * Copyright SL7 (http://sl-7.ru)
+ * Licensed under GNU GPL v2
+ *
+ * Elementst (design)
+ *
+ * Dependence:  procyon.elements.func.less
+ */
+
+/* Paginator design */
+
+.pager {
+    
+    /* Base color design */
+    
+    &.base {
+	li {
+	    &:hover,
+	    &:focus {
+		a {
+		    background-color: @grey-color;
+		    color: @base-color;
+		}
+	    }
+	    
+	    a {
+		text-decoration: none !important;
+		padding-left: 7px;
+		padding-right: 7px;
+	    }
+	    
+	    + li {
+		margin-left: 5px;
+	    }
+	    
+	    &.active {
+		background-color: @base-color;
+		color: white;
+		padding-left: 7px;
+		padding-right: 7px;
+	    }
+	}
+	
+	&.radius {
+	    li {
+		border-radius: @base-radius;
+		
+		a {
+		    border-radius: @base-radius;
+		}
+	    }
+	}
+    }
+}
+
+/* Tabs design */
+
+.tabs {
+    
+    /* Base color design */
+    
+    &.base {	
+	> ul {  
+	    > li {
+		border-bottom: none;
+		
+		a {
+		    .button.base;
+		    display: block !important;
+		    cursor: pointer;
+		    padding: 6px 18px;
+		    text-align: center;
+		    white-space: nowrap;
+		    vertical-align: middle;
+		    position: relative;
+		    text-decoration: none;
+		    border: 2px solid transparent;
+		
+		    &:hover,
+		    &:focus {
+			text-decoration: none;
+		    }
+		}
+		
+		&.active {
+		    a {
+			background-color: @base-color-hover;
+		    }
+		}
+	    }
+	}
+	
+	section {
+	    > div[id] {
+		padding: @base-padding;
+		margin-bottom: -1px;
+		border: 1px solid @base-color;
+	    }
+	}
+	
+	/* Vertical base color tabs */
+	
+	&.vertical {
+	    border: 1px solid @base-color;
+	    
+	    > ul {
+		margin: -1px 0 -1px -1px;
+	    }
+	    
+	    > section {
+		
+		> div[id] {
+		    border: none;
+		}
+	    }
+	}
+    } // End base design
+    
+    /* Minimal design */
+    
+    &.minimal {
+	> ul {
+	    border-bottom: 1px solid @grey-color-border;
+	    
+	    > li {
+		a {
+		    color: @grey-color-text;
+		    display: inline-block;
+		    cursor: pointer;
+		    padding: 6px 18px;
+		    text-align: center;
+		    white-space: nowrap;
+		    vertical-align: middle;
+		    position: relative;
+		    text-decoration: none;
+		    border: 2px solid transparent;
+		    
+		    &:hover,
+		    &:focus {
+			color: @base-color-text;
+		    }
+		}
+		
+		&.active {
+		    margin-bottom: -1px;
+		    border-width: 1px;
+		    border-style: solid;
+		    border-color: @grey-color-border @grey-color-border white;
+		    
+		    a {
+			color: @base-color-text;
+		    }
+		}
+                
+                @media @xs {
+                    & + li {
+                        border-top: 1px solid @grey-color-border !important;
+                    }
+                }
+	    }
+	}
+	
+	section {
+	    > div[id] {
+		padding: @base-padding;
+		border-left: 1px solid @grey-color-border;
+		border-right: 1px solid @grey-color-border;
+		border-bottom: 1px solid @grey-color-border;
+	    }
+	}
+	
+	/* Vertical minimal tabs */
+	
+	&.vertical {
+	    border: 1px solid @grey-color-border;
+	    
+	    > ul {
+		border: none;
+		
+		> li {
+		    border: 1px solid @grey-color-border;
+		    margin: -1px 0 -1px -1px;
+		    
+		    &.active {
+			border-right-width: 0;
+			border-color: @grey-color-border;
+		    }
+                    
+                    @media @xs {
+                        & {
+                            border: none;
+                        }
+                        
+                        &:last-child {
+                            border-bottom: 1px solid @grey-color-border !important;
+                        }
+                    }
+		}
+	    }
+	    
+	    > section {
+		> div[id] {
+		    border: none;
+		}
+	    }
+	}
+	
+	@media @xs {
+	    > ul {
+		border: 1px solid @grey-color-border;
+		
+		> li {
+                    margin: 0 !important;
+                    
+		    &.active {
+			border: none;
+			background-color: @grey-color;
+		    }
+		}
+	    }
+	}
+    } // End minimal design
+}
+
+/* Spoiler design */
+
+.spoiler {
+    
+    /* Base color design */
+    
+    &.base {
+	border: 1px solid @base-color;
+	
+	> .spoiler-head {
+	    background-color: @base-color;
+	    color: white;
+	    padding: 7px;
+	    
+	    &:before {
+		content: "\25BC";
+		display: inline-block;
+		width: 20px;
+	    }
+	    
+	    &.open {
+		&:before {
+		    content: "\25B2";
+		}
+	    }
+	}
+	
+	> .spoiler-content {
+	    padding: @base-padding;
+	}
+    }
+    
+    /* Dark color design */
+    
+    &.dark {
+	border: 1px solid @dark-color-bg;
+	
+	> .spoiler-head {
+	    background-color: @dark-color-bg;
+	    color: white;
+	    padding: 7px;
+	    
+	    &:before {
+		content: "\25BC";
+		display: inline-block;
+		width: 20px;
+	    }
+	    
+	    &.open {
+		&:before {
+		    content: "\25B2";
+		}
+	    }
+	}
+	
+	> .spoiler-content {
+	    padding: @base-padding;
+	}
+    }
+    
+    /* Minimal design */
+    
+    &.minimal {
+	border: 1px solid @grey-color-border;
+	
+	> .spoiler-head {
+	    .to-transition();
+	    padding: 7px;
+	    
+	    &:before {
+		content: "\25BC";
+		display: inline-block;
+		width: 20px;
+	    }
+	    
+	    &.open {
+		background-color: @grey-color;
+		
+		&:before {
+		    content: "\25B2";
+		}
+	    }
+	}
+	
+	> .spoiler-content {
+	    padding: @base-padding;
+	}
+    }
+}
+
+/* Back to top design */
+
+.back-to-top {
+    
+    /* Base color design */
+    
+    &.base {
+	.to-transition();
+	color: white;
+	background-color: @base-color;
+	position: fixed;
+	bottom: 20px;
+	left: 20px;
+	width: 50px;
+	height: 50px;
+	display: table;
+	text-align: center;
+	
+	&:after {
+	    content: "\25B2";
+	    vertical-align: middle;
+	    display: table-cell;
+	    font-size: 18pt;
+	}
+	
+	&:focus,
+	&:hover {
+	    background-color: @base-color-hover;
+	}
+	
+	@media @sm-down {
+	    display: none !important;
+	}
+    }
+}
+
+code,
+pre,
+kbd {
+    font-family: "Menlo", "Monaco", "Consolas", "Courier New", monospace;
+}
+
+mark,
+.mark {
+    background-color: #F9F2F4;
+    color: #C7254E;
+    padding: 0px 4px;
+}
+
+kbd {
+    background-color: @base-color;
+    margin: 0px;
+    padding: 3px 4px 0px;
+    border-radius: 3px;
+    color: white;
+}
+
+abbr[title] {
+    cursor: help;
+    border-bottom: 1px dotted @base-color-text;
+}

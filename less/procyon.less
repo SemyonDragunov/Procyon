@@ -1,0 +1,189 @@
+/*
+ * Procyon Beta 1 (http://procyon.sl-7.ru)
+ * Copyright SL7 (http://sl-7.ru)
+ * Licensed under GNU GPL v2
+ */
+
+// Components
+
+// Full components
+@import "procyon.modalwindow.less";
+@import "procyon.tables.less";
+@import "procyon.typography.less";
+@import "procyon.forms.less";
+@import "procyon.grid.less";
+@import "procyon.media.less";
+@import "procyon.buttons.less";
+
+// Functional
+@import "procyon.blocks.func.less";
+@import "procyon.elements.func.less";
+@import "procyon.menu.func.less";
+
+// Design
+@import "procyon.blocks.design.less";
+@import "procyon.elements.design.less";
+@import "procyon.menu.design.less";
+
+//Drupal
+//@import "procyon.drupal.less";
+
+// Base variables
+
+@columns: 12; // Number of columns grid system
+@base-padding: 15px; // Base padding
+@base-margin: 15px; // Base margin for block
+@base-radius: 3px; // Base border-radius
+
+@base-color: #0099E6; // Base color
+@base-color-hover: darken(@base-color, 10%); // Base color hover
+@base-color-text: #555; // Base color text
+
+@grey-color: #EEE; // Base grey color for background
+@grey-color-border: #DDD; // Base grey border color
+@grey-color-stripe: #F9F9F9; // Stripe for table
+@grey-color-text: #777; // Base grey text color
+@grey-color-text-lighten: lighten(@grey-color-text, 20%);
+
+@dark-color-bg: #333;
+@dark-color-darken: darken(@dark-color-bg, 10%);
+@dark-color-lighten: lighten(@dark-color-bg, 10%);
+
+@error-color: #F04124;
+@error-color-text: white;
+@success-color: #43AC6A;
+@success-color-text: white;
+@warning-color: #F08A24;
+@warning-color-text: white;
+@info-color: #5BC0DE;
+@info-color-text: white;
+
+@font-family: Helvetica Neue, Helvetica, Arial, sans-serif; // Base font type
+@font-size: 16px; // Base font size
+
+/* Selection color */
+
+::selection {
+    color: white;
+    background: @base-color;
+}
+::-moz-selection {
+    color: white;
+    background: @base-color;
+}
+
+/* Base CSS */
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    color: @base-color-text;
+    font-family: @font-family;
+    font-size: @font-size;
+    font-weight: normal;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizespeed;
+    margin: 0px;
+    padding: 0px;
+    line-height: 150%;
+}
+
+body {
+    &.fixed {
+	overflow-y: hidden;
+	padding-right: 16px;
+    }
+}
+
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
+    margin: 0px;
+    padding: 0px;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+    
+    &:after {
+	content: "";
+	display: block;
+	clear: both;
+    }
+}
+
+// For mixing
+
+.to-opacity (@opacity: 0.5) {
+    opacity:            @opacity;
+    -moz-opacity:       @opacity;
+    -khtml-opacity:     @opacity;
+    -webkit-opacity:    @opacity;
+    filter: 		~"alpha(opacity="@opacity*100~")";
+    zoom: 1;
+}
+
+.to-transition (@name: all, @time: .3s, @ease: ease-out, @delay: 0s) {
+    -webkit-transition: @name @time @ease @delay;
+    -moz-transition:    @name @time @ease @delay;
+    -ms-transition:     @name @time @ease @delay; 
+    -o-transition:      @name @time @ease @delay;
+    transition:         @name @time @ease @delay;
+}
+
+.to-animation (@name, @duration: 1000ms, @delay: 0, @ease: ease) {
+    -webkit-animation: @name @duration @delay @ease;
+    -moz-animation:    @name @duration @delay @ease;
+    -ms-animation:     @name @duration @delay @ease;
+}
+
+.to-shadow (@shadow) {
+    -webkit-box-shadow:     @shadow;
+    -moz-box-shadow:        @shadow;
+    box-shadow:             @shadow;
+}
+
+.to-inner-shadow (@horizontal: 0, @vertical: 1px, @blur: 2px, @alpha: 0.4) {
+    -webkit-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+    -moz-box-shadow:    inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+    box-shadow:         inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+}
+
+.to-drop-shadow (@x-axis: 0, @y-axis: 1px, @blur: 2px, @alpha: 0.1) {
+    -webkit-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+    -moz-box-shadow:    @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+    box-shadow:         @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+}
+
+.to-radius (@radius: @base-radius) {
+    -webkit-border-radius:  @radius;
+    -moz-border-radius:     @radius;
+    border-radius:          @radius;
+}
+
+.to-icon-content () {
+    margin-top: -3px;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    text-align: center;
+    font-weight: 700;
+    font-size: @font-size + 10;
+}

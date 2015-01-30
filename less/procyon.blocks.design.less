@@ -1,0 +1,59 @@
+/*
+ * Procyon Beta 1 (http://procyon.sl-7.ru)
+ * Copyright SL7 (http://sl-7.ru)
+ * Licensed under GNU GPL v2
+ *
+ * Blocks (design)
+ *
+ * Dependence:  procyon.blocks.func.less
+ */ 
+
+/* Information blocks design */
+
+.to-messages-color (@color) when (iscolor(@color)) {
+    @lighten-color: lighten(@color, 30%);
+    @darken-color: darken(@color, 20%);
+    
+    background-color: @lighten-color;
+    color: @darken-color;
+    border-left: 5px solid @darken-color;
+    margin: 0px 0px @base-margin;
+    
+    &.round {
+	border-right: 5px solid @darken-color;
+    }
+    
+    a {
+	color: @darken-color;
+	text-decoration: underline;
+    }
+    
+    & *:last-child {
+	margin-bottom: 0px !important;
+    }
+}
+
+div.status {
+    .to-messages-color(@base-color);
+    padding: @base-padding;
+}
+
+div.success {
+    .to-messages-color(@success-color);
+    padding: @base-padding;
+}
+
+div.error {
+    .to-messages-color(@error-color);
+    padding: @base-padding;
+}
+
+div.warning {
+    .to-messages-color(@warning-color);
+    padding: @base-padding;
+}
+
+div.info {
+    .to-messages-color(@info-color);
+    padding: @base-padding;
+}

@@ -1,0 +1,249 @@
+/*
+ * Procyon Beta 1 (http://procyon.sl-7.ru)
+ * Copyright SL7 (http://sl-7.ru)
+ * Licensed under GNU GPL v2
+ *
+ * Buttons (functional & design)
+ *
+ * Dependence:  procyon.less
+ * 
+ */
+
+// Единый стиль ко всем кнопкам
+.button,
+button,
+[type="submit"] {
+    //.button.base();
+    // .button.border();
+    // .button.alpha();
+}
+
+.button,
+button,
+[type="submit"] {
+    .to-transition();
+    border: none;
+    font-family: @font-family;
+    font-size: @font-size;
+}
+
+.button,
+[type="submit"],
+button, {
+    display: inline-block;
+    cursor: pointer;
+    padding: 6px 18px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    position: relative;
+    text-decoration: none;
+    border: 2px solid transparent; 
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+    &.disabled,
+    &[disabled] {
+        .to-opacity();
+	pointer-events: none;
+    }
+    
+    &.big {
+        padding: 15px 28px;
+        font-size: @font-size + 2;
+    }
+    &.small {
+        padding: 1px 5px;
+        font-size: @font-size - 4;
+        line-height: 1.5;
+    }
+    &.expand {
+        padding-right: 0px;
+        padding-left: 0px;
+        width: 100%;
+    }
+    
+    &.suffix {
+        padding: 0px;
+        height: 40px;
+        width: 100%;
+        text-align: center;
+        line-height: 35px;
+        border: medium none;
+        
+        &.radius {
+            .to-radius(0px @base-radius @base-radius 0px);
+        }
+            
+        &.round {
+            .to-radius(0px 1000px 1000px 0px);
+        }
+    }
+    
+    &.prefix {
+        padding: 0px;
+        height: 40px;
+        width: 100%;
+        text-align: center;
+        line-height: 38px;
+        border: medium none;
+        
+        &.radius {
+            .to-radius(@base-radius 0px 0px @base-radius);
+        }
+            
+        &.round {
+            .to-radius(1000px 0px 0px 1000px);
+        }
+    }
+}
+
+.button {
+    &.base {
+	color: white;
+	background-color: @base-color;   
+	
+	&:hover,
+	&:focus {
+	    color: white;
+	    background-color: @base-color-hover;
+	}
+	
+	&.disabled,
+	&[disabled] {        
+	    &:hover,
+	    &:focus {
+		color: white;
+		background-color: @base-color;
+	    }
+	}
+    }
+    
+    &.border {
+	border: 2px solid @base-color;
+	color: @base-color;
+	background-color: transparent;
+	
+	&:hover,
+	&:focus {
+	    border: 2px solid @base-color;
+	    background-color: @base-color;
+	    color: white;
+	}
+	
+	&.disabled,
+	&[disabled] {
+	    &:hover,
+	    &:focus {
+		border: 2px solid @base-color;
+		color: @base-color;
+		background-color: transparent;
+	    }
+	}
+    }
+    
+    &.alpha {
+	border: 2px solid white;
+	color: white;
+	background-color: transparent;
+	
+	&:hover,
+	&:focus {
+	    border: 2px solid white;
+	    background-color: white;
+	    color: rgba(0,0,0,1);
+	}
+	
+	&.disabled,
+	&[disabled] {
+	    &:hover,
+	    &:focus {
+		border: 2px solid white;
+		color: white;
+		background-color: transparent;
+	    }
+	}
+    }
+    
+    &.error {
+	background-color: @error-color;
+	color: @error-color-text;
+	
+	&:hover,
+	&:focus {
+	    background-color: darken(@error-color, 10%);
+	    color: @error-color-text;
+	}
+	
+	&.disabled,
+	&[disabled] {        
+	    &:hover,
+	    &:focus {
+		background-color: @error-color;
+		color: @error-color-text;
+	    }
+	}
+    }
+    
+    &.warning {
+	background-color: @warning-color;
+	color: @warning-color-text;
+	
+	&:hover,
+	&:focus {
+	    background-color: darken(@warning-color, 10%);
+	    color: @warning-color-text;
+	}
+	
+	&.disabled,
+	&[disabled] {        
+	    &:hover,
+	    &:focus {
+		background-color: @warning-color;
+		color: @warning-color-text;
+	    }
+	}
+    }
+    
+    &.success {
+	background-color: @success-color;
+	color: @success-color-text;
+	
+	&:hover,
+	&:focus {
+	    background-color: darken(@success-color, 10%);
+	    color: @success-color-text;
+	}
+	
+	&.disabled,
+	&[disabled] {        
+	    &:hover,
+	    &:focus {
+		background-color: @success-color;
+		color: @success-color-text;
+	    }
+	}
+    }
+    
+    &.info {
+	background-color: @info-color;
+	color: @info-color-text;
+	
+	&:hover,
+	&:focus {
+	    background-color: darken(@info-color, 10%);
+	    color: @info-color-text;
+	}
+	
+	&.disabled,
+	&[disabled] {        
+	    &:hover,
+	    &:focus {
+		background-color: @info-color;
+		color: @info-color-text;
+	    }
+	}
+    }
+}

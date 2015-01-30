@@ -1,0 +1,242 @@
+/*
+ * Procyon Beta 1 (http://procyon.sl-7.ru)
+ * Copyright SL7 (http://sl-7.ru)
+ * Licensed under GNU GPL v2
+ *
+ * Menu (functional)
+ *
+ * Dependence:  procyon.menu.func.less
+ * 
+ */
+
+/* Topbar */
+
+.topbar {
+    
+    /* Base color design */
+    
+    &.base {
+	background-color: @base-color;
+        color: white;
+	    
+	ul {
+	    > li:not(.title):not(.no-hover):not(.toggle) {
+		.to-transition();
+		
+		&:hover,
+		&:focus {
+		    background-color: @base-color-hover;
+		}
+		
+		&.active {
+		    background-color: @base-color-hover;
+		    
+		    &:hover,
+		    &:focus {
+			background-color: @base-color-hover;
+		    }
+		}
+		
+		a {
+		    color: white;
+	        }
+		
+		ul {
+		    background-color: @base-color;
+		}
+	    }
+	    li.title {
+		color: white;
+	    }
+	}
+    }
+    
+    /* Dark color design */
+    
+    &.dark {
+	background-color: @dark-color-bg;
+        color: white;
+	    
+	ul {
+	    > li:not(.title):not(.no-hover):not(.toggle) {
+		.to-transition();
+		
+		&:hover,
+		&:focus {
+		    background-color: @dark-color-darken;
+		}
+		
+		&.active {
+		    background-color: @base-color;
+		    
+		    &:hover,
+		    &:focus {
+			background-color: @base-color-hover;
+		    }
+		}
+		
+		a {
+		    color: white;
+	        }
+		
+		ul {
+		    background-color: @dark-color-bg;
+		}
+	    }
+	    li.title {
+		color: @grey-color-text-lighten;
+	    }
+	}
+    }
+}
+
+/* Superbar */
+
+.superbar {
+    .to-verticalbar-design();
+    //.to-verticalbar-design.dark(); // Если надо выборочно
+}
+
+/* Verticalbar */
+
+.verticalbar {
+    .to-verticalbar-design();
+    //.to-verticalbar-design.base(); // Если надо выборочно
+}
+
+// Verticalbar & Verticalbar design
+
+.to-verticalbar-design () {
+    
+    /* Base color design */
+    
+    &.base {
+	background-color: @base-color;
+	
+	a {
+	    color: white;
+	    
+	    &:hover,
+	    &:focus {
+		color: white;
+	    }
+	}
+	
+	ul {
+	    > li {
+		
+		&:hover,
+		&:focus {
+		    background-color: @base-color-hover;
+		}
+		
+		&.active,
+		&.open {
+		    background-color: @base-color-hover;
+		}
+		
+		a {
+		    padding: 0 @base-padding;
+		    display: block;
+		    height: 50px;
+		    line-height: 50px;
+		}
+		
+		ul {
+		    > li {
+			background-color: @dark-color-lighten;
+			    
+			&:hover,
+			&:focus {
+			    background-color: @dark-color-darken;
+			}
+			    
+			&.active,
+			&.open {
+			    background-color: @base-color-hover;
+			}
+			
+			ul {
+			    > li {
+				background-color: lighten(@dark-color-lighten, 10%);
+			    }
+			}
+		    }
+		}
+	    }
+	}
+    }
+    
+    /* Dark color design */
+    
+    &.dark {
+	background-color: @dark-color-bg;
+	
+	a {
+	    color: white;
+	    
+	    &:hover,
+	    &:focus {
+		color: white;
+	    }
+	}
+	
+	ul {
+	    > li {
+		
+		&:hover,
+		&:focus {
+		    background-color: @dark-color-darken;
+		}
+		
+		&.active,
+		&.open {
+		    background-color: @base-color;
+		    
+		    a {
+			&:hover,
+			&:focus {
+			    background-color: @base-color-hover;
+			}
+		    }
+		}
+		
+		a {
+		    padding: 0 @base-padding;
+		    display: block;
+		    height: 50px;
+		    line-height: 50px;
+		}
+		
+		ul {
+		    > li {
+			background-color: @dark-color-lighten;
+			    
+			&:hover,
+			&:focus {
+			    background-color: @dark-color-darken;
+			}
+			    
+			&.active,
+			&.open {
+			    background-color: @base-color-hover;
+			    
+			    a {
+				&:hover,
+				&:focus {
+				    background-color: @base-color-hover;
+				}
+			    }
+			}
+			
+			ul {
+			    > li {
+				background-color: lighten(@dark-color-lighten, 10%);
+			    }
+			}
+		    }
+		}
+	    }
+	}
+    }
+}

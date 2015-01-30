@@ -1,0 +1,58 @@
+/*
+ * Procyon Beta 1 (http://procyon.sl-7.ru)
+ * Copyright SL7 (http://sl-7.ru)
+ * Licensed under GNU GPL v2
+ *
+ * Blocks (functional)
+ *
+ * Dependence:  procyon.less
+ *              procyon.elements.func.less
+ */
+
+/* Position blocks */
+
+.block {
+    &-v-outer-center {
+        position: absolute;
+        display: table;
+        width: 100%;
+        height: 100%;
+	left: 0;
+	right: 0;
+    }
+    &-v-inner-center {
+        vertical-align: middle;
+        display: table-cell;
+    }
+    &-h-center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        float: none !important;
+    }
+    &-inline {
+        display: inline-block;
+    }
+}
+
+/* Information blocks */
+
+div.messages {
+    margin: 0px 0px @base-margin;
+    padding: @base-padding;
+    position: relative;
+    
+    & *:last-child {
+        margin-bottom: 0px !important;
+    }
+    
+    &.round,
+    &.circle {
+	padding-left: @base-padding * 3;
+	padding-right: @base-padding * 3;
+	
+	span.close {
+	    right: @base-padding * 3;
+	}
+    }
+}

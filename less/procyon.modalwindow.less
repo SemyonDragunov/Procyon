@@ -1,0 +1,85 @@
+/*
+ * Procyon Beta 1 (http://procyon.sl-7.ru)
+ * Copyright SL7 (http://sl-7.ru)
+ * Licensed under GNU GPL v2
+ *
+ * Modal window (functional & design)
+ *
+ * Dependence:  procyon.less
+ *              procyon.grid.less
+ */
+
+.modal-bg {
+    display: none;
+    position: fixed;
+    background: rgba(0,0,0,0.5);
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1005;
+
+    &.open {
+	overflow-y: auto;
+	display: block;
+	
+	[data-modal] {
+	    display: block;
+	}
+    }
+}
+
+span[data-modal-close] { 
+    cursor: pointer;
+    position: absolute;
+    top: @base-padding;
+    right: @base-padding;
+    
+    &:before {
+        content: '\00D7';
+        .to-icon-content();
+    }
+}
+
+[data-modal] {
+    .to-shadow(0px 0px 10px rgba(0, 0, 0, 0.4));
+    .to-transition(all, .6s, ease, 0s);
+    display: none;
+    position: relative;
+    background: white;
+    padding: @base-padding;
+    margin: 80px auto;
+    width: 80%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    z-index: 1006;
+    
+    @media @xs {
+	&,
+	.modal-xs&,
+	.modal-sm&,
+	.modal-md&,
+	.modal-lg& {
+	    margin-top: 10px !important;
+	    width: 95% !important;
+	}
+    }
+    
+    .modal-xs& {
+	width: 30%;
+    }
+    .modal-sm& {
+	width: 40%;
+    }
+    .modal-md& {
+	width: 60%;
+    }
+    .modal-lg& {
+	width: 90%;
+    }
+    .modal-full& {
+	width: 100% !important;
+	min-height: 100% !important;
+	margin: 0 !important;
+    }
+}

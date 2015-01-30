@@ -1,0 +1,387 @@
+/*
+ * Procyon Beta 1 (http://procyon.sl-7.ru)
+ * Copyright SL7 (http://sl-7.ru)
+ * Licensed under GNU GPL v2
+ *
+ * Elements (functional)
+ *
+ * Dependence:  procyon.less
+ *              procyon.grid.less
+ */
+
+/* blockquote */
+
+blockquote {
+    padding: 10px 20px;
+    margin: 0px 0px @base-margin;
+    border-left: 5px solid @grey-color-border;
+    
+    cite {
+        display: block;
+        font-size: 75%;
+        line-height: 1.42857;
+        color: @grey-color-text;
+        font-style: italic;
+        
+        &:before {
+            content: '\2014 \00A0';
+        }
+    }
+    
+    p:last-child {
+        margin-bottom: 0;
+    }
+    
+    &:before,
+    &:after {
+        content: "";
+    }
+    
+    &.reverse {
+        text-align: right;
+        padding-right: 15px;
+        padding-left: 0px;
+        border-right: 5px solid @grey-color-border;
+        border-left: 0px none;
+        
+        cite {
+            &:after {
+                content: ' \2014';
+            }
+            &:before {
+                content: "";
+            }
+        }
+    }
+}
+
+/* Helper classes */
+
+.disabled {
+    pointer-events: none;
+}
+
+.radius {
+    .to-radius();
+}
+
+.round {
+    border-radius: 1000px;
+}
+
+.circle {
+    .to-radius(50%);
+}
+
+.left {
+    float: left !important;
+}
+
+.right {
+    float: right !important;
+}
+
+.no-padding {
+    padding: 0px !important;
+}
+
+.clearfix {
+    clear: both;
+    
+    &:before,
+    &:after {
+        content: "";
+        display: block;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+.clearfix-after {
+    &:after {
+        content: "";
+	clear: both;
+        display: block;
+    }
+}
+
+span.close {
+    right: @base-padding;
+    top: @base-padding;
+    position: absolute;
+    cursor: pointer;
+    
+    &:before {
+        content: '\00D7';
+        .to-icon-content();
+    }
+}
+
+/* Breadcrumb */
+
+.breadcrumb {
+    list-style: none outside none;
+    padding: 8px 0px;
+    font-size: @font-size - 2;
+    display: block;
+    
+    > li {
+	margin: 0px;
+	display: inline-block;
+	
+	+ li {
+	    &:before {
+		content: "/ ";
+		margin: 0px 4px;
+	    }
+	}
+	
+	a {
+	    text-decoration: none !important;
+	}
+    }
+}
+
+/* Paginator */
+
+.pager {
+    line-height: normal;
+    padding: 0;
+    //clear: both; // Обтекание
+    text-align: center;
+    display: inline-block;
+    
+    li {
+	display: inline;
+	list-style: outside none none;
+	cursor: not-allowed;
+	
+	&.disabled {
+	    cursor: not-allowed;
+	    
+	    a {
+		cursor: not-allowed;
+	    }
+	}
+    }
+}
+
+/* Tabs */
+
+.tabs {
+    margin-bottom: @base-margin;
+    
+    &:after {
+	content: "";
+	display: block;
+	clear: both;
+    }
+    
+    > ul {
+	padding: 0;
+	margin: 0;
+
+	&:before,
+	&:after {
+	    content: "";
+	    display: table;
+	}
+	    
+	&:after {
+	    clear: both;
+	}
+        
+        > li {
+	    float: left;
+	    list-style: none outside none;
+	}
+        
+        a {
+            width: 100%;
+        }
+    }
+    
+    > section {	
+	> div[id] {
+	    display: none;
+	    
+	    *:last-child {
+		margin-bottom: 0;
+	    }
+	    
+	    &.active {
+		display: block;
+	    }
+	    
+	    > .row {
+		width: auto;
+		margin: 0px -@base-padding;
+		max-width: none;
+	    }
+	}
+    }
+    
+    /* Vertical tabs */
+    
+    &.vertical {
+	> ul {
+	    float: left;
+	    
+	    > li {
+		float: none;
+	    }
+	}
+	
+	> section {
+	    float: left;
+	}
+	
+	@media @xs {
+	    > ul {
+		margin-bottom: @base-margin !important;
+		width: 100%;
+	    }
+	    
+	    > section {
+		float: none;
+	    }
+	}
+    }
+    
+    @media @xs {
+	> ul {
+	    > li {
+		float: none;
+	        width: 100%;
+	    }
+	}
+    }
+}
+
+/* Screen saver "Do not go" */
+// gag ?
+
+.do-not-go {
+    display: none;
+    z-index: 2000;
+    
+    &.open {
+	display: block;
+    }
+    
+    @media @sm-down {
+	display: none;
+	
+	&.open {
+	    display: none;
+	}
+    }
+}
+
+/* Spoiler */
+
+.spoiler {
+    margin-bottom: @base-margin;
+    
+    > .spoiler-head {
+	cursor: pointer;
+    }
+    
+    > .spoiler-content {
+	display: none;
+	
+	*:last-child {
+	    margin: 0px;
+	}
+    }
+}
+
+/* Back to top */
+
+.back-to-top {
+    z-index: 1010;
+    cursor: pointer;
+}
+
+/* Progress bar */
+
+.progress {
+    background-color: @grey-color;
+    height: 20px;
+    margin-bottom: @base-margin;
+    
+    .meter {
+	background-color: @base-color;
+	height: 100%;
+	display: block;
+    }
+    
+    &.radius {
+	.meter {
+	    .to-radius();
+	}
+    }
+    
+    &.round {
+	.meter {
+	    .round;
+	}
+    }
+}
+
+.badge {
+    margin-left: 4px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    background-color: @base-color;
+    min-width: 10px;
+    white-space: nowrap;
+    padding: 3px 7px;
+    font-weight: 700;
+    line-height: 1;
+    font-size: @font-size - 2;
+    
+    .button.base & {
+	color: @base-color;
+	background-color: white;
+    }
+    .button.alpha & {
+	color: black;
+	background-color: white;
+    }
+}
+
+.label {
+    font-weight: normal;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1;
+    white-space: nowrap;
+    display: inline;
+    position: relative;
+    margin-bottom: inherit;
+    padding: 3px 6px;
+    font-size: 75%;
+    background-color: @base-color;
+    color: white;
+    
+    &.info {
+	background-color: @info-color;
+	color: @info-color-text;
+    }
+    &.warning {
+	background-color: @warning-color;
+	color: @warning-color-text;
+    }
+    &.success {
+	background-color: @success-color;
+	color: @success-color-text;
+    }
+    &.error {
+	background-color: @error-color;
+	color: @error-color-text;
+    }
+}
