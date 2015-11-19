@@ -4,14 +4,12 @@
 
 [Официальный сайт](http://procyon.sl-7.ru)
 
-[Вопросы, баги и предложения](https://github.com/SL7/Procyon/issues)
-
-[Используемые стандартны написания кода](https://github.com/SL7/CodingStandards)
+[Вопросы, баги и предложения](https://github.com/EmperorSAM/Procyon/issues)
 
 ## Drupal
 
 [Стартовый шаблон для Drupal 7](https://github.com/EmperorSAM/ProcyonTheme)
 
-## Авторы
+## Автор
 
 [@EmperorSAM](https://github.com/EmperorSAM)
