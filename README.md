@@ -14,4 +14,4 @@
 
 ## Автор
 
-[@EmperorSAM](https://github.com/EmperorSAM)
+Семён Драгунов [sam.dragunov@gmail.com](sam.dragunov@gmail.com)
