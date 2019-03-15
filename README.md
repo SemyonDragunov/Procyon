@@ -4,13 +4,13 @@
 
 **Проект закрыт. Обновлений не будет. Можно использовать как пример для разработки.**
 
-[Официальный сайт](http://procyon.sl-7.ru)
+[Официальный сайт](https://semyondragunov.github.io/Procyon)
 
-[Вопросы, баги и предложения](https://github.com/EmperorSAM/Procyon/issues)
+[Вопросы, баги и предложения](https://github.com/semyondragunov/Procyon/issues)
 
 ## Drupal
 
-[Стартовый шаблон для Drupal 7](https://github.com/EmperorSAM/ProcyonTheme)
+[Стартовый шаблон для Drupal 7](https://github.com/semyondragunov/ProcyonTheme)
 
 ## Автор
 
