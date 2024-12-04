@@ -11,7 +11,3 @@
 ## Drupal
 
 [Стартовый шаблон для Drupal 7](https://github.com/semyondragunov/ProcyonTheme)
-
-## Автор
-
-Семён Драгунов [sam.dragunov@gmail.com](sam.dragunov@gmail.com)
